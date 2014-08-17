@@ -16,7 +16,8 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-clean": "~0.6.0",
-    "should": "~4.0.4"
+    "should": "~4.0.4",
+    "xmlhttprequest": "~1.6.0"
   },
   "engine": "node >= 0.10.22"
 }

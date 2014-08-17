@@ -142,3 +142,5 @@ CharacterPage.prototype.updateCharacterDeaths = function(players) {
     });
   }
 };
+
+exports.CharacterPage = CharacterPage;
