@@ -1,0 +1,22 @@
+{
+  "name": "tibia_online_status",
+  "version": "0.0.1",
+  "description": "This extension adds additional status information to the characters page.",
+  "author": "johvik",
+  "scripts": {
+    "test": "grunt release"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-jsbeautifier": "~0.2.7",
+    "grunt-mocha-test": "~0.11.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.6.0",
+    "should": "~4.0.4"
+  },
+  "engine": "node >= 0.10.22"
+}
