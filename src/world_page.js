@@ -1,5 +1,6 @@
-function WorldPage(XHR) {
+function WorldPage(XHR, utils) {
   this.XHR = XHR;
+  this.utils = utils;
   // key = world gives element = { time: Number, players: Object Array }
   // players key = name gives element = { level: Number, vocation: String }
   this.worlds_cache = {};
@@ -22,7 +23,7 @@ WorldPage.prototype.parse = function(data, callback) {
         ' Level ' + (level_column.size() !== 1), {});
     }
 
-    var name = to_property_name(name_column.text().trim());
+    var name = self.utils.to_property_name(name_column.text().trim());
     var level = parseInt(level_column.text().trim(), 10);
     var vocation = vocation_column.text().trim();
     var player = {

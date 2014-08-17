@@ -1,4 +1,5 @@
-var characterPage = new CharacterPage();
+var utils = new Utils();
+var characterPage = new CharacterPage(utils);
 
 var characterOk = characterPage.parseCharacterInformation();
 if (characterOk) {

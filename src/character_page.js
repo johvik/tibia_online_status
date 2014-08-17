@@ -1,4 +1,5 @@
-function CharacterPage() {
+function CharacterPage(utils) {
+  this.utils = utils;
   this.name_column = null;
   this.vocation_column = null;
   this.level_column = null;
@@ -72,11 +73,11 @@ CharacterPage.prototype.parseCharacterInformation = function() {
  */
 CharacterPage.prototype.parseCharacters = function() {
   var self = this;
-  var safe_name = to_property_name(self.name);
+  var safe_name = self.utils.to_property_name(self.name);
   var characters_rows = $('table:contains("Characters") tr').slice(2).has('nobr'); // Remove header
 
   characters_rows.each(function() {
-    var tmp_name = to_property_name(($(this).find('td').eq(0).text().split('.')[1] + '').trim());
+    var tmp_name = self.utils.to_property_name(($(this).find('td').eq(0).text().split('.')[1] + '').trim());
     if (tmp_name === safe_name) {
       // Its our character!
       self.must_be_online = $(this).find('td').eq(2).text().trim() === 'online';
@@ -90,7 +91,7 @@ CharacterPage.prototype.parseCharacters = function() {
  */
 CharacterPage.prototype.updateCharacterInformation = function(players, callback) {
   var self = this;
-  var safe_name = to_property_name(self.name);
+  var safe_name = self.utils.to_property_name(self.name);
   var player = players[safe_name];
   if (player) {
     // Character is online
@@ -114,7 +115,7 @@ CharacterPage.prototype.updateCharacterInformation = function(players, callback)
   }
 
   if (self.married_column) {
-    var married_safe_name = to_property_name(self.married);
+    var married_safe_name = self.utils.to_property_name(self.married);
     var married_player = players[married_safe_name];
     if (married_player) {
       // Married character is online
@@ -132,7 +133,7 @@ CharacterPage.prototype.updateCharacterDeaths = function(players) {
   if (character_deaths_rows.size() > 0) {
     character_deaths_rows.each(function() {
       $(this).find('td a').each(function() {
-        var tmp_name = to_property_name($(this).text());
+        var tmp_name = self.utils.to_property_name($(this).text());
         var killer = players[tmp_name];
         if (killer) {
           // Killer character is online
