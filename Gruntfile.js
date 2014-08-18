@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     },
     jsbeautifier: {
       'default': {
-        src: '<%= jshint.files %>',
+        src: ['<%= jshint.files %>', 'package.json', 'manifest.json'],
         options: {
           html: {
             indentSize: 2,
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         }
       },
       release: {
-        src: '<%= jsbeautifier.default.src %>',
+        src: ['<%= jsbeautifier.default.src %>', 'package.json', 'manifest.json'],
         options: {
           mode: 'VERIFY_ONLY',
           html: {
@@ -88,6 +88,9 @@ module.exports = function(grunt) {
           patterns: [{
             match: /__VERSION__/,
             replacement: '<%= pkg.version %>'
+          }, {
+            match: /__DESCRIPTION__/,
+            replacement: '<%= pkg.description %>'
           }]
         },
         files: [{

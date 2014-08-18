@@ -1,13 +1,12 @@
 {
   "name": "tibia_online_status",
   "version": "0.0.1",
-  "description": "This extension adds additional status information to the characters page.",
+  "description": "This extension adds additional status information to the characters page, for the game Tibia.",
   "author": "johvik",
   "scripts": {
     "test": "grunt release"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.10.0",
