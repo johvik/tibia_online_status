@@ -17,7 +17,6 @@ describe('WorldPage', function() {
         should.not.exist(err);
         done();
       });
-      done();
     });
   });
 
