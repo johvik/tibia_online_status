@@ -1,5 +1,4 @@
-function WorldPage(XHR, utils) {
-  this.XHR = XHR;
+function WorldPage(utils) {
   this.utils = utils;
   // key = world gives element = { time: Number, players: Object Array }
   // players key = name gives element = { level: Number, vocation: String }
@@ -40,7 +39,7 @@ WorldPage.prototype.parse = function(data, callback) {
  */
 WorldPage.prototype.fetch = function(world_name, callback) {
   var self = this;
-  var xhr = new self.XHR();
+  var xhr = new XMLHttpRequest();
   xhr.open('GET', 'http://www.tibia.com/community/?subtopic=worlds&world=' + world_name);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) { // DONE
