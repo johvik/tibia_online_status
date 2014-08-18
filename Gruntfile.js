@@ -81,7 +81,21 @@ module.exports = function(grunt) {
         }]
       }
     },
-    clean: ['dest/']
+    clean: ['dest/'],
+    replace: {
+      dist: {
+        options: {
+          patterns: [{
+            match: /__VERSION__/,
+            replacement: '<%= pkg.version %>'
+          }]
+        },
+        files: [{
+          src: ['dest/chrome/manifest.json'],
+          dest: 'dest/chrome/manifest.json'
+        }]
+      }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -90,8 +104,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-replace');
 
   grunt.registerTask('test', ['jshint', 'mochaTest']);
-  grunt.registerTask('release', ['jsbeautifier:release', 'jshint', 'mochaTest', 'clean', 'copy:chrome']);
+  grunt.registerTask('release', ['jsbeautifier:release', 'jshint', 'mochaTest', 'clean', 'copy:chrome', 'replace']);
   grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochaTest']);
 };
