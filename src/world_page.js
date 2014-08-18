@@ -6,6 +6,9 @@ function WorldPage(utils) {
   this.cache_time = 60 * 1000; // 1 min
 }
 
+/**
+ * Parses the world page, for internal use only.
+ */
 WorldPage.prototype.parse = function(data, callback) {
   var rows = $(data).find('.InnerTableContainer table tr.Even, .InnerTableContainer table tr.Odd');
   var res = {};
@@ -60,9 +63,12 @@ WorldPage.prototype.fetch = function(world_name, callback) {
  */
 WorldPage.prototype.query = function(world_name, callback) {
   var self = this;
-  world_name = (world_name + '').trim();
+  if (typeof(world_name) !== 'string') {
+    return callback('World name not a String ' + world_name, {});
+  }
+  world_name = world_name.trim();
   if (world_name.length <= 0) {
-    return callback('Bad world name ' + world_name, {});
+    return callback('Empty world name ' + world_name, {});
   }
 
   var world = self.worlds_cache[world_name];
