@@ -19,7 +19,7 @@ WorldPage.prototype.parse = function(data, callback) {
     var vocation_column = columns.eq(2);
 
     if (name_column.size() !== 1 || vocation_column.size() !== 1 || level_column.size() !== 1) {
-      return callback('Fetch World failed to find columns' +
+      return callback('Parse World failed to find columns' +
         ' Name ' + (name_column.size() !== 1) +
         ' Vocation ' + (vocation_column.size() !== 1) +
         ' Level ' + (level_column.size() !== 1), {});
@@ -35,24 +35,6 @@ WorldPage.prototype.parse = function(data, callback) {
     res[name] = player;
   });
   return callback(null, res);
-};
-
-/**
- * Make the actual HTTP request, for internal use only.
- */
-WorldPage.prototype.fetch = function(world_name, callback) {
-  var self = this;
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://www.tibia.com/community/?subtopic=worlds&world=' + world_name);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) { // DONE
-      if (xhr.status === 200) {
-        return callback(null, xhr.responseText);
-      }
-      return callback('Fetch World wrong status ' + xhr.status, null);
-    }
-  };
-  xhr.send();
 };
 
 /**
@@ -86,7 +68,7 @@ WorldPage.prototype.query = function(world_name, callback) {
       world.running = true;
     }
 
-    return self.fetch(world_name, function(err, data) {
+    return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(err, data) {
       world.running = false;
       if (err) {
         return callback(err, {});

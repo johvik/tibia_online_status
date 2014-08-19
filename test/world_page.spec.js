@@ -8,18 +8,6 @@ var WorldPage = require('../src/world_page.js').WorldPage;
 describe('WorldPage', function() {
   var worldPage = new WorldPage(utils);
 
-  describe('#fetch', function() {
-    it('should fetch Antica', function(done) {
-      this.timeout(5000);
-      worldPage.fetch('Antica', function(err, data) {
-        should.exist(data);
-        data.should.match(/Antica/);
-        should.not.exist(err);
-        done();
-      });
-    });
-  });
-
   describe('#query', function() {
     it('should not accept a Number', function(done) {
       worldPage.query(42, function(err, res) {
