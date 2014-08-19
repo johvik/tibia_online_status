@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "This extension adds additional status information to the characters page, for the game Tibia.",
   "author": "johvik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johvik/tibia_online_status.git"
+  },
   "scripts": {
     "test": "grunt release"
   },
