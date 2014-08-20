@@ -1,36 +1,84 @@
+var fs = require('fs');
 var should = require('should');
 
+var jsdom = require("jsdom");
+global.$ = require('jquery')(jsdom.jsdom().parentWindow);
 global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var utils = new require('../src/utils.js').Utils;
+var Utils = require('../src/utils.js').Utils;
 
 var WorldPage = require('../src/world_page.js').WorldPage;
 
 describe('WorldPage', function() {
+  var utils = new Utils();
   var worldPage = new WorldPage(utils);
 
+  describe('#parse', function() {
+    this.timeout(5000);
+
+    it('should parse Antica', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/world_page_antica_633.html', 'utf8');
+      var expected = require('./files/world_page_antica_633.expected.js').expected;
+      worldPage.parse(data, function(err, res) {
+        should.not.exist(err);
+        res.should.eql(expected);
+        Object.keys(res).should.have.length(633);
+        done();
+      });
+    });
+
+    it('should parse empty String', function(done) {
+      worldPage.parse(' ', function(err, res) {
+        should.not.exist(err);
+        res.should.eql({});
+        done();
+      });
+    });
+
+    it('should not parse a Number', function(done) {
+      worldPage.parse(42, function(err, res) {
+        err.should.startWith('Data not a String ');
+        done();
+      });
+    });
+
+    it('should not parse an Object', function(done) {
+      worldPage.parse({}, function(err, res) {
+        err.should.startWith('Data not a String ');
+        done();
+      });
+    });
+
+    it('should not parse an Array', function(done) {
+      worldPage.parse(['abc'], function(err, res) {
+        err.should.startWith('Data not a String ');
+        done();
+      });
+    });
+  });
+
   describe('#query', function() {
-    it('should not accept a Number', function(done) {
+    it('should not query a Number', function(done) {
       worldPage.query(42, function(err, res) {
         err.should.startWith('World name not a String ');
         done();
       });
     });
 
-    it('should not accept an Object', function(done) {
+    it('should not query an Object', function(done) {
       worldPage.query({}, function(err, res) {
         err.should.startWith('World name not a String ');
         done();
       });
     });
 
-    it('should not accept an Array', function(done) {
+    it('should not query an Array', function(done) {
       worldPage.query(['abc'], function(err, res) {
         err.should.startWith('World name not a String ');
         done();
       });
     });
 
-    it('should not accept an empty String', function(done) {
+    it('should not query an empty String', function(done) {
       worldPage.query(' ', function(err, res) {
         err.should.startWith('Empty world name ');
         done();

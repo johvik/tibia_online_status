@@ -10,6 +10,10 @@ function WorldPage(utils) {
  * Parses the world page, for internal use only.
  */
 WorldPage.prototype.parse = function(data, callback) {
+  var self = this;
+  if (typeof(data) !== 'string') {
+    return callback('Data not a String ' + data, {});
+  }
   var rows = $(data).find('.InnerTableContainer table tr.Even, .InnerTableContainer table tr.Odd');
   var res = {};
   rows.each(function() {
@@ -27,7 +31,7 @@ WorldPage.prototype.parse = function(data, callback) {
 
     var name = self.utils.to_property_name(name_column.text().trim());
     var level = parseInt(level_column.text().trim(), 10);
-    var vocation = vocation_column.text().trim();
+    var vocation = self.utils.to_property_name(vocation_column.text().trim());
     var player = {
       level: level,
       vocation: vocation
