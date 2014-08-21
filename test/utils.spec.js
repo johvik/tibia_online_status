@@ -55,12 +55,5 @@ describe('Utils', function() {
         done();
       });
     });
-
-    it('should not accept an empty String', function(done) {
-      utils.fetch(' ', function(err, res) {
-        err.should.startWith('Empty url ');
-        done();
-      });
-    });
   });
 });

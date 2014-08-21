@@ -18,18 +18,13 @@ Utils.prototype.to_property_name = function(name) {
  * Make a HTTP request and return the text if status is 200.
  */
 Utils.prototype.fetch = function(url, callback) {
-  var self = this;
   if (typeof(url) !== 'string') {
     return callback('Url not a String ' + url, {});
-  }
-  url = url.trim();
-  if (url.length <= 0) {
-    return callback('Empty url ' + url, {});
   }
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url);
   xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) { // DONE
+    if (xhr.readyState === xhr.DONE) {
       if (xhr.status === 200) {
         return callback(null, xhr.responseText);
       }
