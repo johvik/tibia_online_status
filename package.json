@@ -22,7 +22,6 @@
     "grunt-replace": "~0.7.8",
     "should": "~4.0.4",
     "xmlhttprequest": "~1.6.0",
-    "jquery": "~2.1.1",
     "jsdom": "~1.0.0-pre.1"
   },
   "engine": "node >= 0.10.22"

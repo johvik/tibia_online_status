@@ -1,12 +1,10 @@
 var utils = new Utils();
 var characterPage = new CharacterPage(utils);
 
-characterPage.parseCharacterInformation(function(err) {
+characterPage.parse(function(err) {
   if (err) {
     console.log(err);
   } else {
-    characterPage.parseCharacters();
-
     chrome.runtime.sendMessage({
       query: 'world',
       world: characterPage.world

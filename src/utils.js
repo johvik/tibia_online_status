@@ -11,11 +11,6 @@ function Utils() {
   this.vocations = ['Druid', 'Elder Druid', 'Elite Knight', 'Knight', 'Master Sorcerer', 'None', 'Paladin', 'Royal Paladin', 'Sorcerer'];
 }
 
-Utils.prototype.to_property_name = function(name) {
-  // Hack to come around jQuerys 160 char...
-  return name.replace(/\s/g, ' ');
-};
-
 /**
  * Replaces html codes in str.
  */

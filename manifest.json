@@ -15,6 +15,6 @@
   },
   "content_scripts": [{
     "matches": ["http://www.tibia.com/community/?subtopic=characters*"],
-    "js": ["lib/jquery-2.1.1.min.js", "src/utils.js", "src/character_page.js", "src/chrome/characters.js"]
+    "js": ["src/utils.js", "src/character_page.js", "src/chrome/characters.js"]
   }]
 }

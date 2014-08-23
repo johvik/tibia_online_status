@@ -1,4 +1,3 @@
-// TODO Remove dependency to jQuery... $.parseHTML("<img src='z' onerror='alert(\"hi there\")'>")
 // TODO Add for guild page?
 var utils = new Utils();
 var worldPage = new WorldPage(utils);
