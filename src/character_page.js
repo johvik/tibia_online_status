@@ -1,17 +1,6 @@
 function CharacterPage(utils) {
   this.utils = utils;
-  this.name_column = null;
-  this.vocation_column = null;
-  this.level_column = null;
-  this.married_column = null;
   this.must_be_online = false; // Will be set if online is displayed on the page
-
-  // These fields will be set if parseCharacterInformation return ok
-  this.name = null;
-  this.vocation = null;
-  this.level = null;
-  this.world = null;
-  this.married = null;
 }
 
 /**
@@ -20,13 +9,18 @@ function CharacterPage(utils) {
  */
 CharacterPage.prototype.parseCharacterInformation = function(callback) {
   var self = this;
+  var characters = document.getElementById('characters');
+  if (characters === null) {
+    return callback('Characters div not found');
+  }
+  self.characters = characters;
+
   var character_information_rows = $('table:contains("Character Information") tr');
 
   var name_column = character_information_rows.filter(':contains("Name:")').find('td').eq(1);
   var vocation_column = character_information_rows.filter(':contains("Vocation:")').find('td').eq(1);
   var level_column = character_information_rows.filter(':contains("Level:")').find('td').eq(1);
   var world_column = character_information_rows.filter(':contains("World:")').find('td').eq(1);
-  var married_column = character_information_rows.filter(':contains("Married to:")').find('td').eq(1);
 
   if (name_column.size() === 1) {
     self.name_column = name_column.get(0);
@@ -53,11 +47,6 @@ CharacterPage.prototype.parseCharacterInformation = function(callback) {
     self.world = world_column.text().trim();
   } else {
     return callback('World not found');
-  }
-
-  if (married_column.size() === 1) {
-    self.married_column = married_column.find('a').get(0);
-    self.married = married_column.text().trim();
   }
 
   return callback(null);
@@ -109,33 +98,24 @@ CharacterPage.prototype.updateCharacterInformation = function(players, callback)
     self.name_column.innerHTML = '<span class="orange">' + self.name + '</span>';
   }
 
-  if (self.married_column) {
-    var married_safe_name = self.utils.to_property_name(self.married);
-    var married_player = players[married_safe_name];
-    if (married_player) {
-      // Married character is online
-      self.married_column.classList.add('green');
-    }
-  }
   return callback(null);
 };
 
 /**
- * Mark all killers if they are online
+ * Mark all character links if they are online (includes married, deaths).
  */
-CharacterPage.prototype.updateCharacterDeaths = function(players) {
-  var character_deaths_rows = $('table:contains("Character Deaths") tr').slice(1);
-  if (character_deaths_rows.size() > 0) {
-    character_deaths_rows.each(function() {
-      $(this).find('td a').each(function() {
-        var tmp_name = self.utils.to_property_name($(this).text());
-        var killer = players[tmp_name];
-        if (killer) {
-          // Killer character is online
-          $(this).addClass('green');
-        }
-      });
-    });
+CharacterPage.prototype.updateCharacterLinks = function(players) {
+  var self = this;
+  var links = self.characters.getElementsByTagName('a');
+  var link_exp = /http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
+  for (var i = 0, j = links.length; i < j; i++) {
+    if (link_exp.test(links[i].href)) {
+      var name = self.utils.decode(links[i].innerHTML);
+      var player = players[name];
+      if (player) {
+        links[i].classList.add('green');
+      }
+    }
   }
 };
 

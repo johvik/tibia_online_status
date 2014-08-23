@@ -18,7 +18,7 @@ characterPage.parseCharacterInformation(function(err) {
           if (err) {
             console.log(err);
           } else {
-            characterPage.updateCharacterDeaths(res.players);
+            characterPage.updateCharacterLinks(res.players);
           }
         });
       }

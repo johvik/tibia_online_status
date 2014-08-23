@@ -23,6 +23,14 @@ describe('Utils', function() {
       str.should.not.equal(hello_world);
       utils.decode(str).should.equal(hello_world);
     });
+
+    it('should replace &nbsp;', function() {
+      var str = 'Hello&nbsp;World!';
+      var hello_world = 'Hello World!';
+
+      str.should.not.equal(hello_world);
+      utils.decode(str).should.equal(hello_world);
+    });
   });
 
   describe('#isVocation', function() {

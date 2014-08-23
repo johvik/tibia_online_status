@@ -3,8 +3,8 @@ if (typeof(window) !== 'undefined') {
 
   // Avoid undefined errors when exporting to nodejs
   var exports = {};
-  // Hide logs
-  console.log = function() {};
+  // Hide logs?
+  // console.log = function() {};
 }
 
 function Utils() {
@@ -20,7 +20,7 @@ Utils.prototype.to_property_name = function(name) {
  * Replaces html codes in str.
  */
 Utils.prototype.decode = function(str) {
-  return str.replace(/&#160;/g, ' ');
+  return str.replace(/&#160;/g, ' ').replace(/&nbsp;/g, ' ');
 };
 
 /**
