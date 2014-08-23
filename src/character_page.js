@@ -19,7 +19,7 @@ function CharacterPage(utils) {
  * Retrieves and stores information from the character information table.
  * @return False if something is missing.
  */
-CharacterPage.prototype.parseCharacterInformation = function() {
+CharacterPage.prototype.parseCharacterInformation = function(callback) {
   var self = this;
   var character_information_rows = $('table:contains("Character Information") tr');
 
@@ -33,39 +33,36 @@ CharacterPage.prototype.parseCharacterInformation = function() {
     self.name_column = name_column;
     self.name = name_column.text().trim();
   } else {
-    console.log('Name not found');
+    return callback('Name not found');
   }
 
   if (vocation_column.size() === 1) {
     self.vocation_column = vocation_column;
     self.vocation = vocation_column.text().trim();
   } else {
-    console.log('Vocation not found');
+    return callback('Vocation not found');
   }
 
   if (level_column.size() === 1) {
     self.level_column = level_column;
     self.level = parseInt(level_column.text().trim(), 10);
   } else {
-    console.log('Level not found');
+    return callback('Level not found');
   }
 
   if (world_column.size() === 1) {
     self.world_column = world_column;
     self.world = world_column.text().trim();
   } else {
-    console.log('World not found');
+    return callback('World not found');
   }
 
   if (married_column.size() === 1) {
     self.married_column = married_column;
     self.married = married_column.text().trim();
-  } else {
-    console.log('Married not found');
   }
 
-  // Check required columns
-  return self.name_column !== null && self.vocation_column !== null && self.level_column !== null && self.world_column !== null;
+  return callback(null);
 };
 
 /**
