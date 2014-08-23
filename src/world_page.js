@@ -14,30 +14,19 @@ WorldPage.prototype.parse = function(data, callback) {
   if (typeof(data) !== 'string') {
     return callback('Data not a String ' + data, {});
   }
-  var rows = $(data).find('.InnerTableContainer table tr.Even, .InnerTableContainer table tr.Odd');
   var res = {};
-  rows.each(function() {
-    var columns = $(this).find('td');
-    var name_column = columns.eq(0);
-    var level_column = columns.eq(1);
-    var vocation_column = columns.eq(2);
+  var row_exp = /href=\"http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+?>(.+?)<\/a><\/td><td.*?>(\d+?)<\/td><td.*?>(.+?)<\/td>/g;
+  while ((row = row_exp.exec(data)) !== null) {
+    var name = self.utils.decode(row[1]);
+    var level = parseInt(row[2], 10);
+    var vocation = self.utils.decode(row[3]);
 
-    if (name_column.size() !== 1 || vocation_column.size() !== 1 || level_column.size() !== 1) {
-      return callback('Parse World failed to find columns' +
-        ' Name ' + (name_column.size() !== 1) +
-        ' Vocation ' + (vocation_column.size() !== 1) +
-        ' Level ' + (level_column.size() !== 1), {});
-    }
-
-    var name = self.utils.to_property_name(name_column.text().trim());
-    var level = parseInt(level_column.text().trim(), 10);
-    var vocation = self.utils.to_property_name(vocation_column.text().trim());
     var player = {
       level: level,
       vocation: vocation
     };
     res[name] = player;
-  });
+  }
   return callback(null, res);
 };
 

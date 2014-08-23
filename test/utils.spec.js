@@ -15,6 +15,16 @@ describe('Utils', function() {
     });
   });
 
+  describe('#decode', function() {
+    it('should replace &#160;', function() {
+      var str = 'Hello&#160;World!';
+      var hello_world = 'Hello World!';
+
+      str.should.not.equal(hello_world);
+      utils.decode(str).should.equal(hello_world);
+    });
+  });
+
   describe('#fetch', function() {
     it('should fetch url', function(done) {
       this.timeout(5000);

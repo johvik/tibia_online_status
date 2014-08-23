@@ -15,6 +15,13 @@ Utils.prototype.to_property_name = function(name) {
 };
 
 /**
+ * Replaces html codes in str.
+ */
+Utils.prototype.decode = function(str) {
+  return str.replace(/&#160;/g, ' ');
+};
+
+/**
  * Make a HTTP request and return the text if status is 200.
  */
 Utils.prototype.fetch = function(url, callback) {

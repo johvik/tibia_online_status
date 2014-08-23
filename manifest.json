@@ -11,7 +11,7 @@
     "128": "icons/icon128.png"
   },
   "background": {
-    "scripts": ["lib/jquery-2.1.1.min.js", "src/utils.js", "src/world_page.js", "src/chrome/background.js"]
+    "scripts": ["src/utils.js", "src/world_page.js", "src/chrome/background.js"]
   },
   "content_scripts": [{
     "matches": ["http://www.tibia.com/community/?subtopic=characters*"],

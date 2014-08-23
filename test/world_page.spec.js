@@ -1,8 +1,6 @@
 var fs = require('fs');
 var should = require('should');
 
-var jsdom = require("jsdom");
-global.$ = require('jquery')(jsdom.jsdom().parentWindow);
 global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var Utils = require('../src/utils.js').Utils;
 
