@@ -3,11 +3,10 @@ function CharacterPage(utils) {
   this.name_column = null;
   this.vocation_column = null;
   this.level_column = null;
-  this.world_column = null;
   this.married_column = null;
   this.must_be_online = false; // Will be set if online is displayed on the page
 
-  // These fields will be set if the columns are valid.
+  // These fields will be set if parseCharacterInformation return ok
   this.name = null;
   this.vocation = null;
   this.level = null;
@@ -30,35 +29,34 @@ CharacterPage.prototype.parseCharacterInformation = function(callback) {
   var married_column = character_information_rows.filter(':contains("Married to:")').find('td').eq(1);
 
   if (name_column.size() === 1) {
-    self.name_column = name_column;
+    self.name_column = name_column.get(0);
     self.name = name_column.text().trim();
   } else {
     return callback('Name not found');
   }
 
   if (vocation_column.size() === 1) {
-    self.vocation_column = vocation_column;
+    self.vocation_column = vocation_column.get(0);
     self.vocation = vocation_column.text().trim();
   } else {
     return callback('Vocation not found');
   }
 
   if (level_column.size() === 1) {
-    self.level_column = level_column;
+    self.level_column = level_column.get(0);
     self.level = parseInt(level_column.text().trim(), 10);
   } else {
     return callback('Level not found');
   }
 
   if (world_column.size() === 1) {
-    self.world_column = world_column;
     self.world = world_column.text().trim();
   } else {
     return callback('World not found');
   }
 
   if (married_column.size() === 1) {
-    self.married_column = married_column;
+    self.married_column = married_column.find('a').get(0);
     self.married = married_column.text().trim();
   }
 
@@ -92,23 +90,23 @@ CharacterPage.prototype.updateCharacterInformation = function(players, callback)
   var player = players[safe_name];
   if (player) {
     // Character is online
-    self.name_column.html('<span class="green">' + self.name + '</span>');
+    self.name_column.innerHTML = '<span class="green">' + self.name + '</span>';
 
     // Set level
     var level_diff = player.level - self.level;
     if (level_diff < 0) {
       // Lost level
-      self.level_column.html(player.level + ' (' + (level_diff) + ')');
+      self.level_column.innerHTML = player.level + ' (' + (level_diff) + ')';
     } else if (level_diff > 0) {
       // Gained level
-      self.level_column.html(player.level + ' (+' + (level_diff) + ')');
+      self.level_column.innerHTML = player.level + ' (+' + (level_diff) + ')';
     }
 
     // Set vocation
-    self.vocation_column.text(player.vocation);
+    self.vocation_column.innerHTML = player.vocation;
   } else if (self.must_be_online) {
     // Character is online but not in the list
-    self.name_column.html('<span class="orange">' + self.name + '</span>');
+    self.name_column.innerHTML = '<span class="orange">' + self.name + '</span>';
   }
 
   if (self.married_column) {
@@ -116,7 +114,7 @@ CharacterPage.prototype.updateCharacterInformation = function(players, callback)
     var married_player = players[married_safe_name];
     if (married_player) {
       // Married character is online
-      self.married_column.find('a').addClass('green');
+      self.married_column.classList.add('green');
     }
   }
   return callback(null);
