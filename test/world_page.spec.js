@@ -26,6 +26,27 @@ describe('WorldPage', function() {
       });
     });
 
+    it('should parse Inferna', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/world_page_inferna_7.html', 'utf8');
+      var expected = require('./files/world_page_inferna_7.expected.js').expected;
+      worldPage.parse(data, function(err, res) {
+        should.not.exist(err);
+        res.should.eql(expected);
+        Object.keys(res).should.have.length(7);
+        done();
+      });
+    });
+
+    it('should parse offline Magera', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/world_page_magera_offline.html', 'utf8');
+      worldPage.parse(data, function(err, res) {
+        should.not.exist(err);
+        res.should.eql({});
+        Object.keys(res).should.have.length(0);
+        done();
+      });
+    });
+
     it('should parse empty String', function(done) {
       worldPage.parse(' ', function(err, res) {
         should.not.exist(err);
