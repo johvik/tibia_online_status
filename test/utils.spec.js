@@ -25,6 +25,27 @@ describe('Utils', function() {
     });
   });
 
+  describe('#isVocation', function() {
+    it('should be vocations', function() {
+      utils.isVocation('Druid').should.equal(true);
+      utils.isVocation('Elder Druid').should.equal(true);
+      utils.isVocation('Elite Knight').should.equal(true);
+      utils.isVocation('Knight').should.equal(true);
+      utils.isVocation('Master Sorcerer').should.equal(true);
+      utils.isVocation('None').should.equal(true);
+      utils.isVocation('Paladin').should.equal(true);
+      utils.isVocation('Royal Paladin').should.equal(true);
+      utils.isVocation('Sorcerer').should.equal(true);
+    });
+
+    it('should not be vocations', function() {
+      utils.isVocation(' Druid').should.equal(false);
+      utils.isVocation('druid').should.equal(false);
+      utils.isVocation('Some text').should.equal(false);
+      utils.isVocation(9).should.equal(false);
+    });
+  });
+
   describe('#fetch', function() {
     it('should fetch url', function(done) {
       this.timeout(5000);

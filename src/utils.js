@@ -7,7 +7,9 @@ if (typeof(window) !== 'undefined') {
   console.log = function() {};
 }
 
-function Utils() {}
+function Utils() {
+  this.vocations = ['Druid', 'Elder Druid', 'Elite Knight', 'Knight', 'Master Sorcerer', 'None', 'Paladin', 'Royal Paladin', 'Sorcerer'];
+}
 
 Utils.prototype.to_property_name = function(name) {
   // Hack to come around jQuerys 160 char...
@@ -19,6 +21,19 @@ Utils.prototype.to_property_name = function(name) {
  */
 Utils.prototype.decode = function(str) {
   return str.replace(/&#160;/g, ' ');
+};
+
+/**
+ * Check if str is a valid vocation.
+ */
+Utils.prototype.isVocation = function(str) {
+  var self = this;
+  for (var i = 0, j = self.vocations.length; i < j; i++) {
+    if (str === self.vocations[i]) {
+      return true;
+    }
+  }
+  return false;
 };
 
 /**

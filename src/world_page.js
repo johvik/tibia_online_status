@@ -17,10 +17,13 @@ WorldPage.prototype.parse = function(data, callback) {
   var res = {};
   var row_exp = /href=\"http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+?>(.+?)<\/a><\/td><td.*?>(\d+?)<\/td><td.*?>(.+?)<\/td>/g;
   while ((row = row_exp.exec(data)) !== null) {
-    var name = self.utils.decode(row[1]);
+    var name = self.utils.decode(row[1]).trim();
     var level = parseInt(row[2], 10);
-    var vocation = self.utils.decode(row[3]);
+    var vocation = self.utils.decode(row[3]).trim();
 
+    if (self.utils.isVocation(vocation) !== true) {
+      return callback('Suspicious row match, name: ' + name + ' level: ' + level + ' vocation: ' + vocation + ' row: ' + row, {});
+    }
     var player = {
       level: level,
       vocation: vocation
