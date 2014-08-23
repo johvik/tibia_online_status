@@ -20,7 +20,7 @@ Utils.prototype.to_property_name = function(name) {
  * Replaces html codes in str.
  */
 Utils.prototype.decode = function(str) {
-  return str.replace(/&#160;/g, ' ').replace(/&nbsp;/g, ' ');
+  return str.replace(/(&#160;|&nbsp;)/g, ' ');
 };
 
 /**

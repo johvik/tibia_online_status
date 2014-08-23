@@ -31,6 +31,14 @@ describe('Utils', function() {
       str.should.not.equal(hello_world);
       utils.decode(str).should.equal(hello_world);
     });
+
+    it('should replace combined', function() {
+      var str = 'Hello&nbsp;&nbsp;&#160;&#160;&nbsp;World!';
+      var hello_world = 'Hello     World!';
+
+      str.should.not.equal(hello_world);
+      utils.decode(str).should.equal(hello_world);
+    });
   });
 
   describe('#isVocation', function() {
