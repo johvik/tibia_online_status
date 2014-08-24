@@ -71,10 +71,6 @@ module.exports = function(grunt) {
           dest: 'dest/chrome/'
         }, {
           expand: true,
-          src: ['lib/**'],
-          dest: 'dest/chrome/'
-        }, {
-          expand: true,
           src: ['manifest.json'],
           dest: 'dest/chrome/'
         }, {
