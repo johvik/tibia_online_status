@@ -16,5 +16,8 @@
   "content_scripts": [{
     "matches": ["http://www.tibia.com/community/?subtopic=characters*"],
     "js": ["src/utils.js", "src/character_page.js", "src/chrome/characters.js"]
+  }, {
+    "matches": ["http://www.tibia.com/community/?subtopic=guilds*"],
+    "js": ["src/utils.js", "src/guild_page.js", "src/chrome/guilds.js"]
   }]
 }

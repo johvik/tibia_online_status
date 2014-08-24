@@ -1,7 +1,7 @@
 var fs = require('fs');
 var should = require('should');
 var jsdom = require('jsdom').jsdom;
-require("jsdom").defaultDocumentFeatures = {
+require('jsdom').defaultDocumentFeatures = {
   FetchExternalResources: false,
   ProcessExternalResources: false
 };

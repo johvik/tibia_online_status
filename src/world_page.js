@@ -16,6 +16,7 @@ WorldPage.prototype.parse = function(data, callback) {
   }
   var res = {};
   var row_exp = /href=\"http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+?>(.+?)<\/a><\/td><td.*?>(\d+?)<\/td><td.*?>(.+?)<\/td>/g;
+  var row;
   while ((row = row_exp.exec(data)) !== null) {
     var name = self.utils.decode(row[1]).trim();
     var level = parseInt(row[2], 10);

@@ -1,4 +1,3 @@
-// TODO Add for guild page?
 var utils = new Utils();
 var worldPage = new WorldPage(utils);
 
