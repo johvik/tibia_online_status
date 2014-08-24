@@ -105,6 +105,15 @@ module.exports = function(grunt) {
           dest: 'dest/chrome/manifest.json'
         }]
       }
+    },
+    compress: {
+      main: {
+        options: {
+          archive: 'dest/chrome.zip'
+        },
+        cwd: 'dest/chrome',
+        src: ['**'],
+      }
     }
   });
 
@@ -115,9 +124,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-replace');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   grunt.registerTask('test', ['jshint', 'mochacov:test']);
   grunt.registerTask('cov', ['jshint', 'mochacov:cov']);
-  grunt.registerTask('travis', ['jsbeautifier:release', 'jshint', 'mochacov:test', 'mochacov:travis', 'clean', 'copy:chrome', 'replace']);
-  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochacov:test', 'clean', 'copy:chrome', 'replace']);
+  grunt.registerTask('travis', ['jsbeautifier:release', 'jshint', 'mochacov:test', 'mochacov:travis', 'clean', 'copy:chrome', 'replace', 'compress']);
+  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochacov:test', 'clean', 'copy:chrome', 'replace', 'compress']);
 };
