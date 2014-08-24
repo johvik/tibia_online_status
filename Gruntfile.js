@@ -38,12 +38,25 @@ module.exports = function(grunt) {
         }
       }
     },
-    mochaTest: {
+    mochacov: {
       test: {
         options: {
           reporter: 'spec'
         },
-        src: ['test/**/*spec.js']
+      },
+      cov: {
+        options: {
+          reporter: 'html-cov',
+          output: 'coverage.html'
+        }
+      },
+      travis: {
+        options: {
+          coveralls: true
+        }
+      },
+      options: {
+        files: 'test/**/*spec.js'
       }
     },
     watch: {
@@ -97,13 +110,14 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jsbeautifier');
-  grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-replace');
 
-  grunt.registerTask('test', ['jshint', 'mochaTest']);
-  grunt.registerTask('release', ['jsbeautifier:release', 'jshint', 'mochaTest', 'clean', 'copy:chrome', 'replace']);
-  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochaTest']);
+  grunt.registerTask('test', ['jshint', 'mochacov:test']);
+  grunt.registerTask('cov', ['jshint', 'mochacov:cov']);
+  grunt.registerTask('travis', ['jsbeautifier:release', 'jshint', 'mochacov:test', 'mochacov:travis', 'clean', 'copy:chrome', 'replace']);
+  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochacov:test', 'clean', 'copy:chrome', 'replace']);
 };
