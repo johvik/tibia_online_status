@@ -85,18 +85,25 @@ CharacterPage.prototype.parseCharacterInformation = function(table) {
  */
 CharacterPage.prototype.parseCharacters = function(table) {
   var self = this;
-  // TODO
-  /*var safe_name = self.utils.to_property_name(self.name);
-  var characters_rows = $('table:contains("Characters") tr').slice(2).has('nobr'); // Remove header
+  var rows = table.getElementsByTagName('tr');
 
-  characters_rows.each(function() {
-    var tmp_name = self.utils.to_property_name(($(this).find('td').eq(0).text().split('.')[1] + '').trim());
-    if (tmp_name === safe_name) {
-      // Its our character!
-      self.must_be_online = $(this).find('td').eq(2).text().trim() === 'online';
-      return false;
+  for (var i = 0, j = rows.length; i < j; i++) {
+    var columns = rows[i].getElementsByTagName('td');
+
+    if (columns.length >= 4) {
+      var row_value = columns[2].textContent.trim();
+      if (row_value === 'online') {
+        // Remove number
+        var row_name = columns[0].textContent.split('.');
+        if (row_name.length >= 2) {
+          // Replace 160 char...
+          var name = row_name[1].replace(/\s/g, ' ').trim();
+          self.must_be_online = (name === self.name);
+        }
+        break; // Only one can be online
+      }
     }
-  });*/
+  }
 };
 
 /**

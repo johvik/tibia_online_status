@@ -44,9 +44,25 @@ describe('CharacterPage', function() {
       global.document = jsdom(data);
       characterPage.parse(function(err) {
         should.not.exist(err);
+        characterPage.must_be_online.should.equal(false);
         characterPage.name.should.equal('Chorizo\'korv');
         characterPage.vocation.should.equal('Master Sorcerer');
         characterPage.level.should.equal(69);
+        characterPage.world.should.equal('Inferna');
+        characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
+        done();
+      });
+    });
+
+    it('should parse Ratsafari Guide', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/character_page_ratsafari_guide.html', 'utf8');
+      global.document = jsdom(data);
+      characterPage.parse(function(err) {
+        should.not.exist(err);
+        characterPage.must_be_online.should.equal(true);
+        characterPage.name.should.equal('Ratsafari Guide');
+        characterPage.vocation.should.equal('Master Sorcerer');
+        characterPage.level.should.equal(31);
         characterPage.world.should.equal('Inferna');
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
         done();
