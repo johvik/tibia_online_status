@@ -22,7 +22,7 @@ CharacterPage.prototype.parse = function(callback) {
   for (var i = 0, j = character_tables.length; i < j; i++) {
     if (!parsed_character_information && /Character Information/.test(character_tables[i].innerHTML)) {
       if (!self.parseCharacterInformation(character_tables[i])) {
-        return callback('Failed to parse character information');
+        return callback('Failed to parse character information. Name:' + self.name + ', Vocation:' + self.vocation + ', Level:' + self.level + ', World:' + self.world);
       }
       parsed_character_information = true;
     } else if (!parsed_characters && /Characters/.test(character_tables[i].innerHTML)) {
@@ -54,7 +54,7 @@ CharacterPage.prototype.parseCharacterInformation = function(table) {
   for (var i = 0, j = rows.length; i < j; i++) {
     var columns = rows[i].getElementsByTagName('td');
 
-    if (columns.length === 2) {
+    if (columns.length >= 2) {
       var row_name = columns[0].innerHTML;
       var row_value = columns[1].textContent.trim();
       if (!name_found && row_name === 'Name:') {
