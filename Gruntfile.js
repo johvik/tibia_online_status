@@ -112,7 +112,7 @@ module.exports = function(grunt) {
           archive: 'dest/chrome.zip'
         },
         cwd: 'dest/chrome',
-        src: ['**'],
+        src: ['**/*'],
       }
     }
   });
