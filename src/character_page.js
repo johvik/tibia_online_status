@@ -16,10 +16,6 @@ CharacterPage.prototype.parse = function(callback) {
   self.elements.characters_div = characters_div;
 
   var character_tables = characters_div.getElementsByTagName('table');
-  if (character_tables.length === 0) {
-    return callback('No character tables found');
-  }
-
   var parsed_character_information = false;
   var parsed_characters = false;
 
@@ -43,6 +39,7 @@ CharacterPage.prototype.parse = function(callback) {
 
 /**
  * Retrieves and stores information from the character information table.
+ * Used internally by #parse.
  * @return False if something isn't found or is bad.
  */
 CharacterPage.prototype.parseCharacterInformation = function(table) {
@@ -59,7 +56,7 @@ CharacterPage.prototype.parseCharacterInformation = function(table) {
 
     if (columns.length === 2) {
       var row_name = columns[0].innerHTML;
-      var row_value = columns[1].innerText.trim();
+      var row_value = columns[1].textContent.trim();
       if (!name_found && row_name === 'Name:') {
         self.elements.name_column = columns[1];
         self.name = row_value;
@@ -84,6 +81,7 @@ CharacterPage.prototype.parseCharacterInformation = function(table) {
 
 /**
  * Checks if character is online by looking at characters (possible if not a hidden character)
+ * Used internally by #parse.
  */
 CharacterPage.prototype.parseCharacters = function(table) {
   var self = this;
