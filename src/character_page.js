@@ -100,9 +100,19 @@ CharacterPage.prototype.parseCharacters = function(table) {
 };
 
 /**
- * Updates the character information
+ * Wrapper to update information and links.
  */
-CharacterPage.prototype.updateCharacterInformation = function(players, callback) {
+CharacterPage.prototype.update = function(players) {
+  var self = this;
+  self.updateCharacterInformation(players);
+  self.updateCharacterLinks(players);
+};
+
+/**
+ * Updates the character information.
+ * Used internally by #update.
+ */
+CharacterPage.prototype.updateCharacterInformation = function(players) {
   var self = this;
   var player = players[self.name];
   if (player) {
@@ -125,12 +135,11 @@ CharacterPage.prototype.updateCharacterInformation = function(players, callback)
     // Character is online but not in the list
     self.elements.name_column.innerHTML = '<span class="orange">' + self.elements.name_column.innerHTML + '</span>';
   }
-
-  return callback(null);
 };
 
 /**
  * Mark all character links if they are online (includes married, deaths).
+ * Used internally by #update.
  */
 CharacterPage.prototype.updateCharacterLinks = function(players) {
   var self = this;

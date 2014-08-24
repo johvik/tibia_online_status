@@ -12,13 +12,7 @@ characterPage.parse(function(err) {
       if (res.error) {
         console.log(res.error);
       } else {
-        characterPage.updateCharacterInformation(res.players, function(err) {
-          if (err) {
-            console.log(err);
-          } else {
-            characterPage.updateCharacterLinks(res.players);
-          }
-        });
+        characterPage.update(res.players);
       }
     });
   }
