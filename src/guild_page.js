@@ -28,18 +28,7 @@ GuildPage.prototype.parse = function(callback) {
  */
 GuildPage.prototype.update = function(players) {
   var self = this;
-  // TODO Move to utils
-  var links = self.elements.guilds_div.getElementsByTagName('a');
-  var link_exp = /http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
-  for (var i = 0, j = links.length; i < j; i++) {
-    if (link_exp.test(links[i].href)) {
-      var name = self.utils.decode(links[i].innerHTML);
-      var player = players[name];
-      if (player) {
-        links[i].classList.add('green');
-      }
-    }
-  }
+  self.utils.markOnlineLinks(self.elements.guilds_div, players);
 };
 
 exports.GuildPage = GuildPage;

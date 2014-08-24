@@ -1,4 +1,9 @@
 var should = require('should');
+var jsdom = require('jsdom').jsdom;
+require('jsdom').defaultDocumentFeatures = {
+  FetchExternalResources: false,
+  ProcessExternalResources: false
+};
 
 var Utils = require('../src/utils.js').Utils;
 
@@ -91,6 +96,18 @@ describe('Utils', function() {
         err.should.startWith('Url not a String ');
         done();
       });
+    });
+  });
+
+  describe('#markOnlineLinks', function() {
+    it('should mark online green', function() {
+      var document = jsdom('<a href="http://www.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="http://www.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>');
+      utils.markOnlineLinks(document, {
+        'Chorizo\'korv': {}
+      });
+      var links = document.getElementsByTagName('a');
+      links[0].className.should.containEql('green');
+      links[1].className.should.not.containEql('green');
     });
   });
 });

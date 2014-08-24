@@ -105,7 +105,7 @@ CharacterPage.prototype.parseCharacters = function(table) {
 CharacterPage.prototype.update = function(players) {
   var self = this;
   self.updateCharacterInformation(players);
-  self.updateCharacterLinks(players);
+  self.utils.markOnlineLinks(self.elements.characters_div, players);
 };
 
 /**
@@ -134,25 +134,6 @@ CharacterPage.prototype.updateCharacterInformation = function(players) {
   } else if (self.must_be_online) {
     // Character is online but not in the list
     self.elements.name_column.innerHTML = '<span class="orange">' + self.elements.name_column.innerHTML + '</span>';
-  }
-};
-
-/**
- * Mark all character links if they are online (includes married, deaths).
- * Used internally by #update.
- */
-CharacterPage.prototype.updateCharacterLinks = function(players) {
-  var self = this;
-  var links = self.elements.characters_div.getElementsByTagName('a');
-  var link_exp = /http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
-  for (var i = 0, j = links.length; i < j; i++) {
-    if (link_exp.test(links[i].href)) {
-      var name = self.utils.decode(links[i].innerHTML);
-      var player = players[name];
-      if (player) {
-        links[i].classList.add('green');
-      }
-    }
   }
 };
 
