@@ -68,5 +68,22 @@ describe('CharacterPage', function() {
         done();
       });
     });
+
+    it('should fetch and parse Chorizo\'korv', function(done) {
+      utils.fetch('http://www.tibia.com/community/?subtopic=characters&name=Chorizo%27korv', function(err, data) {
+        should.not.exist(err);
+        global.document = jsdom(data);
+        characterPage.parse(function(err) {
+          should.not.exist(err);
+          characterPage.must_be_online.should.equal(false);
+          characterPage.name.should.equal('Chorizo\'korv');
+          characterPage.vocation.should.equal('Master Sorcerer');
+          characterPage.level.should.be.within(60, 140);
+          characterPage.world.should.equal('Inferna');
+          characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
+          done();
+        });
+      });
+    });
   });
 });

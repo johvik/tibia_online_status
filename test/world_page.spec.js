@@ -103,5 +103,12 @@ describe('WorldPage', function() {
         done();
       });
     });
+
+    it('should query Antica', function(done) {
+      worldPage.query('Antica', function(err, res) {
+        should.not.exist(err);
+        done();
+      });
+    });
   });
 });
