@@ -39,6 +39,15 @@ describe('CharacterPage', function() {
       });
     });
 
+    it('should not parse character information', function(done) {
+      global.document = jsdom('<div id="characters"><table><tr><td>Character Information</td></tr></table></div>');
+      characterPage.parse(function(err) {
+        err.should.startWith('Failed to parse character information. ');
+        characterPage.elements.should.have.keys('characters_div');
+        done();
+      });
+    });
+
     it('should parse Chorizo\'korv', function(done) {
       var data = fs.readFileSync(__dirname + '/files/character_page_chorizo_korv.html', 'utf8');
       global.document = jsdom(data);
