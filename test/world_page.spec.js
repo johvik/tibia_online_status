@@ -105,8 +105,41 @@ describe('WorldPage', function() {
     });
 
     it('should query Antica', function(done) {
+      worldPage.worlds_cache.should.eql({});
+      var time = new Date().getTime();
       worldPage.query('Antica', function(err, res) {
         should.not.exist(err);
+        should.exist(res);
+        worldPage.worlds_cache.should.have.keys('Antica');
+        worldPage.worlds_cache.Antica.time.should.be.within(time, time + worldPage.cache_time);
+        done();
+      });
+    });
+
+    it('should use cached Antica', function(done) {
+      worldPage.worlds_cache.should.have.keys('Antica');
+      var time = worldPage.worlds_cache.Antica.time;
+      var now = new Date().getTime();
+      now.should.be.within(time, time + worldPage.cache_time);
+      worldPage.query('Antica', function(err, res) {
+        should.not.exist(err);
+        should.exist(res);
+        time.should.equal(worldPage.worlds_cache.Antica.time);
+        worldPage.worlds_cache.should.have.keys('Antica');
+        done();
+      });
+    });
+
+    it('should not use cached Antica', function(done) {
+      worldPage.worlds_cache.should.have.keys('Antica');
+      // Move so its time to refresh cache
+      worldPage.worlds_cache.Antica.time -= worldPage.cache_time;
+      var time = worldPage.worlds_cache.Antica.time;
+      worldPage.query('Antica', function(err, res) {
+        should.not.exist(err);
+        should.exist(res);
+        worldPage.worlds_cache.Antica.time.should.be.above(time);
+        worldPage.worlds_cache.should.have.keys('Antica');
         done();
       });
     });
