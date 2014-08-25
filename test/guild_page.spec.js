@@ -48,4 +48,22 @@ describe('GuildPage', function() {
       });
     });
   });
+
+  describe('#update', function() {
+    beforeEach(function() {
+      guildPage = new GuildPage(utils);
+    });
+
+    it('should call markOnlineLinks', function() {
+      var called = false;
+      var UtilsStub = function() {};
+      UtilsStub.prototype.markOnlineLinks = function(a, b) {
+        called = true;
+      };
+      guildPage.utils = new UtilsStub();
+      called.should.equal(false);
+      guildPage.update({});
+      called.should.equal(true);
+    });
+  });
 });
