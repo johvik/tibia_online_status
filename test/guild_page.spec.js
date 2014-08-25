@@ -15,9 +15,7 @@ describe('GuildPage', function() {
   var guildPage = new GuildPage(utils);
 
   describe('#parse', function() {
-    this.timeout(5000);
-
-    afterEach(function() {
+    beforeEach(function() {
       guildPage = new GuildPage(utils);
     });
 

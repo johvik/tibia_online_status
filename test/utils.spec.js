@@ -59,7 +59,6 @@ describe('Utils', function() {
 
   describe('#fetch', function() {
     it('should fetch url', function(done) {
-      this.timeout(5000);
       utils.fetch('http://www.google.com', function(err, data) {
         should.exist(data);
         data.should.match(/Google/);
@@ -70,7 +69,6 @@ describe('Utils', function() {
     });
 
     it('should not fetch url', function(done) {
-      this.timeout(5000);
       utils.fetch('http://www.google.com/testing_404', function(err, data) {
         err.should.startWith('Fetch wrong return status ');
         done();

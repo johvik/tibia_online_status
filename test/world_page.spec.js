@@ -11,8 +11,6 @@ describe('WorldPage', function() {
   var worldPage = new WorldPage(utils);
 
   describe('#parse', function() {
-    this.timeout(5000);
-
     it('should parse Antica', function(done) {
       var data = fs.readFileSync(__dirname + '/files/world_page_antica_633.html', 'utf8');
       var expected = require('./files/world_page_antica_633.expected.js').expected;

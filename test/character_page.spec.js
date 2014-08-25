@@ -15,9 +15,7 @@ describe('CharacterPage', function() {
   var characterPage = new CharacterPage(utils);
 
   describe('#parse', function() {
-    this.timeout(5000);
-
-    afterEach(function() {
+    beforeEach(function() {
       characterPage = new CharacterPage(utils);
     });
 
@@ -93,6 +91,16 @@ describe('CharacterPage', function() {
           done();
         });
       });
+    });
+  });
+
+  describe('#update', function() {
+    beforeEach(function() {
+      characterPage = new CharacterPage(utils);
+    });
+
+    it('should update character', function(done) {
+      done();
     });
   });
 });
