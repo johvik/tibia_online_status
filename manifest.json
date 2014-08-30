@@ -19,5 +19,8 @@
   }, {
     "matches": ["http://www.tibia.com/community/?subtopic=guilds*"],
     "js": ["src/utils.js", "src/guild_page.js", "src/chrome/guilds.js"]
+  }, {
+    "matches": ["http://www.tibia.com/community/?subtopic=highscores*"],
+    "js": ["src/utils.js", "src/highscore_page.js", "src/chrome/highscores.js"]
   }]
 }
