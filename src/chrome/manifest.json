@@ -11,16 +11,16 @@
     "128": "icons/icon128.png"
   },
   "background": {
-    "scripts": ["src/utils.js", "src/world_page.js", "src/chrome/background.js"]
+    "scripts": ["src/utils.js", "src/world_page.js", "src/background.js"]
   },
   "content_scripts": [{
     "matches": ["http://www.tibia.com/community/?subtopic=characters*"],
-    "js": ["src/utils.js", "src/character_page.js", "src/chrome/characters.js"]
+    "js": ["src/utils.js", "src/character_page.js", "src/characters.js"]
   }, {
     "matches": ["http://www.tibia.com/community/?subtopic=guilds*"],
-    "js": ["src/utils.js", "src/guild_page.js", "src/chrome/guilds.js"]
+    "js": ["src/utils.js", "src/guild_page.js", "src/guilds.js"]
   }, {
     "matches": ["http://www.tibia.com/community/?subtopic=highscores*"],
-    "js": ["src/utils.js", "src/highscore_page.js", "src/chrome/highscores.js"]
+    "js": ["src/utils.js", "src/highscore_page.js", "src/highscores.js"]
   }]
 }
