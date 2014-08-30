@@ -67,7 +67,7 @@ module.exports = function(grunt) {
       chrome: {
         files: [{
           expand: true,
-          src: ['icons/**/*.png'],
+          src: ['icons/icon16.png', 'icons/icon48.png', 'icons/icon128.png'],
           dest: 'dest/chrome/'
         }, {
           expand: true,
