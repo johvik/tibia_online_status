@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     },
     jsbeautifier: {
       'default': {
-        src: ['<%= jshint.files %>', 'package.json', 'manifest.json'],
+        src: ['<%= jshint.files %>', 'package.json', 'src/chrome/manifest.json', 'src/firefox/package.json'],
         options: {
           html: {
             indentSize: 2,
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         }
       },
       release: {
-        src: ['<%= jsbeautifier.default.src %>', 'package.json', 'manifest.json'],
+        src: ['<%= jsbeautifier.default.src %>'],
         options: {
           mode: 'VERIFY_ONLY',
           html: {
