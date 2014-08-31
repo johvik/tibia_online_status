@@ -8,7 +8,9 @@
     "url": "https://github.com/johvik/tibia_online_status.git"
   },
   "scripts": {
-    "test": "grunt travis",
+    "test": "grunt travis"
+  },
+  "config": {
     "blanket": {
       "pattern": ["tibia_online_status/src"]
     }
