@@ -48,6 +48,19 @@ describe('HighscorePage', function() {
         done();
       });
     });
+
+    it('should fetch and parse Aurera', function(done) {
+      utils.fetch('http://www.tibia.com/community/?subtopic=highscores&world=Aurera', function(err, data) {
+        should.not.exist(err);
+        global.document = jsdom(data);
+        highscorePage.parse(function(err) {
+          should.not.exist(err);
+          highscorePage.world.should.equal('Aurera');
+          highscorePage.elements.should.have.keys('highscores_div');
+          done();
+        });
+      });
+    });
   });
 
   describe('#update', function() {

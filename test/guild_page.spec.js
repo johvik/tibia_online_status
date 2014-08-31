@@ -48,6 +48,19 @@ describe('GuildPage', function() {
         done();
       });
     });
+
+    it('should fetch and parse Red Rose', function(done) {
+      utils.fetch('http://www.tibia.com/community/?subtopic=guilds&page=view&GuildName=Red+Rose', function(err, data) {
+        should.not.exist(err);
+        global.document = jsdom(data);
+        guildPage.parse(function(err) {
+          should.not.exist(err);
+          guildPage.world.should.equal('Antica');
+          guildPage.elements.should.have.keys('guilds_div');
+          done();
+        });
+      });
+    });
   });
 
   describe('#update', function() {
