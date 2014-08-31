@@ -124,23 +124,23 @@ CharacterPage.prototype.updateCharacterInformation = function(players) {
   var player = players[self.name];
   if (player) {
     // Character is online
-    self.elements.name_column.innerHTML = '<span class="green">' + self.elements.name_column.innerHTML + '</span>';
+    self.elements.name_column.style.color = self.utils.color.green;
 
     // Set level
     var level_diff = player.level - self.level;
     if (level_diff < 0) {
       // Lost level
-      self.elements.level_column.innerHTML = player.level + ' (' + (level_diff) + ')';
+      self.elements.level_column.textContent = player.level + ' (' + (level_diff) + ')';
     } else if (level_diff > 0) {
       // Gained level
-      self.elements.level_column.innerHTML = player.level + ' (+' + (level_diff) + ')';
+      self.elements.level_column.textContent = player.level + ' (+' + (level_diff) + ')';
     }
 
     // Set vocation
-    self.elements.vocation_column.innerHTML = player.vocation;
+    self.elements.vocation_column.textContent = player.vocation;
   } else if (self.must_be_online) {
     // Character is online but not in the list
-    self.elements.name_column.innerHTML = '<span class="orange">' + self.elements.name_column.innerHTML + '</span>';
+    self.elements.name_column.style.color = self.utils.color.orange;
   }
 };
 

@@ -5,6 +5,7 @@ require('jsdom').defaultDocumentFeatures = {
   FetchExternalResources: false,
   ProcessExternalResources: false
 };
+var TestUtils = require('./test_utils.js');
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var Utils = require('../src/common/utils.js').Utils;
@@ -118,7 +119,7 @@ describe('CharacterPage', function() {
             vocation: 'Sorcerer'
           }
         });
-        characterPage.elements.name_column.getElementsByTagName('span')[0].className.should.containEql('green');
+        TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.green);
         characterPage.elements.level_column.textContent.should.equal('70 (+1)');
         characterPage.elements.vocation_column.textContent.should.equal('Sorcerer');
 
@@ -128,7 +129,7 @@ describe('CharacterPage', function() {
             vocation: 'Master Sorcerer'
           }
         });
-        characterPage.elements.name_column.getElementsByTagName('span')[0].className.should.containEql('green');
+        TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.green);
         characterPage.elements.level_column.textContent.should.equal('68 (-1)');
         characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
         done();
@@ -148,7 +149,7 @@ describe('CharacterPage', function() {
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
 
         characterPage.update({});
-        characterPage.elements.name_column.getElementsByTagName('span')[0].className.should.containEql('orange');
+        TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.orange);
         characterPage.elements.level_column.textContent.should.equal('31');
         characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
         done();

@@ -4,6 +4,7 @@ require('jsdom').defaultDocumentFeatures = {
   FetchExternalResources: false,
   ProcessExternalResources: false
 };
+var TestUtils = require('./test_utils.js');
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var Utils = require('../src/common/utils.js').Utils;
@@ -105,8 +106,8 @@ describe('Utils', function() {
         'Chorizo\'korv': {}
       });
       var links = document.getElementsByTagName('a');
-      links[0].className.should.containEql('green');
-      links[1].className.should.not.containEql('green');
+      TestUtils.rgbToHex(links[0].style.color).should.equal(utils.color.green);
+      links[1].style.color.should.equal('');
     });
   });
 });

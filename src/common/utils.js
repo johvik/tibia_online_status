@@ -1,6 +1,10 @@
 function Utils(XHR) {
   this.vocations = ['Druid', 'Elder Druid', 'Elite Knight', 'Knight', 'Master Sorcerer', 'None', 'Paladin', 'Royal Paladin', 'Sorcerer'];
   this.XHR = XHR;
+  this.color = {
+    green: '#00BF00',
+    orange: '#FF9712'
+  };
 }
 
 /**
@@ -56,7 +60,7 @@ Utils.prototype.markOnlineLinks = function(root_element, players) {
       var name = self.decode(links[i].innerHTML);
       var player = players[name];
       if (player) {
-        links[i].className += ' green';
+        links[i].style.color = self.color.green;
       }
     }
   }
