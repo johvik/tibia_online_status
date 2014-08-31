@@ -43,6 +43,13 @@ describe('WorldPage', function() {
       });
     });
 
+    it('should not parse suspicious row', function(done) {
+      worldPage.parse('<tr><td><a href="http://www.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a></td><td>70</td><td>Elite&#160;Sorcerer</td></tr>', function(err, res) {
+        err.should.startWith('Suspicious row match, name: ');
+        done();
+      });
+    });
+
     it('should parse empty String', function(done) {
       worldPage.parse(' ', function(err, res) {
         should.not.exist(err);
