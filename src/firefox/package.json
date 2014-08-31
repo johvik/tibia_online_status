@@ -5,5 +5,7 @@
   "description": "__DESCRIPTION__",
   "author": "johvik",
   "license": "MPL 2.0",
-  "version": "__VERSION__"
+  "version": "__VERSION__",
+  "icon": "icons/icon48.png",
+  "icon64": "icons/icon64.png"
 }
