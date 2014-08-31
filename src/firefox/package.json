@@ -4,7 +4,7 @@
   "id": "jid1-fvCjY69UDEeqOg",
   "description": "__DESCRIPTION__",
   "author": "johvik",
-  "license": "MPL 2.0",
+  "license": "MIT",
   "version": "__VERSION__",
   "icon": "icons/icon48.png",
   "icon64": "icons/icon64.png"
