@@ -1,13 +1,13 @@
 var fs = require('fs');
 var should = require('should');
 
-global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var Utils = require('../src/utils.js').Utils;
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var Utils = require('../src/common/utils.js').Utils;
 
-var WorldPage = require('../src/world_page.js').WorldPage;
+var WorldPage = require('../src/common/world_page.js').WorldPage;
 
 describe('WorldPage', function() {
-  var utils = new Utils();
+  var utils = new Utils(XMLHttpRequest);
   var worldPage = new WorldPage(utils);
 
   describe('#parse', function() {

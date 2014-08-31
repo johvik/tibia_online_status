@@ -1,14 +1,6 @@
-if (typeof(window) !== 'undefined') {
-  // We are in the browser!
-
-  // Avoid undefined errors when exporting to nodejs
-  var exports = {};
-  // Hide logs?
-  // console.log = function() {};
-}
-
-function Utils() {
+function Utils(XHR) {
   this.vocations = ['Druid', 'Elder Druid', 'Elite Knight', 'Knight', 'Master Sorcerer', 'None', 'Paladin', 'Royal Paladin', 'Sorcerer'];
+  this.XHR = XHR;
 }
 
 /**
@@ -35,10 +27,11 @@ Utils.prototype.isVocation = function(str) {
  * Make a HTTP request and return the text if status is 200.
  */
 Utils.prototype.fetch = function(url, callback) {
+  var self = this;
   if (typeof(url) !== 'string') {
     return callback('Url not a String ' + url, {});
   }
-  var xhr = new XMLHttpRequest();
+  var xhr = new self.XHR();
   xhr.open('GET', url);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === xhr.DONE) {

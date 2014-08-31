@@ -5,10 +5,11 @@ require('jsdom').defaultDocumentFeatures = {
   ProcessExternalResources: false
 };
 
-var Utils = require('../src/utils.js').Utils;
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var Utils = require('../src/common/utils.js').Utils;
 
 describe('Utils', function() {
-  var utils = new Utils();
+  var utils = new Utils(XMLHttpRequest);
 
   describe('#decode', function() {
     it('should replace &#160;', function() {

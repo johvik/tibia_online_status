@@ -70,18 +70,15 @@ module.exports = function(grunt) {
           src: ['icons/icon16.png', 'icons/icon48.png', 'icons/icon128.png'],
           dest: 'dest/chrome/'
         }, {
-          src: 'src/chrome/manifest.json',
-          dest: 'dest/chrome/manifest.json'
+          expand: true,
+          cwd: 'src/chrome/',
+          src: ['**/*'],
+          dest: 'dest/chrome/'
         }, {
           expand: true,
           flatten: true,
-          src: ['src/*.js'],
-          dest: 'dest/chrome/src/'
-        }, {
-          expand: true,
-          flatten: true,
-          src: ['src/chrome/*.js'],
-          dest: 'dest/chrome/src/'
+          src: ['src/common/**/*.js'],
+          dest: 'dest/chrome/data/'
         }]
       },
       firefox: {
@@ -90,17 +87,19 @@ module.exports = function(grunt) {
           src: ['icons/icon48.png', 'icons/icon64.png'],
           dest: 'dest/firefox/'
         }, {
-          src: 'src/firefox/package.json',
-          dest: 'dest/firefox/package.json'
+          expand: true,
+          cwd: 'src/firefox/',
+          src: ['**/*', '!**/test/**'],
+          dest: 'dest/firefox/'
         }, {
           expand: true,
           flatten: true,
-          src: ['src/*.js'],
-          dest: 'dest/firefox/lib/'
+          src: ['src/common/**/*.js', '!**/world_page.js'],
+          dest: 'dest/firefox/data/'
         }, {
           expand: true,
           flatten: true,
-          src: ['src/firefox/lib/*.js'],
+          src: ['src/common/world_page.js', 'src/common/utils.js'],
           dest: 'dest/firefox/lib/'
         }]
       }
@@ -149,6 +148,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint', 'mochacov:test']);
   grunt.registerTask('cov', ['jshint', 'mochacov:cov']);
-  grunt.registerTask('travis', ['jsbeautifier:release', 'jshint', 'mochacov:test', 'mochacov:travis', 'clean', 'copy:chrome', 'copy:firefox', 'replace', 'compress']);
-  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochacov:test', 'clean', 'copy:chrome', 'copy:firefox', 'replace', 'compress']);
+  grunt.registerTask('travis', ['jsbeautifier:release', 'jshint', 'mochacov:test', 'mochacov:travis', 'clean', 'copy', 'replace', 'compress']);
+  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochacov:test', 'clean', 'copy', 'replace', 'compress']);
 };

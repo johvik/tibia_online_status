@@ -6,12 +6,13 @@ require('jsdom').defaultDocumentFeatures = {
   ProcessExternalResources: false
 };
 
-var Utils = require('../src/utils.js').Utils;
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var Utils = require('../src/common/utils.js').Utils;
 
-var CharacterPage = require('../src/character_page.js').CharacterPage;
+var CharacterPage = require('../src/common/character_page.js').CharacterPage;
 
 describe('CharacterPage', function() {
-  var utils = new Utils();
+  var utils = new Utils(XMLHttpRequest);
   var characterPage = new CharacterPage(utils);
 
   describe('#parse', function() {
