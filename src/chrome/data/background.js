@@ -1,4 +1,4 @@
-var worldPage = new WorldPage(new Utils(XMLHttpRequest));
+var worldPage = new WorldPage(new Utils(XMLHttpRequest), new MemoryStorage());
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.query === 'world') {

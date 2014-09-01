@@ -94,12 +94,12 @@ module.exports = function(grunt) {
         }, {
           expand: true,
           flatten: true,
-          src: ['src/common/**/*.js', '!**/world_page.js'],
+          src: ['src/common/**/*.js', '!**/world_page.js', '!**/memory_storage.js'],
           dest: 'dest/firefox/data/'
         }, {
           expand: true,
           flatten: true,
-          src: ['src/common/world_page.js', 'src/common/utils.js'],
+          src: ['src/common/world_page.js', 'src/common/utils.js', 'src/common/memory_storage.js'],
           dest: 'dest/firefox/lib/'
         }]
       }

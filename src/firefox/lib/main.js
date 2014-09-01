@@ -2,10 +2,11 @@ var data = require("sdk/self").data;
 var pageMod = require("sdk/page-mod");
 
 var Utils = require('./utils').Utils;
+var MemoryStorage = require('./memory_storage').MemoryStorage;
 var WorldPage = require('./world_page').WorldPage;
 
 var XMLHttpRequest = require("sdk/net/xhr").XMLHttpRequest;
-var worldPage = new WorldPage(new Utils(XMLHttpRequest));
+var worldPage = new WorldPage(new Utils(XMLHttpRequest), new MemoryStorage());
 
 function onAttach(worker) {
   worker.port.once('query:world', function(world) {

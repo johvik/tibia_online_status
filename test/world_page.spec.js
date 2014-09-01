@@ -3,12 +3,14 @@ var should = require('should');
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var Utils = require('../src/common/utils.js').Utils;
+var MemoryStorage = require('../src/common/memory_storage.js').MemoryStorage;
 
 var WorldPage = require('../src/common/world_page.js').WorldPage;
 
 describe('WorldPage', function() {
   var utils = new Utils(XMLHttpRequest);
-  var worldPage = new WorldPage(utils);
+  var memoryStorage = new MemoryStorage();
+  var worldPage = new WorldPage(utils, memoryStorage);
 
   describe('#parse', function() {
     it('should parse Antica', function(done) {
@@ -110,41 +112,50 @@ describe('WorldPage', function() {
     });
 
     it('should query Antica', function(done) {
-      worldPage.worlds_cache.should.eql({});
+      should.not.exist(worldPage.storage.get('Antica'));
       var time = new Date().getTime();
       worldPage.query('Antica', function(err, res) {
         should.not.exist(err);
         should.exist(res);
-        worldPage.worlds_cache.should.have.keys('Antica');
-        worldPage.worlds_cache.Antica.time.should.be.within(time, time + worldPage.cache_time);
+        var antica = worldPage.storage.get('Antica');
+        should.exist(antica);
+        antica.players.should.eql(res);
+        antica.time.should.be.within(time, time + worldPage.cache_time);
         done();
       });
     });
 
     it('should use cached Antica', function(done) {
-      worldPage.worlds_cache.should.have.keys('Antica');
-      var time = worldPage.worlds_cache.Antica.time;
+      var antica = worldPage.storage.get('Antica');
+      should.exist(antica);
+      var old_time = antica.time;
       var now = new Date().getTime();
-      now.should.be.within(time, time + worldPage.cache_time);
+      now.should.be.within(old_time, old_time + worldPage.cache_time);
       worldPage.query('Antica', function(err, res) {
         should.not.exist(err);
         should.exist(res);
-        time.should.equal(worldPage.worlds_cache.Antica.time);
-        worldPage.worlds_cache.should.have.keys('Antica');
+        var antica = worldPage.storage.get('Antica');
+        should.exist(antica);
+        antica.players.should.eql(res);
+        old_time.should.equal(antica.time);
         done();
       });
     });
 
     it('should not use cached Antica', function(done) {
-      worldPage.worlds_cache.should.have.keys('Antica');
+      var antica = worldPage.storage.get('Antica');
+      should.exist(antica);
       // Move so its time to refresh cache
-      worldPage.worlds_cache.Antica.time -= (worldPage.cache_time + 1);
-      var time = worldPage.worlds_cache.Antica.time;
+      antica.time -= worldPage.cache_time;
+      worldPage.storage.set('Antica', antica);
+      var old_time = antica.time;
       worldPage.query('Antica', function(err, res) {
         should.not.exist(err);
         should.exist(res);
-        worldPage.worlds_cache.Antica.time.should.be.above(time);
-        worldPage.worlds_cache.should.have.keys('Antica');
+        var antica = worldPage.storage.get('Antica');
+        should.exist(antica);
+        antica.players.should.eql(res);
+        antica.time.should.be.above(old_time);
         done();
       });
     });

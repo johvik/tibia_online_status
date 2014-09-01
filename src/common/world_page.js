@@ -1,8 +1,12 @@
-function WorldPage(utils) {
+/**
+ * @param utils
+ * @param storage Storage object must implement: get(key) and set(key, value).
+ */
+function WorldPage(utils, storage) {
   this.utils = utils;
+  this.storage = storage;
   // key = world gives element = { time: Number, players: Object Array }
   // players key = name gives element = { level: Number, vocation: String }
-  this.worlds_cache = {};
   this.cache_time = 60 * 1000; // 1 min
 }
 
@@ -50,23 +54,10 @@ WorldPage.prototype.query = function(world_name, callback) {
     return callback('Empty world name ' + world_name, {});
   }
 
-  var world = self.worlds_cache[world_name];
+  var world = self.storage.get(world_name);
   var now = new Date().getTime();
-  if (!world || (world.time + self.cache_time < now && world.running === false)) {
-    // Attempt to avoid double requests
-    if (!world) {
-      self.worlds_cache[world_name] = {
-        time: 0,
-        players: {},
-        running: true
-      };
-      world = self.worlds_cache[world_name];
-    } else {
-      world.running = true;
-    }
-
+  if (!world || (world.time + self.cache_time <= now)) {
     return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(err, data) {
-      world.running = false;
       if (err) {
         return callback(err, {});
       }
@@ -74,8 +65,10 @@ WorldPage.prototype.query = function(world_name, callback) {
         if (err) {
           return callback(err, {});
         }
-        world.players = res;
-        world.time = new Date().getTime();
+        self.storage.set(world_name, {
+          players: res,
+          time: new Date().getTime()
+        });
         return callback(null, res);
       });
     });
