@@ -1,6 +1,6 @@
 /**
  * @param utils
- * @param storage Storage object must implement: get(key) and set(key, value).
+ * @param storage Storage object must implement: get(key, callback(value)) and set(key, value).
  */
 function WorldPage(utils, storage) {
   this.utils = utils;
@@ -54,28 +54,29 @@ WorldPage.prototype.query = function(world_name, callback) {
     return callback('Empty world name ' + world_name, {});
   }
 
-  var world = self.storage.get(world_name);
-  var now = new Date().getTime();
-  if (!world || (world.time + self.cache_time <= now)) {
-    return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(err, data) {
-      if (err) {
-        return callback(err, {});
-      }
-      return self.parse(data, function(err, res) {
+  self.storage.get(world_name, function(world) {
+    var now = new Date().getTime();
+    if (!world || (world.time + self.cache_time <= now)) {
+      return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(err, data) {
         if (err) {
           return callback(err, {});
         }
-        self.storage.set(world_name, {
-          players: res,
-          time: new Date().getTime()
+        return self.parse(data, function(err, res) {
+          if (err) {
+            return callback(err, {});
+          }
+          self.storage.set(world_name, {
+            players: res,
+            time: new Date().getTime()
+          });
+          return callback(null, res);
         });
-        return callback(null, res);
       });
-    });
-  } else {
-    // Up to date
-    return callback(null, world.players);
-  }
+    } else {
+      // Up to date
+      return callback(null, world.players);
+    }
+  });
 };
 
 exports.WorldPage = WorldPage;

@@ -112,51 +112,58 @@ describe('WorldPage', function() {
     });
 
     it('should query Antica', function(done) {
-      should.not.exist(worldPage.storage.get('Antica'));
-      var time = new Date().getTime();
-      worldPage.query('Antica', function(err, res) {
-        should.not.exist(err);
-        should.exist(res);
-        var antica = worldPage.storage.get('Antica');
-        should.exist(antica);
-        antica.players.should.eql(res);
-        antica.time.should.be.within(time, time + worldPage.cache_time);
-        done();
+      worldPage.storage.get('Antica', function(value) {
+        should.not.exist(value);
+        var time = new Date().getTime();
+        worldPage.query('Antica', function(err, res) {
+          should.not.exist(err);
+          should.exist(res);
+          worldPage.storage.get('Antica', function(antica) {
+            should.exist(antica);
+            antica.players.should.eql(res);
+            antica.time.should.be.within(time, time + worldPage.cache_time);
+            done();
+          });
+        });
       });
     });
 
     it('should use cached Antica', function(done) {
-      var antica = worldPage.storage.get('Antica');
-      should.exist(antica);
-      var old_time = antica.time;
-      var now = new Date().getTime();
-      now.should.be.within(old_time, old_time + worldPage.cache_time);
-      worldPage.query('Antica', function(err, res) {
-        should.not.exist(err);
-        should.exist(res);
-        var antica = worldPage.storage.get('Antica');
+      worldPage.storage.get('Antica', function(antica) {
         should.exist(antica);
-        antica.players.should.eql(res);
-        old_time.should.equal(antica.time);
-        done();
+        var old_time = antica.time;
+        var now = new Date().getTime();
+        now.should.be.within(old_time, old_time + worldPage.cache_time);
+        worldPage.query('Antica', function(err, res) {
+          should.not.exist(err);
+          should.exist(res);
+          worldPage.storage.get('Antica', function(antica) {
+            should.exist(antica);
+            antica.players.should.eql(res);
+            old_time.should.equal(antica.time);
+            done();
+          });
+        });
       });
     });
 
     it('should not use cached Antica', function(done) {
-      var antica = worldPage.storage.get('Antica');
-      should.exist(antica);
-      // Move so its time to refresh cache
-      antica.time -= worldPage.cache_time;
-      worldPage.storage.set('Antica', antica);
-      var old_time = antica.time;
-      worldPage.query('Antica', function(err, res) {
-        should.not.exist(err);
-        should.exist(res);
-        var antica = worldPage.storage.get('Antica');
+      worldPage.storage.get('Antica', function(antica) {
         should.exist(antica);
-        antica.players.should.eql(res);
-        antica.time.should.be.above(old_time);
-        done();
+        // Move so its time to refresh cache
+        antica.time -= worldPage.cache_time;
+        worldPage.storage.set('Antica', antica);
+        var old_time = antica.time;
+        worldPage.query('Antica', function(err, res) {
+          should.not.exist(err);
+          should.exist(res);
+          worldPage.storage.get('Antica', function(antica) {
+            should.exist(antica);
+            antica.players.should.eql(res);
+            antica.time.should.be.above(old_time);
+            done();
+          });
+        });
       });
     });
   });
