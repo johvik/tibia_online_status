@@ -1,5 +1,3 @@
-// Avoid undefined errors when exporting as modules
-var exports = {};
 // Hide logs?
 // console.log = function() {};
 

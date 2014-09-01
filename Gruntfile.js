@@ -106,7 +106,7 @@ module.exports = function(grunt) {
     },
     clean: ['dest/'],
     replace: {
-      dist: {
+      json: {
         options: {
           patterns: [{
             match: /__VERSION__/,
@@ -122,6 +122,18 @@ module.exports = function(grunt) {
         }, {
           src: ['dest/firefox/package.json'],
           dest: 'dest/firefox/package.json'
+        }]
+      },
+      exports: {
+        options: {
+          patterns: [{
+            match: /exports\..*=.*/,
+            replacement: ''
+          }]
+        },
+        files: [{
+          src: ['dest/**/*.js', '!dest/firefox/lib/**/*.js'],
+          dest: './'
         }]
       }
     },
