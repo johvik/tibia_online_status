@@ -1,12 +1,8 @@
-/**
- * @param utils
- * @param storage Storage object must implement: get(key, callback(value)) and set(key, value).
- */
-function WorldPage(utils, storage) {
+function WorldPage(utils) {
   this.utils = utils;
-  this.storage = storage;
   // key = world gives element = { time: Number, players: Object Array }
   // players key = name gives element = { level: Number, vocation: String }
+  this.worlds_cache = {};
   this.cache_time = 60 * 1000; // 1 min
   // Note: In case of event pages in chrome the cache time will be as low as 15 seconds if it becomes inactive.
 }
@@ -55,29 +51,28 @@ WorldPage.prototype.query = function(world_name, callback) {
     return callback('Empty world name ' + world_name, {});
   }
 
-  self.storage.get(world_name, function(world) {
-    var now = new Date().getTime();
-    if (!world || (world.time + self.cache_time <= now)) {
-      return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(err, data) {
+  var world = self.worlds_cache[world_name];
+  var now = new Date().getTime();
+  if (!world || (world.time + self.cache_time <= now)) {
+    return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(err, data) {
+      if (err) {
+        return callback(err, {});
+      }
+      return self.parse(data, function(err, res) {
         if (err) {
           return callback(err, {});
         }
-        return self.parse(data, function(err, res) {
-          if (err) {
-            return callback(err, {});
-          }
-          self.storage.set(world_name, {
-            players: res,
-            time: new Date().getTime()
-          });
-          return callback(null, res);
-        });
+        self.worlds_cache[world_name] = {
+          players: res,
+          time: new Date().getTime()
+        };
+        return callback(null, res);
       });
-    } else {
-      // Up to date
-      return callback(null, world.players);
-    }
-  });
+    });
+  } else {
+    // Up to date
+    return callback(null, world.players);
+  }
 };
 
 exports.WorldPage = WorldPage;
