@@ -110,6 +110,7 @@ describe('WorldPage', function() {
     });
 
     it('should query Antica', function(done) {
+      this.timeout(5000);
       worldPage.worlds_cache.should.eql({});
       var time = new Date().getTime();
       worldPage.query('Antica', function(err, res) {
@@ -136,6 +137,7 @@ describe('WorldPage', function() {
     });
 
     it('should not use cached Antica', function(done) {
+      this.timeout(5000);
       worldPage.worlds_cache.should.have.keys('Antica');
       // Move so its time to refresh cache
       worldPage.worlds_cache.Antica.time -= (worldPage.cache_time + 1);

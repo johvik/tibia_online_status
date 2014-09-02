@@ -50,6 +50,7 @@ describe('HighscorePage', function() {
     });
 
     it('should fetch and parse Aurera', function(done) {
+      this.timeout(5000);
       utils.fetch('http://www.tibia.com/community/?subtopic=highscores&world=Aurera', function(err, data) {
         should.not.exist(err);
         global.document = jsdom(data);

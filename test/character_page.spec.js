@@ -79,6 +79,7 @@ describe('CharacterPage', function() {
     });
 
     it('should fetch and parse Chorizo\'korv', function(done) {
+      this.timeout(5000);
       utils.fetch('http://www.tibia.com/community/?subtopic=characters&name=Chorizo%27korv', function(err, data) {
         should.not.exist(err);
         global.document = jsdom(data);

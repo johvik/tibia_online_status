@@ -111,7 +111,7 @@ describe('Utils', function() {
     });
 
     it('should fetch and mark online green', function(done) {
-      this.timeout(5000);
+      this.timeout(7000);
       utils.fetch('http://www.tibia.com/community/?subtopic=guilds&page=view&GuildName=Red+Rose', function(err, data) {
         should.not.exist(err);
         var document = jsdom(data);
