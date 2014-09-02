@@ -33,7 +33,7 @@ Utils.prototype.isVocation = function(str) {
 Utils.prototype.fetch = function(url, callback) {
   var self = this;
   if (typeof(url) !== 'string') {
-    return callback('Url not a String ' + url, {});
+    return callback('Url not a String ' + url, '');
   }
   var xhr = new self.XHR();
   xhr.open('GET', url);
@@ -42,7 +42,7 @@ Utils.prototype.fetch = function(url, callback) {
       if (xhr.status === 200) {
         return callback(null, xhr.responseText);
       }
-      return callback('Fetch wrong return status ' + xhr.status, null);
+      return callback('Fetch wrong return status ' + xhr.status, '');
     }
   };
   xhr.send();

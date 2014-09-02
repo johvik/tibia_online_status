@@ -148,5 +148,31 @@ describe('WorldPage', function() {
         done();
       });
     });
+
+    it('should fail on fetch', function(done) {
+      var UtilsStub = function() {};
+      UtilsStub.prototype.fetch = function(url, callback) {
+        return callback('My error', '');
+      };
+      var worldPageStub = new WorldPage(new UtilsStub());
+
+      worldPageStub.query('dummy', function(err, res) {
+        err.should.equal('My error');
+        done();
+      });
+    });
+
+    it('should fail on parse', function(done) {
+      var UtilsStub = function() {};
+      UtilsStub.prototype.fetch = function(url, callback) {
+        return callback(null, null);
+      };
+      var worldPageStub = new WorldPage(new UtilsStub());
+
+      worldPageStub.query('dummy', function(err, res) {
+        err.should.startWith('Data not a String ');
+        done();
+      });
+    });
   });
 });
