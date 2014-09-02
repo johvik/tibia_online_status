@@ -8,6 +8,7 @@ function WorldPage(utils, storage) {
   // key = world gives element = { time: Number, players: Object Array }
   // players key = name gives element = { level: Number, vocation: String }
   this.cache_time = 60 * 1000; // 1 min
+  // Note: In case of event pages in chrome the cache time will be as low as 15 seconds if it becomes inactive.
 }
 
 /**
