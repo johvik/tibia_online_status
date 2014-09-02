@@ -1,6 +1,6 @@
 {
   "name": "tibia_online_status",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This extension adds additional status information to the characters, guilds and highscores page.",
   "author": "johvik",
   "license": "MIT",
