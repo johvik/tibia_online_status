@@ -24,18 +24,18 @@ function onAttach(worker) {
 
 pageMod.PageMod({
   include: "http://www.tibia.com/community/?subtopic=characters*",
-  contentScriptFile: [data.url("firefox_page.js"), data.url("utils.js"), data.url("character_page.js"), data.url("characters.js")],
+  contentScriptFile: [data.url("utils.js"), data.url("characters.js")],
   onAttach: onAttach
 });
 
 pageMod.PageMod({
   include: "http://www.tibia.com/community/?subtopic=guilds*",
-  contentScriptFile: [data.url("firefox_page.js"), data.url("utils.js"), data.url("guild_page.js"), data.url("guilds.js")],
+  contentScriptFile: [data.url("utils.js"), data.url("guilds.js")],
   onAttach: onAttach
 });
 
 pageMod.PageMod({
   include: "http://www.tibia.com/community/?subtopic=highscores*",
-  contentScriptFile: [data.url("firefox_page.js"), data.url("utils.js"), data.url("highscore_page.js"), data.url("highscores.js")],
+  contentScriptFile: [data.url("utils.js"), data.url("highscores.js")],
   onAttach: onAttach
 });

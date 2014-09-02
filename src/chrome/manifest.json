@@ -11,17 +11,17 @@
     "128": "icons/icon128.png"
   },
   "background": {
-    "scripts": ["data/utils.js", "data/world_page.js", "data/background.js"],
+    "scripts": ["data/utils.js", "data/background.js"],
     "persistent": false
   },
   "content_scripts": [{
     "matches": ["http://www.tibia.com/community/?subtopic=characters*"],
-    "js": ["data/chrome_page.js", "data/utils.js", "data/character_page.js", "data/characters.js"]
+    "js": ["data/utils.js", "data/characters.js"]
   }, {
     "matches": ["http://www.tibia.com/community/?subtopic=guilds*"],
-    "js": ["data/chrome_page.js", "data/utils.js", "data/guild_page.js", "data/guilds.js"]
+    "js": ["data/utils.js", "data/guilds.js"]
   }, {
     "matches": ["http://www.tibia.com/community/?subtopic=highscores*"],
-    "js": ["data/chrome_page.js", "data/utils.js", "data/highscore_page.js", "data/highscores.js"]
+    "js": ["data/utils.js", "data/highscores.js"]
   }]
 }

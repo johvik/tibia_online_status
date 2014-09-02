@@ -64,21 +64,15 @@ module.exports = function(grunt) {
       tasks: ['jshint', 'mochaTest']
     },
     copy: {
+      /* Copy icons and manifest.json/package.json. Source files are copied through concat. */
       chrome: {
         files: [{
           expand: true,
           src: ['icons/icon16.png', 'icons/icon48.png', 'icons/icon128.png'],
           dest: 'dest/chrome/'
         }, {
-          expand: true,
-          cwd: 'src/chrome/',
-          src: ['**/*'],
-          dest: 'dest/chrome/'
-        }, {
-          expand: true,
-          flatten: true,
-          src: ['src/common/**/*.js'],
-          dest: 'dest/chrome/data/'
+          src: ['src/chrome/manifest.json'],
+          dest: 'dest/chrome/manifest.json'
         }]
       },
       firefox: {
@@ -87,20 +81,8 @@ module.exports = function(grunt) {
           src: ['icons/icon48.png', 'icons/icon64.png'],
           dest: 'dest/firefox/'
         }, {
-          expand: true,
-          cwd: 'src/firefox/',
-          src: ['**/*', '!**/test/**'],
-          dest: 'dest/firefox/'
-        }, {
-          expand: true,
-          flatten: true,
-          src: ['src/common/**/*.js', '!**/world_page.js'],
-          dest: 'dest/firefox/data/'
-        }, {
-          expand: true,
-          flatten: true,
-          src: ['src/common/world_page.js', 'src/common/utils.js'],
-          dest: 'dest/firefox/lib/'
+          src: ['src/firefox/package.json'],
+          dest: 'dest/firefox/package.json'
         }]
       }
     },
@@ -146,6 +128,28 @@ module.exports = function(grunt) {
         cwd: 'dest/chrome/',
         src: ['**/*']
       }
+    },
+    concat: {
+      chrome: {
+        files: {
+          'dest/chrome/data/background.js': ['src/common/world_page.js', 'src/chrome/data/background.js'],
+          'dest/chrome/data/utils.js': ['src/common/utils.js', 'src/chrome/data/chrome_page.js'],
+          'dest/chrome/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
+          'dest/chrome/data/guilds.js': ['src/common/guild_page.js', 'src/common/pages/guilds.js'],
+          'dest/chrome/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js']
+        }
+      },
+      firefox: {
+        files: {
+          'dest/firefox/lib/main.js': ['src/firefox/lib/main.js'],
+          'dest/firefox/lib/world_page.js': ['src/common/world_page.js'],
+          'dest/firefox/lib/utils.js': ['src/common/utils.js'],
+          'dest/firefox/data/utils.js': ['src/common/utils.js', 'src/firefox/data/firefox_page.js'],
+          'dest/firefox/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
+          'dest/firefox/data/guilds.js': ['src/common/guild_page.js', 'src/common/pages/guilds.js'],
+          'dest/firefox/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js']
+        }
+      }
     }
   });
 
@@ -157,9 +161,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   grunt.registerTask('test', ['jshint', 'mochacov:test']);
   grunt.registerTask('cov', ['jshint', 'mochacov:cov']);
-  grunt.registerTask('travis', ['jsbeautifier:release', 'jshint', 'mochacov:test', 'mochacov:travis', 'clean', 'copy', 'replace', 'compress']);
-  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochacov:test', 'clean', 'copy', 'replace', 'compress']);
+  grunt.registerTask('travis', ['jsbeautifier:release', 'jshint', 'mochacov:test', 'mochacov:travis', 'clean', 'copy', 'concat', 'replace', 'compress']);
+  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochacov:test', 'clean', 'copy', 'concat', 'replace', 'compress']);
 };
