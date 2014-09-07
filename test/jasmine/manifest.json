@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Tibia Online Status Test",
+  "short_name": "TOST",
+  "description": "Testcases for TOS.",
+  "version": "0.0.1",
+  "browser_action": {
+    "default_icon": "jasmine_favicon.png"
+  },
+  "permissions": [
+    "http://www.tibia.com/community/?subtopic=*"
+  ],
+  "background": {
+    "scripts": ["data/background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["http://www.tibia.com/community/?subtopic=*"],
+    "js": ["data/content_test_driver.js"]
+  }, {
+    "matches": ["http://www.tibia.com/community/?subtopic=characters*"],
+    "js": ["lib/console.js", "lib/jasmine.js", "data/console_boot.js"]
+  }]
+}

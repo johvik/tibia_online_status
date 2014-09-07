@@ -3,11 +3,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js']
+      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js']
     },
     jsbeautifier: {
       'default': {
-        src: ['<%= jshint.files %>', 'package.json', 'src/chrome/manifest.json', 'src/firefox/package.json'],
+        src: ['<%= jshint.files %>', 'package.json', 'src/chrome/manifest.json', 'src/firefox/package.json', 'test/**/*.json'],
         options: {
           html: {
             indentSize: 2,
