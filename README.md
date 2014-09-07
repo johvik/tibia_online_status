@@ -9,3 +9,5 @@ This extension adds additional status information to the characters page and the
 To build run `npm install` followed by `grunt`.
 The chrome extension will be packed in `dest/chrome.zip`.
 For the firefox addon go into `dest/firefox` and run `cfx xpi`.
+
+To execute end-to-end tests for chrome load the extension from `test/jasmin/` (requires that the main extension is loaded first). Then click on the jasmine icon in the browser to start the test.
