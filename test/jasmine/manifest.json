@@ -6,7 +6,8 @@
   "description": "Testcases for TOS.",
   "version": "0.0.1",
   "browser_action": {
-    "default_icon": "jasmine_favicon.png"
+    "default_icon": "jasmine_favicon.png",
+    "default_title": "Run TOST"
   },
   "permissions": [
     "http://www.tibia.com/community/?subtopic=*"
