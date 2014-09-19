@@ -166,5 +166,36 @@ describe('CharacterPage', function() {
         done();
       });
     });
+
+    it('should not update Ratsafari Guide', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/character_page_ratsafari_guide_offline.html', 'utf8');
+      global.document = jsdom(data);
+      characterPage.parse(function(err) {
+        should.not.exist(err);
+        characterPage.must_be_online.should.equal(false);
+        characterPage.must_be_offline.should.equal(true);
+        characterPage.name.should.equal('Ratsafari Guide');
+        characterPage.vocation.should.equal('Master Sorcerer');
+        characterPage.level.should.equal(32);
+        characterPage.world.should.equal('Inferna');
+        characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
+
+        characterPage.update({});
+        characterPage.elements.name_column.style.color.should.equal('');
+        characterPage.elements.level_column.textContent.should.equal('32');
+        characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
+
+        characterPage.update({
+          'Ratsafari Guide': {
+            level: 100,
+            vocation: 'Knight'
+          }
+        });
+        characterPage.elements.name_column.style.color.should.equal('');
+        characterPage.elements.level_column.textContent.should.equal('32');
+        characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
+        done();
+      });
+    });
   });
 });
