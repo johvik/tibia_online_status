@@ -2,8 +2,7 @@ function Utils(XHR) {
   this.vocations = ['Druid', 'Elder Druid', 'Elite Knight', 'Knight', 'Master Sorcerer', 'None', 'Paladin', 'Royal Paladin', 'Sorcerer'];
   this.XHR = XHR;
   this.color = {
-    green: '#00BF00',
-    orange: '#FF9712'
+    green: '#00BF00'
   };
 }
 

@@ -1,6 +1,7 @@
 function CharacterPage(utils) {
   this.utils = utils;
-  this.must_be_online = false; // Will be set if online is displayed on the page
+  this.must_be_online = false;
+  this.must_be_offline = false;
   this.elements = {};
 }
 
@@ -91,16 +92,19 @@ CharacterPage.prototype.parseCharacters = function(table) {
     var columns = rows[i].getElementsByTagName('td');
 
     if (columns.length >= 4) {
-      var row_value = columns[2].textContent.trim();
-      if (row_value === 'online') {
-        // Remove number
-        var row_name = columns[0].textContent.split('.');
-        if (row_name.length >= 2) {
-          // Replace 160 char...
-          var name = row_name[1].replace(/\s/g, ' ').trim();
-          self.must_be_online = (name === self.name);
+      // Remove number
+      var row_name = columns[0].textContent.split('.');
+      if (row_name.length >= 2) {
+        // Replace 160 char...
+        var name = row_name[1].replace(/\s/g, ' ').trim();
+        if (name === self.name) {
+          var row_value = columns[2].textContent.trim();
+          // Is the character displayed as online on the page?
+          self.must_be_online = (row_value === 'online');
+          // Is the character shown but isn't online?
+          self.must_be_offline = (self.must_be_online === false);
+          break;
         }
-        break; // Only one can be online
       }
     }
   }
@@ -122,7 +126,7 @@ CharacterPage.prototype.update = function(players) {
 CharacterPage.prototype.updateCharacterInformation = function(players) {
   var self = this;
   var player = players[self.name];
-  if (player) {
+  if (player && self.must_be_offline === false) {
     // Character is online
     self.elements.name_column.style.color = self.utils.color.green;
 
@@ -140,7 +144,7 @@ CharacterPage.prototype.updateCharacterInformation = function(players) {
     self.elements.vocation_column.textContent = player.vocation;
   } else if (self.must_be_online) {
     // Character is online but not in the list
-    self.elements.name_column.style.color = self.utils.color.orange;
+    self.elements.name_column.style.color = self.utils.color.green;
   }
 };
 

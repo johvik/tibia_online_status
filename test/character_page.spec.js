@@ -54,6 +54,7 @@ describe('CharacterPage', function() {
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(false);
+        characterPage.must_be_offline.should.equal(false);
         characterPage.name.should.equal('Chorizo\'korv');
         characterPage.vocation.should.equal('Master Sorcerer');
         characterPage.level.should.equal(69);
@@ -69,6 +70,7 @@ describe('CharacterPage', function() {
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(true);
+        characterPage.must_be_offline.should.equal(false);
         characterPage.name.should.equal('Ratsafari Guide');
         characterPage.vocation.should.equal('Master Sorcerer');
         characterPage.level.should.equal(31);
@@ -86,6 +88,7 @@ describe('CharacterPage', function() {
         characterPage.parse(function(err) {
           should.not.exist(err);
           characterPage.must_be_online.should.equal(false);
+          characterPage.must_be_offline.should.equal(false);
           characterPage.name.should.equal('Chorizo\'korv');
           characterPage.vocation.should.equal('Master Sorcerer');
           characterPage.level.should.be.within(60, 140);
@@ -108,11 +111,17 @@ describe('CharacterPage', function() {
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(false);
+        characterPage.must_be_offline.should.equal(false);
         characterPage.name.should.equal('Chorizo\'korv');
         characterPage.vocation.should.equal('Master Sorcerer');
         characterPage.level.should.equal(69);
         characterPage.world.should.equal('Inferna');
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
+
+        characterPage.update({});
+        characterPage.elements.name_column.style.color.should.equal('');
+        characterPage.elements.level_column.textContent.should.equal('69');
+        characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
 
         characterPage.update({
           'Chorizo\'korv': {
@@ -143,6 +152,7 @@ describe('CharacterPage', function() {
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(true);
+        characterPage.must_be_offline.should.equal(false);
         characterPage.name.should.equal('Ratsafari Guide');
         characterPage.vocation.should.equal('Master Sorcerer');
         characterPage.level.should.equal(31);
@@ -150,7 +160,7 @@ describe('CharacterPage', function() {
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
 
         characterPage.update({});
-        TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.orange);
+        TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.green);
         characterPage.elements.level_column.textContent.should.equal('31');
         characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
         done();
