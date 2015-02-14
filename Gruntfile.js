@@ -91,10 +91,10 @@ module.exports = function(grunt) {
       json: {
         options: {
           patterns: [{
-            match: /__VERSION__/,
+            match: /__VERSION__/g,
             replacement: '<%= pkg.version %>'
           }, {
-            match: /__DESCRIPTION__/,
+            match: /__DESCRIPTION__/g,
             replacement: '<%= pkg.description %>'
           }]
         },
@@ -109,7 +109,7 @@ module.exports = function(grunt) {
       exports: {
         options: {
           patterns: [{
-            match: /exports\..*=.*/,
+            match: /exports\..*=.*/g,
             replacement: ''
           }]
         },
