@@ -16,7 +16,7 @@ WorldPage.prototype.parse = function(data, callback) {
     return callback('Data not a String ' + data, {});
   }
   var res = {};
-  var row_exp = /href=\"http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+?>(.+?)<\/a><\/td><td.*?>(\d+?)<\/td><td.*?>(.+?)<\/td>/g;
+  var row_exp = /href=\"https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+?>(.+?)<\/a><\/td><td.*?>(\d+?)<\/td><td.*?>(.+?)<\/td>/g;
   var row;
   while ((row = row_exp.exec(data)) !== null) {
     var name = self.utils.decode(row[1]).trim();

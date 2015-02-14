@@ -23,19 +23,13 @@ function onAttach(worker) {
 }
 
 pageMod.PageMod({
-  include: "http://www.tibia.com/community/?subtopic=characters*",
+  include: ["http://www.tibia.com/community/?subtopic=characters*", "https://secure.tibia.com/community/?subtopic=characters*"],
   contentScriptFile: [data.url("utils.js"), data.url("characters.js")],
   onAttach: onAttach
 });
 
 pageMod.PageMod({
-  include: "http://www.tibia.com/community/?subtopic=guilds*",
-  contentScriptFile: [data.url("utils.js"), data.url("guilds.js")],
-  onAttach: onAttach
-});
-
-pageMod.PageMod({
-  include: "http://www.tibia.com/community/?subtopic=highscores*",
+  include: ["http://www.tibia.com/community/?subtopic=highscores*", "https://secure.tibia.com/community/?subtopic=highscores*"],
   contentScriptFile: [data.url("utils.js"), data.url("highscores.js")],
   onAttach: onAttach
 });

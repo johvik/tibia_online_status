@@ -15,13 +15,10 @@
     "persistent": false
   },
   "content_scripts": [{
-    "matches": ["http://www.tibia.com/community/?subtopic=characters*"],
+    "matches": ["http://www.tibia.com/community/?subtopic=characters*", "https://secure.tibia.com/community/?subtopic=characters*"],
     "js": ["data/utils.js", "data/characters.js"]
   }, {
-    "matches": ["http://www.tibia.com/community/?subtopic=guilds*"],
-    "js": ["data/utils.js", "data/guilds.js"]
-  }, {
-    "matches": ["http://www.tibia.com/community/?subtopic=highscores*"],
+    "matches": ["http://www.tibia.com/community/?subtopic=highscores*", "https://secure.tibia.com/community/?subtopic=highscores*"],
     "js": ["data/utils.js", "data/highscores.js"]
   }]
 }

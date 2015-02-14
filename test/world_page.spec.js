@@ -12,23 +12,12 @@ describe('WorldPage', function() {
 
   describe('#parse', function() {
     it('should parse Antica', function(done) {
-      var data = fs.readFileSync(__dirname + '/files/world_page_antica_633.html', 'utf8');
-      var expected = require('./files/world_page_antica_633.expected.js').expected;
+      var data = fs.readFileSync(__dirname + '/files/world_page_antica_613.html', 'utf8');
+      var expected = require('./files/world_page_antica_613.expected.js').expected;
       worldPage.parse(data, function(err, res) {
         should.not.exist(err);
         res.should.eql(expected);
-        Object.keys(res).should.have.length(633);
-        done();
-      });
-    });
-
-    it('should parse Inferna', function(done) {
-      var data = fs.readFileSync(__dirname + '/files/world_page_inferna_7.html', 'utf8');
-      var expected = require('./files/world_page_inferna_7.expected.js').expected;
-      worldPage.parse(data, function(err, res) {
-        should.not.exist(err);
-        res.should.eql(expected);
-        Object.keys(res).should.have.length(7);
+        Object.keys(res).should.have.length(613);
         done();
       });
     });
@@ -44,7 +33,7 @@ describe('WorldPage', function() {
     });
 
     it('should not parse suspicious row', function(done) {
-      worldPage.parse('<tr><td><a href="http://www.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a></td><td>70</td><td>Elite&#160;Sorcerer</td></tr>', function(err, res) {
+      worldPage.parse('<tr><td><a href="https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a></td><td>70</td><td>Elite&#160;Sorcerer</td></tr>', function(err, res) {
         err.should.startWith('Suspicious row match, name: ');
         done();
       });

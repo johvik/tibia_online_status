@@ -101,43 +101,13 @@ describe('Utils', function() {
 
   describe('#markOnlineLinks', function() {
     it('should mark online green', function() {
-      var document = jsdom('<a href="http://www.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="http://www.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>');
+      var document = jsdom('<a href="https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="https://secure.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>');
       utils.markOnlineLinks(document, {
         'Chorizo\'korv': {}
       });
       var links = document.getElementsByTagName('a');
       TestUtils.rgbToHex(links[0].style.color).should.equal(utils.color.green);
       links[1].style.color.should.equal('');
-    });
-
-    it('should fetch and mark online green', function(done) {
-      this.timeout(7000);
-      utils.fetch('http://www.tibia.com/community/?subtopic=guilds&page=view&GuildName=Red+Rose', function(err, data) {
-        should.not.exist(err);
-        var document = jsdom(data);
-        utils.markOnlineLinks(document, {
-          'Halfhigh': {}
-        });
-        // Look for Halfhigh(online) and Buffy(offline)
-        var links = document.getElementsByTagName('a');
-        var found_halfhigh = false;
-        var found_buffy = false;
-        for (var i = 0, j = links.length; i < j; i++) {
-          var name = links[i].textContent;
-          if (name === 'Halfhigh') {
-            found_halfhigh.should.equal(false);
-            found_halfhigh = true;
-            TestUtils.rgbToHex(links[i].style.color).should.equal(utils.color.green);
-          } else if (name === 'Buffy') {
-            found_buffy.should.equal(false);
-            found_buffy = true;
-            links[i].style.color.should.equal('');
-          }
-        }
-        found_halfhigh.should.equal(true);
-        found_buffy.should.equal(true);
-        done();
-      });
     });
   });
 });

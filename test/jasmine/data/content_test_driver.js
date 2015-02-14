@@ -14,7 +14,7 @@ function onExecuteComplete(success, text) {
 function pickCharacters(callback) {
   // Pick the first online/offline characters if any
   var links = document.getElementsByTagName('a');
-  var link_exp = /http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
+  var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
   var res = {};
   for (var i = 0, j = links.length; i < j; i++) {
     if (link_exp.test(links[i].href)) {

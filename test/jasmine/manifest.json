@@ -10,16 +10,16 @@
     "default_title": "Run TOST"
   },
   "permissions": [
-    "http://www.tibia.com/community/?subtopic=*"
+    "*://*.tibia.com/community/?subtopic=*"
   ],
   "background": {
     "scripts": ["data/background.js"]
   },
   "content_scripts": [{
-    "matches": ["http://www.tibia.com/community/?subtopic=*"],
+    "matches": ["*://*.tibia.com/community/?subtopic=*"],
     "js": ["data/content_test_driver.js"]
   }, {
-    "matches": ["http://www.tibia.com/community/?subtopic=characters*"],
+    "matches": ["*://*.tibia.com/community/?subtopic=characters*"],
     "js": ["lib/console.js", "lib/jasmine.js", "data/console_boot.js"]
   }]
 }

@@ -90,8 +90,8 @@ describe('CharacterPage', function() {
           characterPage.must_be_online.should.equal(false);
           characterPage.must_be_offline.should.equal(false);
           characterPage.name.should.equal('Chorizo\'korv');
-          characterPage.vocation.should.equal('Master Sorcerer');
-          characterPage.level.should.be.within(60, 140);
+          characterPage.vocation.should.equal('Sorcerer');
+          characterPage.level.should.be.within(90, 150);
           characterPage.world.should.equal('Inferna');
           characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
           done();

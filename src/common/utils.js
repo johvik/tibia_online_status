@@ -53,7 +53,7 @@ Utils.prototype.fetch = function(url, callback) {
 Utils.prototype.markOnlineLinks = function(root_element, players) {
   var self = this;
   var links = root_element.getElementsByTagName('a');
-  var link_exp = /http:\/\/www\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
+  var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
   for (var i = 0, j = links.length; i < j; i++) {
     if (link_exp.test(links[i].href)) {
       var name = self.decode(links[i].innerHTML);
