@@ -73,6 +73,9 @@ module.exports = function(grunt) {
         }, {
           src: ['src/chrome/manifest.json'],
           dest: 'dest/chrome/manifest.json'
+        }, {
+          src: ['src/chrome/options/options.html'],
+          dest: 'dest/chrome/options/options.html'
         }]
       },
       firefox: {
@@ -135,7 +138,8 @@ module.exports = function(grunt) {
           'dest/chrome/data/background.js': ['src/common/world_page.js', 'src/chrome/data/background.js'],
           'dest/chrome/data/utils.js': ['src/common/utils.js', 'src/chrome/data/chrome_page.js'],
           'dest/chrome/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
-          'dest/chrome/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js']
+          'dest/chrome/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js'],
+          'dest/chrome/options/options.js': ['src/chrome/options/options.js']
         }
       },
       firefox: {
@@ -147,6 +151,14 @@ module.exports = function(grunt) {
           'dest/firefox/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
           'dest/firefox/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js']
         }
+      }
+    },
+    shell: {
+      xpi: {
+        command: ['cd dest/firefox', 'cfx xpi'].join('&&')
+      },
+      run: {
+        command: ['cd dest/firefox', 'cfx run'].join('&&')
       }
     }
   });
@@ -160,6 +172,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('test', ['jshint', 'mochacov:test']);
   grunt.registerTask('cov', ['jshint', 'mochacov:cov']);

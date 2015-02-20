@@ -198,4 +198,15 @@ describe('CharacterPage', function() {
       });
     });
   });
+
+  describe('#toString', function() {
+    beforeEach(function() {
+      characterPage = new CharacterPage(utils);
+    });
+
+    it('should have keys', function() {
+      var str = characterPage.toString();
+      str.should.have.keys('name', 'world', 'must_be_online', 'must_be_offline', 'elements');
+    });
+  });
 });

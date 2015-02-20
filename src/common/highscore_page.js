@@ -31,4 +31,15 @@ HighscorePage.prototype.update = function(players) {
   self.utils.markOnlineLinks(self.elements.highscores_div, players);
 };
 
+/**
+ * Returns an object to print.
+ */
+HighscorePage.prototype.toString = function() {
+  var self = this;
+  return {
+    world: self.world,
+    elements: self.elements
+  };
+};
+
 exports.HighscorePage = HighscorePage;

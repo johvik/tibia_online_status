@@ -1,19 +1,31 @@
-// Hide logs?
-// console.log = function() {};
-
 function TosPage(page) {
   page.parse(function(err) {
     if (err) {
-      console.log('Tibia Online Status:', err);
+      TosPage.debug(err);
     } else {
+      TosPage.debug(page.toString());
       self.port.once('query:world', function(res) {
         if (res.error) {
-          console.log('Tibia Online Status:', res.error);
+          TosPage.debug(res.error);
         } else {
+          TosPage.debug(res.players);
           page.update(res.players);
+          TosPage.debug('Done');
         }
       });
       self.port.emit('query:world', page.world);
     }
   });
 }
+
+/**
+ * Prints message if debug output is set in the options.
+ */
+TosPage.debug = function(message) {
+  self.port.once('query:options', function(options) {
+    if (options.debugOutput) {
+      console.log('Tibia Online Status:', message);
+    }
+  });
+  self.port.emit('query:options');
+};

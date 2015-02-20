@@ -81,4 +81,15 @@ describe('HighscorePage', function() {
       called.should.equal(true);
     });
   });
+
+  describe('#toString', function() {
+    beforeEach(function() {
+      highscorePage = new HighscorePage(utils);
+    });
+
+    it('should have keys', function() {
+      var str = highscorePage.toString();
+      str.should.have.keys('world', 'elements');
+    });
+  });
 });

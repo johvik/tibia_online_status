@@ -20,6 +20,10 @@ function onAttach(worker) {
       });
     });
   });
+
+  worker.port.on('query:options', function() {
+    return worker.port.emit('query:options', require('sdk/simple-prefs').prefs);
+  });
 }
 
 pageMod.PageMod({

@@ -148,4 +148,18 @@ CharacterPage.prototype.updateCharacterInformation = function(players) {
   }
 };
 
+/**
+ * Returns an object to print.
+ */
+CharacterPage.prototype.toString = function() {
+  var self = this;
+  return {
+    name: self.name,
+    world: self.world,
+    must_be_online: self.must_be_online,
+    must_be_offline: self.must_be_offline,
+    elements: self.elements
+  };
+};
+
 exports.CharacterPage = CharacterPage;
