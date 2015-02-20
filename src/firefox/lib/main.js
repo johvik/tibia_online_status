@@ -7,6 +7,17 @@ var WorldPage = require('./world_page').WorldPage;
 var XMLHttpRequest = require("sdk/net/xhr").XMLHttpRequest;
 var worldPage = new WorldPage(new Utils(XMLHttpRequest));
 
+function onPrefChange(prefName) {
+  var name = 'extensions.jid1-fvCjY69UDEeqOg@jetpack.sdk.console.logLevel';
+  if (require('sdk/simple-prefs').prefs.debugOutput) {
+    require('sdk/preferences/service').set(name, 'debug');
+  } else {
+    require('sdk/preferences/service').reset(name);
+  }
+}
+
+require('sdk/simple-prefs').on('', onPrefChange);
+
 function onAttach(worker) {
   worker.port.once('query:world', function(world) {
     worldPage.query(world, function(err, res) {
