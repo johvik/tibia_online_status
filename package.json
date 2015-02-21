@@ -1,6 +1,6 @@
 {
   "name": "tibia_online_status",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "This extension adds additional status information to the characters and highscores page.",
   "author": "johvik",
   "license": "MIT",
