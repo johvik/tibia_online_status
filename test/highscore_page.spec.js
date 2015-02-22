@@ -87,18 +87,6 @@ describe('HighscorePage', function() {
       highscorePage = new HighscorePage(utils);
     });
 
-    it('should call markOnlineLinks', function() {
-      var called = false;
-      var UtilsStub = function() {};
-      UtilsStub.prototype.markOnlineLinks = function(a, b) {
-        called = true;
-      };
-      highscorePage.utils = new UtilsStub();
-      called.should.equal(false);
-      highscorePage.update({});
-      called.should.equal(true);
-    });
-
     it('should update Antica', function(done) {
       var data = fs.readFileSync(__dirname + '/files/highscore_page_antica_experience.html', 'utf8');
       global.document = jsdom(data);
@@ -115,7 +103,7 @@ describe('HighscorePage', function() {
             vocation: 'Royal Paladin'
           },
           'Linglifer': {
-            level: 426,
+            level: 427,
             vocation: 'Master Sorcerer'
           }
         });
@@ -126,14 +114,18 @@ describe('HighscorePage', function() {
         for (var i = 0, j = links.length; i < j; i++) {
           if (link_exp.test(links[i].href)) {
             var name = utils.decode(links[i].innerHTML);
+            var level_column = links[i].parentElement.parentElement.getElementsByTagName('td')[2];
             if (name === 'Meendel') {
               meendel_found = true;
               TestUtils.rgbToHex(links[i].style.color).should.equal(utils.color.green);
+              level_column.textContent.should.equal('11 (-500)');
             } else if (name === 'Linglifer') {
               linglifer_found = true;
               TestUtils.rgbToHex(links[i].style.color).should.equal(utils.color.green);
+              level_column.textContent.should.equal('427 (+1)');
             } else {
               links[i].style.color.should.equal('');
+              level_column.textContent.should.equal('' + parseInt(level_column.textContent, 10));
             }
           }
         }

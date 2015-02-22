@@ -48,9 +48,9 @@ Utils.prototype.fetch = function(url, callback) {
 };
 
 /**
- * Mark characters links green if online.
+ * Mark characters links green if online. Optional callback(link_element, player) for each online player.
  */
-Utils.prototype.markOnlineLinks = function(root_element, players) {
+Utils.prototype.markOnlineLinks = function(root_element, players, callback) {
   var self = this;
   var links = root_element.getElementsByTagName('a');
   var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
@@ -59,6 +59,9 @@ Utils.prototype.markOnlineLinks = function(root_element, players) {
       var name = self.decode(links[i].innerHTML);
       var player = players[name];
       if (player) {
+        if (callback) {
+          callback(links[i], player);
+        }
         links[i].style.color = self.color.green;
       }
     }
