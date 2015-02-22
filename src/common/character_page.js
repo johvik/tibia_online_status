@@ -131,14 +131,7 @@ CharacterPage.prototype.updateCharacterInformation = function(players) {
     self.elements.name_column.style.color = self.utils.color.green;
 
     // Set level
-    var level_diff = player.level - self.level;
-    if (level_diff < 0) {
-      // Lost level
-      self.elements.level_column.textContent = player.level + ' (' + (level_diff) + ')';
-    } else if (level_diff > 0) {
-      // Gained level
-      self.elements.level_column.textContent = player.level + ' (+' + (level_diff) + ')';
-    }
+    self.utils.setLevel(self.elements.level_column, self.level, player.level);
 
     // Set vocation
     self.elements.vocation_column.textContent = player.vocation;

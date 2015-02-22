@@ -110,4 +110,30 @@ describe('Utils', function() {
       links[1].style.color.should.equal('');
     });
   });
+
+  describe('#setLevel', function() {
+    it('should not change', function() {
+      var document = jsdom('<div>abc</div>');
+      var elements = document.getElementsByTagName('div');
+      elements.should.have.length(1);
+      utils.setLevel(elements[0], 1, 1);
+      elements[0].textContent.should.equal('abc');
+    });
+
+    it('should change positive', function() {
+      var document = jsdom('<div>abc</div>');
+      var elements = document.getElementsByTagName('div');
+      elements.should.have.length(1);
+      utils.setLevel(elements[0], 1, 2);
+      elements[0].textContent.should.equal('2 (+1)');
+    });
+
+    it('should change negative', function() {
+      var document = jsdom('<div>abc</div>');
+      var elements = document.getElementsByTagName('div');
+      elements.should.have.length(1);
+      utils.setLevel(elements[0], 2, 1);
+      elements[0].textContent.should.equal('1 (-1)');
+    });
+  });
 });

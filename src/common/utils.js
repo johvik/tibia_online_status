@@ -65,4 +65,18 @@ Utils.prototype.markOnlineLinks = function(root_element, players) {
   }
 };
 
+/**
+ * Update element with level and difference.
+ */
+Utils.prototype.setLevel = function(element, old_level, new_level) {
+  var level_diff = new_level - old_level;
+  if (level_diff < 0) {
+    // Lost level
+    element.textContent = new_level + ' (' + (level_diff) + ')';
+  } else if (level_diff > 0) {
+    // Gained level
+    element.textContent = new_level + ' (+' + (level_diff) + ')';
+  }
+};
+
 exports.Utils = Utils;
