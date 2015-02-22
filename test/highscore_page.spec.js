@@ -65,6 +65,21 @@ describe('HighscorePage', function() {
         });
       });
     });
+
+    it('should fetch and parse Inferna secure', function(done) {
+      this.timeout(5000);
+      utils.fetch('http://www.tibia.com/community/?subtopic=highscores&world=Inferna', function(err, data) {
+        should.not.exist(err);
+        global.document = jsdom(data);
+        highscorePage.parse(function(err) {
+          should.not.exist(err);
+          highscorePage.list.should.equal('Experience');
+          highscorePage.world.should.equal('Inferna');
+          highscorePage.elements.should.have.keys('highscores_div');
+          done();
+        });
+      });
+    });
   });
 
   describe('#update', function() {

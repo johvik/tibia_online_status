@@ -22,11 +22,11 @@ chrome.browserAction.onClicked.addListener(function() {
   }
   // Start a new test
   chrome.tabs.create({
-    url: 'http://www.tibia.com/community/?subtopic=guilds&page=view&GuildName=Red+Rose'
+    url: 'https://secure.tibia.com/community/?subtopic=highscores&world=Antica'
   }, function(tab) {
     testRunner = {
       tabId: tab.id,
-      next: pickGuildCharacters,
+      next: pickHighscoreCharacters,
       waiting: true,
       characters: []
     };
@@ -105,21 +105,6 @@ function onCharacterPickCallback(response) {
     console.warn('No offline character');
   }
   runNextAction('callback');
-}
-
-function pickGuildCharacters() {
-  chrome.tabs.sendMessage(testRunner.tabId, {
-    type: 'pickCharacters'
-  }, onCharacterPickCallback);
-  return gotoHighscore;
-}
-
-function gotoHighscore() {
-  testRunner.waiting = true;
-  chrome.tabs.update(testRunner.tabId, {
-    url: 'http://www.tibia.com/community/?subtopic=highscores&world=Antica'
-  });
-  return pickHighscoreCharacters;
 }
 
 function pickHighscoreCharacters() {
