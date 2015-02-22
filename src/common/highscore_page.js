@@ -14,11 +14,12 @@ HighscorePage.prototype.parse = function(callback) {
   }
   self.elements.highscores_div = highscores_div;
 
-  var world_match = highscores_div.innerHTML.match(/<h2>Ranking for .*? on (.*?)<\/h2>/);
-  if (world_match === null) {
+  var match = highscores_div.innerHTML.match(/<h2>Ranking for (.*?) on (.*?)<\/h2>/);
+  if (match === null) {
     return callback('No world found');
   }
-  self.world = world_match[1].trim();
+  self.list = match[1].trim();
+  self.world = match[2].trim();
 
   return callback(null);
 };
@@ -37,6 +38,7 @@ HighscorePage.prototype.update = function(players) {
 HighscorePage.prototype.toString = function() {
   var self = this;
   return {
+    list: self.list,
     world: self.world,
     elements: self.elements
   };

@@ -1,0 +1,856 @@
+<html>
+<head>
+  <title>Tibia - Free Multiplayer Online Role Playing Game - Community</title>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />  <meta name="description" content="Tibia is a free massively multiplayer online role-playing game (MMORPG). Join this fascinating game that has thousands of fans from all over the world! - http://www.tibia.com" />
+  <meta name="author" content="CipSoft GmbH" />
+  <meta http-equiv="content-language" content="en" />
+  <meta name="keywords" content="free online game, free multiplayer game, free online rpg, free mmorpg, mmorpg, mmog, online role playing game, online multiplayer game, internet game, online rpg, rpg" />
+  <meta name="google-site-verification" content="DnO3wR8m-XUPrU02NoZt9x3vMB0fjpOXXJshbKucEj8" />
+
+  <!--  regular browsers -->
+  <link rel="shortcut icon" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/favicon.ico" type="image/x-icon">
+  <!-- For iPad with high-resolution Retina display running iOS = 7: -->
+  <link rel="apple-touch-icon" sizes="152x152" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-152x152.png">
+  <!-- For iPad with high-resolution Retina display running iOS = 6: -->
+  <link rel="apple-touch-icon" sizes="144x144" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-144x144.png">
+  <!-- For iPhone with high-resolution Retina display running iOS = 7: -->
+  <link rel="apple-touch-icon" sizes="120x120" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-120x120.png">
+  <!-- For iPhone with high-resolution Retina display running iOS = 6: -->
+  <link rel="apple-touch-icon" sizes="114x114" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-114x114.png">
+  <!-- For the iPad mini and the first- and second-generation iPad on iOS = 7: -->
+  <link rel="apple-touch-icon" sizes="76x76" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-76x76.png">
+  <!-- For the iPad mini and the first- and second-generation iPad on iOS = 6: -->
+  <link rel="apple-touch-icon" sizes="72x72" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-72x72.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon.png">
+  <!-- Fallback for older devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-precomposed.png">
+
+  <link href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/styles/basic_d.css?version=754e58cf1f85b08732433cd22bea6662" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/extern/jquery.js" ></script>
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/extern/jquery_ui/jquery-ui.core.js" ></script>
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/extern/jquery_ui/jquery-ui.widgets.js" ></script>
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/ajax/ajaxcip.js" ></script>
+    <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/generic.js?version=162424c1525895fb7aa44914903651ca" ></script>
+  <script type='text/javascript'>  var loginStatus=0; loginStatus='false';  var activeSubmenuItem='highscores';  var JS_DIR_IMAGES=0; JS_DIR_IMAGES='https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/';  var JS_DIR_ACCOUNT=0; JS_DIR_ACCOUNT='https://secure.tibia.com/account/';  var g_FormName='';  var g_FormField='';  var g_Deactivated=false;  var g_FlashClientInPopUp=true;var FB_TryLogin = 0;var FB_ForceReload = 0;</script><script type="text/javascript" >
+  if(top.location != window.location) {
+    g_FlashClientInPopUp = false;
+  }
+</script>
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/initialize.js?version=84b006a17f10638ad20e77ad1647b8df" ></script>
+  
+</head>
+
+<body onBeforeUnLoad="SaveMenu();" onUnload="SaveMenu();" onLoad="SetFormFocus()" >
+  <script type="text/javascript" >
+var g_FB_LoginURL = "";
+</script>
+<div id="fb-root" ></div><script type="text/javascript" >
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 497232093667125, // App ID
+      status     : true,              // check login status
+      cookie     : true,              // enable cookies to allow the server to access the session
+      xfbml      : true               // parse XFBML
+    });
+    FB.Event.subscribe('auth.login', function() {
+      var URLHelper = "?";
+      if (window.location.search.replace("?", "").length > 0) {
+        URLHelper = "&";
+      }
+      if (FB_TryLogin == 1) {
+        window.location = "https://secure.tibia.com/mmorpg/free-multiplayer-online-role-playing-game.php" + window.location.search + URLHelper + "step=facebooktrylogin&wasreloaded=1";
+      } else if (FB_TryLogin == 2) {
+        window.location = window.location + URLHelper + "page=facebooktrylogin&wasreloaded=1";
+      } else {
+      }
+    });
+    FB.Event.subscribe('auth.logout', function(a_Response) {
+      if (a_Response.status !== 'connected') {
+        window.location.href=window.location.href;
+      } else {
+        /* nothing to do here*/
+      }
+    });
+    FB.Event.subscribe('auth.statusChange', function(response) {
+      if (FB_ForceReload == 1 && response.status == "connected") {
+        var URLHelper = "?";
+        if (window.location.search.replace("?", "").length > 0) {
+          URLHelper = "&";
+        }
+        window.location = window.location + URLHelper + "step=facebooktrylogin&wasreloaded=1";
+      }
+    });
+  };
+  (function(d){
+    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement('script'); js.id = id; js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    ref.parentNode.insertBefore(js, ref);
+  }(document));
+</script>
+
+  <div id="DeactivationContainer" onClick="DisableDeactivationContainer();" ></div>
+
+  <a name="top" ></a>
+  <div id="DeactivationContainer" onClick="DisableDeactivationContainer();" ></div>
+
+  <div id="MainHelper1" >
+    <div id="MainHelper2" >
+      <div id="ArtworkHelper1" >
+        <div id="ArtworkHelper2" >
+          <div id="HeaderArtworkDiv" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/background-artwork.jpg);" ></div>
+        </div>
+      </div>
+
+      <div id="Bodycontainer" >
+        <div id="ContentRow">
+          <div id="MenuColumn">
+            <div id="LeftArtwork">
+              <a href="https://secure.tibia.com/mmorpg/free-multiplayer-online-role-playing-game.php" ><img id="TibiaLogoArtworkTop" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/tibia-logo-artwork-top.gif" alt="logoartwork" /></a>
+              <img id="LogoLink" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/tibia-logo-artwork-string.gif" onClick="window.location = 'http://www.tibia.com/abouttibia/?subtopic=aboutcipsoft';" alt="logoartwork" />
+            </div>
+            
+  <div id="Loginbox" >
+    <div id="LoginTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-top.gif)" ></div>
+    <div id="BorderLeft" class="LoginBorder" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif)" ></div>
+    <div id="LoginButtonContainer" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/loginbox/loginbox-textfield-background.gif)" >
+      <div id="PlayNowContainer" ><form class="MediumButtonForm" action="https://secure.tibia.com/account/?subtopic=accountmanagement" method="post" ><input type="hidden" name="page" value="overview" ><div class="MediumButtonBackground" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/mediumbutton.gif)" onMouseOver="MouseOverMediumButton(this);" onMouseOut="MouseOutMediumButton(this);" ><div class="MediumButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/mediumbutton-over.gif)" onMouseOver="MouseOverMediumButton(this);" onMouseOut="MouseOutMediumButton(this);" ></div><input class="MediumButtonText" type="image" name="Play Now" alt="Play Now" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/mediumbutton_playnow.png" /></div></form></div>
+    </div>
+    <div class="Loginstatus" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/loginbox/loginbox-textfield-background.gif)" >
+      <div id="LoginstatusText" onClick="LoginstatusTextAction(this);" onMouseOver="MouseOverLoginBoxText(this);" onMouseOut="MouseOutLoginBoxText(this);" ><div id="LoginstatusText_1" class="LoginstatusText" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/loginbox/loginbox-font-create-account.gif)" ></div><div id="LoginstatusText_2" class="LoginstatusText" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/loginbox/loginbox-font-create-account-over.gif)" ></div></div>
+    </div>
+    <div id="BorderRight" class="LoginBorder" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif)" ></div>
+    <div id="LoginBottom" class="Loginstatus" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif)" ></div>
+  </div>
+<div id='Menu'>
+<div id='MenuTop' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-top.gif);'></div>
+<div id='news' class='menuitem'>
+<span onClick="MenuItemAction('news')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='news_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='news_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-news.gif);'></div>
+      <div id='news_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-news.gif);'></div>
+      <div id='news_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='news_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/news/?subtopic=latestnews'>
+  <div id='submenu_latestnews' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_latestnews' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_latestnews' class='SubmenuitemLabel'>Latest News</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/news/?subtopic=newsarchive'>
+  <div id='submenu_newsarchive' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_newsarchive' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_newsarchive' class='SubmenuitemLabel'>News Archive</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='abouttibia' class='menuitem'>
+<span onClick="MenuItemAction('abouttibia')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='abouttibia_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='abouttibia_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-abouttibia.gif);'></div>
+      <div id='abouttibia_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-abouttibia.gif);'></div>
+      <div id='abouttibia_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='abouttibia_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/abouttibia/?subtopic=whatistibia'>
+  <div id='submenu_whatistibia' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_whatistibia' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_whatistibia' class='SubmenuitemLabel'>What Is Tibia?</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/abouttibia/?subtopic=screenshots'>
+  <div id='submenu_screenshots' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_screenshots' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_screenshots' class='SubmenuitemLabel'>Screenshots</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/abouttibia/?subtopic=gamefeatures'>
+  <div id='submenu_gamefeatures' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_gamefeatures' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_gamefeatures' class='SubmenuitemLabel'>Game Features</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/abouttibia/?subtopic=premiumfeatures'>
+  <div id='submenu_premiumfeatures' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_premiumfeatures' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_premiumfeatures' class='SubmenuitemLabel'>Premium Features</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/abouttibia/?subtopic=aboutcipsoft'>
+  <div id='submenu_aboutcipsoft' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_aboutcipsoft' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_aboutcipsoft' class='SubmenuitemLabel'>About CipSoft</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='gameguides' class='menuitem'>
+<span onClick="MenuItemAction('gameguides')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='gameguides_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='gameguides_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-gameguides.gif);'></div>
+      <div id='gameguides_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-gameguides.gif);'></div>
+      <div id='gameguides_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='gameguides_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/gameguides/?subtopic=quickstart'>
+  <div id='submenu_quickstart' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_quickstart' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_quickstart' class='SubmenuitemLabel'>Quickstart</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/gameguides/?subtopic=manual'>
+  <div id='submenu_manual' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_manual' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_manual' class='SubmenuitemLabel'>Manual</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/gameguides/?subtopic=securityhints'>
+  <div id='submenu_securityhints' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_securityhints' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_securityhints' class='SubmenuitemLabel'>Security Hints</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='library' class='menuitem'>
+<span onClick="MenuItemAction('library')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='library_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='library_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-library.gif);'></div>
+      <div id='library_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-library.gif);'></div>
+      <div id='library_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='library_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/library/?subtopic=creatures'>
+  <div id='submenu_creatures' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_creatures' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_creatures' class='SubmenuitemLabel'>Creatures</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=spells'>
+  <div id='submenu_spells' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_spells' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_spells' class='SubmenuitemLabel'>Spells</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=achievements'>
+  <div id='submenu_achievements' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_achievements' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_achievements' class='SubmenuitemLabel'>Achievements</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=worldquests'>
+  <div id='submenu_worldquests' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_worldquests' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_worldquests' class='SubmenuitemLabel'>World Quests</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=experiencetable'>
+  <div id='submenu_experiencetable' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_experiencetable' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_experiencetable' class='SubmenuitemLabel'>Experience Table</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=maps'>
+  <div id='submenu_maps' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_maps' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_maps' class='SubmenuitemLabel'>Maps</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=genesis'>
+  <div id='submenu_genesis' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_genesis' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_genesis' class='SubmenuitemLabel'>Genesis</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='community' class='menuitem'>
+<span onClick="MenuItemAction('community')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='community_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='community_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-community.gif);'></div>
+      <div id='community_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-community.gif);'></div>
+      <div id='community_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='community_Submenu' class='Submenu'>
+<a href='https://secure.tibia.com/community/?subtopic=characters'>
+  <div id='submenu_characters' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_characters' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_characters' class='SubmenuitemLabel'>Characters</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=worlds'>
+  <div id='submenu_worlds' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_worlds' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_worlds' class='SubmenuitemLabel'>Worlds</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=highscores'>
+  <div id='submenu_highscores' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_highscores' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_highscores' class='SubmenuitemLabel'>Highscores</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=killstatistics'>
+  <div id='submenu_killstatistics' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_killstatistics' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_killstatistics' class='SubmenuitemLabel'>Kill Statistics</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=houses'>
+  <div id='submenu_houses' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_houses' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_houses' class='SubmenuitemLabel'>Houses</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=guilds'>
+  <div id='submenu_guilds' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_guilds' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_guilds' class='SubmenuitemLabel'>Guilds</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=polls'>
+  <div id='submenu_polls' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_polls' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_polls' class='SubmenuitemLabel'>Polls</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=feedbackform'>
+  <div id='submenu_feedbackform' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_feedbackform' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_feedbackform' class='SubmenuitemLabel'>Feedback Form</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=conventions'>
+  <div id='submenu_conventions' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_conventions' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_conventions' class='SubmenuitemLabel'>Conventions</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=fansites'>
+  <div id='submenu_fansites' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_fansites' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_fansites' class='SubmenuitemLabel'>Fansites</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=resellers'>
+  <div id='submenu_resellers' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_resellers' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_resellers' class='SubmenuitemLabel'>Resellers</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='forum' class='menuitem'>
+<span onClick="MenuItemAction('forum')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='forum_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='forum_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-forum.gif);'></div>
+      <div id='forum_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-forum.gif);'></div>
+      <div id='forum_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='forum_Submenu' class='Submenu'>
+<a href='http://forum.tibia.com/forum/?subtopic=worldboards'>
+  <div id='submenu_worldboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_worldboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_worldboards' class='SubmenuitemLabel'>World Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=tradeboards'>
+  <div id='submenu_tradeboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_tradeboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_tradeboards' class='SubmenuitemLabel'>Trade Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=communityboards'>
+  <div id='submenu_communityboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_communityboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_communityboards' class='SubmenuitemLabel'>Community Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=councilboards'>
+  <div id='submenu_councilboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_councilboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_councilboards' class='SubmenuitemLabel'>Council Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=supportboards'>
+  <div id='submenu_supportboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_supportboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_supportboards' class='SubmenuitemLabel'>Support Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=guildboards'>
+  <div id='submenu_guildboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_guildboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_guildboards' class='SubmenuitemLabel'>Guild Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='account' class='menuitem'>
+<span onClick="MenuItemAction('account')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='account_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='account_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-account.gif);'></div>
+      <div id='account_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-account.gif);'></div>
+      <div id='account_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='account_Submenu' class='Submenu'>
+<a href='https://secure.tibia.com/account/?subtopic=accountmanagement&amp;page=overview'>
+  <div id='submenu_accountmanagement' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_accountmanagement' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_accountmanagement' class='SubmenuitemLabel'>Account Management</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/account/?subtopic=createaccount'>
+  <div id='submenu_createaccount' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_createaccount' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_createaccount' class='SubmenuitemLabel'>Create Account</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/account/?subtopic=downloadclient&step=downloadagreement'>
+  <div id='submenu_downloadclient' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_downloadclient' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_downloadclient' class='SubmenuitemLabel'>Download Client</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/account/?subtopic=lostaccount'>
+  <div id='submenu_lostaccount' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_lostaccount' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_lostaccount' class='SubmenuitemLabel'>Lost Account?</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='support' class='menuitem'>
+<span onClick="MenuItemAction('support')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='support_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='support_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-support.gif);'></div>
+      <div id='support_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-support.gif);'></div>
+      <div id='support_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='support_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/support/?subtopic=faq'>
+  <div id='submenu_faq' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_faq' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_faq' class='SubmenuitemLabel'>FAQ</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/support/?subtopic=tibiarules'>
+  <div id='submenu_tibiarules' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_tibiarules' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_tibiarules' class='SubmenuitemLabel'>Tibia Rules</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/support/?subtopic=tutorguide'>
+  <div id='submenu_tutorguide' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_tutorguide' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_tutorguide' class='SubmenuitemLabel'>Tutor Guide</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/support/?subtopic=parentsguide'>
+  <div id='submenu_parentsguide' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_parentsguide' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_parentsguide' class='SubmenuitemLabel'>Parents' Guide</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/support/?subtopic=legaldocuments'>
+  <div id='submenu_legaldocuments' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_legaldocuments' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_legaldocuments' class='SubmenuitemLabel'>Legal Documents</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='MenuBottom' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif);'></div>
+</div>
+<script type='text/javascript'>InitializePage();</script>          </div>
+          <div id="ContentColumn">
+            <div id="Content" class="Content">
+              <div id="ContentHelper">
+
+
+  <div id="highscores" class="Box">
+    <div class="Corner-tl" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/corner-tl.gif);"></div>
+    <div class="Corner-tr" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/corner-tr.gif);"></div>
+    <div class="Border_1" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/border-1.gif);"></div>
+    <div class="BorderTitleText" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/title-background-green.gif);"></div>
+    <img id="ContentBoxHeadline" class="Title" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/strings/headline-highscores.gif" alt="Contentbox headline" />
+    <div class="Border_2">
+      <div class="Border_3">
+        <div class="BoxContent" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/scroll.gif);">
+<TABLE BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
+<TR><TD WIDTH=100% ALIGN=right VALIGN=bottom>
+<BR><CENTER><H2>Ranking for Experience on Antica</H2></CENTER><BR>
+<FORM ACTION="?subtopic=highscores" METHOD=post>
+<INPUT TYPE=hidden NAME=list VALUE=experience>
+  <div class="TableContainer" >  <table class="Table1" cellpadding="0" cellspacing="0" >    <div class="CaptionContainer" >      <div class="CaptionInnerContainer" >        <span class="CaptionEdgeLeftTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionBorderTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionVerticalLeft" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <div class="Text" >World Selection</div>        <span class="CaptionVerticalRight" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <span class="CaptionBorderBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionEdgeLeftBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>      </div>    </div>    <tr>      <td>        <div class="InnerTableContainer" >          <table style="width:100%;" >  <TR><TD BGCOLOR="#D4C0A1">
+    <TABLE BORDER=0 CELLPADDING=1>
+      <TR>
+        <TD>World: </TD>
+        <TD>
+          <SELECT SIZE="1" NAME="world">
+<OPTION VALUE="Amera">Amera</OPTION>
+<OPTION VALUE="Antica" SELECTED>Antica</OPTION>
+<OPTION VALUE="Astera">Astera</OPTION>
+<OPTION VALUE="Aurea">Aurea</OPTION>
+<OPTION VALUE="Aurera">Aurera</OPTION>
+<OPTION VALUE="Aurora">Aurora</OPTION>
+<OPTION VALUE="Bellona">Bellona</OPTION>
+<OPTION VALUE="Calmera">Calmera</OPTION>
+<OPTION VALUE="Calva">Calva</OPTION>
+<OPTION VALUE="Calvera">Calvera</OPTION>
+<OPTION VALUE="Candia">Candia</OPTION>
+<OPTION VALUE="Celesta">Celesta</OPTION>
+<OPTION VALUE="Chrona">Chrona</OPTION>
+<OPTION VALUE="Danera">Danera</OPTION>
+<OPTION VALUE="Dolera">Dolera</OPTION>
+<OPTION VALUE="Efidia">Efidia</OPTION>
+<OPTION VALUE="Eldera">Eldera</OPTION>
+<OPTION VALUE="Elera">Elera</OPTION>
+<OPTION VALUE="Elysia">Elysia</OPTION>
+<OPTION VALUE="Fidera">Fidera</OPTION>
+<OPTION VALUE="Fortera">Fortera</OPTION>
+<OPTION VALUE="Garnera">Garnera</OPTION>
+<OPTION VALUE="Guardia">Guardia</OPTION>
+<OPTION VALUE="Harmonia">Harmonia</OPTION>
+<OPTION VALUE="Honera">Honera</OPTION>
+<OPTION VALUE="Hydera">Hydera</OPTION>
+<OPTION VALUE="Inferna">Inferna</OPTION>
+<OPTION VALUE="Iona">Iona</OPTION>
+<OPTION VALUE="Irmada">Irmada</OPTION>
+<OPTION VALUE="Julera">Julera</OPTION>
+<OPTION VALUE="Justera">Justera</OPTION>
+<OPTION VALUE="Kenora">Kenora</OPTION>
+<OPTION VALUE="Kronera">Kronera</OPTION>
+<OPTION VALUE="Luminera">Luminera</OPTION>
+<OPTION VALUE="Magera">Magera</OPTION>
+<OPTION VALUE="Menera">Menera</OPTION>
+<OPTION VALUE="Morta">Morta</OPTION>
+<OPTION VALUE="Mortera">Mortera</OPTION>
+<OPTION VALUE="Neptera">Neptera</OPTION>
+<OPTION VALUE="Nerana">Nerana</OPTION>
+<OPTION VALUE="Nika">Nika</OPTION>
+<OPTION VALUE="Olympa">Olympa</OPTION>
+<OPTION VALUE="Pacera">Pacera</OPTION>
+<OPTION VALUE="Premia">Premia</OPTION>
+<OPTION VALUE="Pythera">Pythera</OPTION>
+<OPTION VALUE="Quilia">Quilia</OPTION>
+<OPTION VALUE="Refugia">Refugia</OPTION>
+<OPTION VALUE="Rowana">Rowana</OPTION>
+<OPTION VALUE="Secura">Secura</OPTION>
+<OPTION VALUE="Shivera">Shivera</OPTION>
+<OPTION VALUE="Silvera">Silvera</OPTION>
+<OPTION VALUE="Solera">Solera</OPTION>
+<OPTION VALUE="Tenebra">Tenebra</OPTION>
+<OPTION VALUE="Thera">Thera</OPTION>
+<OPTION VALUE="Umera">Umera</OPTION>
+<OPTION VALUE="Unitera">Unitera</OPTION>
+<OPTION VALUE="Valoria">Valoria</OPTION>
+<OPTION VALUE="Vinera">Vinera</OPTION>
+<OPTION VALUE="Xantera">Xantera</OPTION>
+<OPTION VALUE="Yanara">Yanara</OPTION>
+<OPTION VALUE="Zanera">Zanera</OPTION>
+</SELECT>
+&nbsp;        </TD>
+        <TD>
+          <table border="0" cellspacing="0" cellpadding="0" ><tr><td style="border:0px;" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Submit" alt="Submit" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_submit.gif" ></div></div></td><tr></form></table>        </TD>
+      </TR>
+    </TABLE>
+  </TD></TR>
+            </table>        </div>      </td>    </tr>  </table></div>  </FORM>
+  <BR><BR>
+<TABLE BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
+<TR><TD WIDTH=100% ALIGN=right VALIGN=bottom><A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=experience&page=1" CLASS="size_xxs">Rank 26-50</A></TD></TR>
+</TABLE>
+<TABLE BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
+<TR BGCOLOR="#505050">
+<TD WIDTH=10% CLASS=white ><B>Rank</B></TD>
+<TD WIDTH=55% CLASS=white ><B>Name</B></TD>
+<TD WIDTH=15% CLASS=white ><B>Level</B></TD>
+<TD WIDTH=20% CLASS=white ><B>Points</B></TD>
+</TR><TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>1</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Meendel">Meendel</A></TD><TD WIDTH=15%>511</TD><TD WIDTH=20%>2204654148</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>2</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Glusti">Glusti</A></TD><TD WIDTH=15%>503</TD><TD WIDTH=20%>2097881344</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>3</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vicium">Vicium</A></TD><TD WIDTH=15%>501</TD><TD WIDTH=20%>2080175981</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>4</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ereaper">Ereaper</A></TD><TD WIDTH=15%>475</TD><TD WIDTH=20%>1774480891</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>5</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Pysio">Pysio</A></TD><TD WIDTH=15%>472</TD><TD WIDTH=20%>1730567507</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>6</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Trankus">Trankus</A></TD><TD WIDTH=15%>462</TD><TD WIDTH=20%>1629789779</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>7</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Snakefejs">Snakefejs</A></TD><TD WIDTH=15%>461</TD><TD WIDTH=20%>1618876805</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>8</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ilidan">Ilidan</A></TD><TD WIDTH=15%>458</TD><TD WIDTH=20%>1580950961</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>9</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Crazy+skanerr">Crazy skanerr</A></TD><TD WIDTH=15%>454</TD><TD WIDTH=20%>1544856866</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>10</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Wudu+Than">Wudu Than</A></TD><TD WIDTH=15%>452</TD><TD WIDTH=20%>1518974523</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>11</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Magicalse">Magicalse</A></TD><TD WIDTH=15%>451</TD><TD WIDTH=20%>1508923357</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>12</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Aratar+Payne">Aratar Payne</A></TD><TD WIDTH=15%>450</TD><TD WIDTH=20%>1504514023</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>13</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Deichkind">Deichkind</A></TD><TD WIDTH=15%>446</TD><TD WIDTH=20%>1462673468</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>14</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Bay">Bay</A></TD><TD WIDTH=15%>442</TD><TD WIDTH=20%>1428471685</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>15</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Santa+of+Xerena">Santa of Xerena</A></TD><TD WIDTH=15%>440</TD><TD WIDTH=20%>1401937119</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>16</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Martin+Karlsson">Martin Karlsson</A></TD><TD WIDTH=15%>438</TD><TD WIDTH=20%>1383675320</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>17</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Druid+Bloom">Druid Bloom</A></TD><TD WIDTH=15%>436</TD><TD WIDTH=20%>1364221936</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>18</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=General+Fiimp">General Fiimp</A></TD><TD WIDTH=15%>433</TD><TD WIDTH=20%>1336916121</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>19</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Dillaz">Dillaz</A></TD><TD WIDTH=15%>432</TD><TD WIDTH=20%>1333265611</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>20</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Jay+Rolla">Jay Rolla</A></TD><TD WIDTH=15%>432</TD><TD WIDTH=20%>1330921557</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>21</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Kenami">Kenami</A></TD><TD WIDTH=15%>432</TD><TD WIDTH=20%>1326654204</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>22</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Dank+Trefemma">Dank Trefemma</A></TD><TD WIDTH=15%>432</TD><TD WIDTH=20%>1326103498</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>23</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Super+Bonden">Super Bonden</A></TD><TD WIDTH=15%>429</TD><TD WIDTH=20%>1303935822</TD></TR>
+<TR BGCOLOR="#D4C0A1"><TD WIDTH=10%>24</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Aregon+The+king">Aregon The king</A></TD><TD WIDTH=15%>428</TD><TD WIDTH=20%>1293378843</TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD WIDTH=10%>25</TD><TD WIDTH=55%><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Linglifer">Linglifer</A></TD><TD WIDTH=15%>426</TD><TD WIDTH=20%>1273160527</TD></TR>
+</TABLE>
+<TABLE BORDER=0 CELLPADDING=4 CELLSPACING=1 WIDTH=100%>
+<TR><TD WIDTH=100% ALIGN=right VALIGN=top><A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=experience&page=1" CLASS="size_xxs">Rank 26-50</A></TD></TR>
+</TABLE>
+</TD>
+<TD WIDTH=5%><IMG SRC="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/blank.gif" WIDTH=1 HEIGHT=1 BORDER=0></TD>
+<TD WIDTH=15% VALIGN=top ALIGN=right>
+<TABLE BORDER=0 CELLPADDING=4 CELLSPACING=1>
+<TR BGCOLOR="#505050"><TD CLASS=white><B>Choose a category</B></TD></TR>
+<TR BGCOLOR="#F1E0C6"><TD>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=magic" CLASS="size_xs">Magic</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=shielding" CLASS="size_xs">Shielding</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=distance" CLASS="size_xs">Distance</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=sword" CLASS="size_xs">Sword</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=club" CLASS="size_xs">Club</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=axe" CLASS="size_xs">Axe</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=fist" CLASS="size_xs">Fist</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=fishing" CLASS="size_xs">Fishing</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=achievements" CLASS="size_xs">Achievements</A><BR>
+<A HREF="https://secure.tibia.com/community/?subtopic=highscores&world=Antica&list=loyalty" CLASS="size_xs">Loyalty</A><BR>
+</TD></TR>
+</TABLE>
+</TD></TR>
+</TABLE>
+        </div>
+      </div>
+    </div>
+    <div class="Border_1" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/border-1.gif);"></div>
+    <div class="CornerWrapper-b"><div class="Corner-bl" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/corner-bl.gif);"></div></div>
+    <div class="CornerWrapper-b"><div class="Corner-br" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/corner-br.gif);"></div></div>
+  </div>
+              <div id="ThemeboxesColumn" >
+                <div id="DeactivationContainerThemebox" onClick="DisableDeactivationContainer();" ></div>
+                <div id="RightArtwork">
+                  <img id="Monster" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/monsters/lion.gif" onClick="window.location = 'http://www.tibia.com/library/?subtopic=creatures&amp;race=lion';" alt="Monster of the Week" />
+                  <img id="PedestalAndOnline" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/pedestal-and-online.gif" alt="Monster Pedestal and Players Online Box"/>
+                  <div id="PlayersOnline" onClick="window.location = 'https://secure.tibia.com/community/?subtopic=worlds';">19952<br />Players Online</div>
+                </div>
+                <div id="Themeboxes">
+                  <!-- premium theme box -->
+<div id="PremiumBox" class="Themebox" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/themeboxes/premium/premiumbox.gif);">
+    <div class="ThemeboxButton" >
+    <form action="https://secure.tibia.com/account/index.php?subtopic=redirectlogin&redirect=https%3A%2F%2Fsecure.tibia.com%2Faccount%2F%3Fsubtopic%3Daccountmanagement%23Products%2BAvailable" method="post" style="padding:0px;margin:0px;" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_green.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_green_over.gif);" ></div><input class="ButtonText" type="image" name="Get Premium" alt="Get Premium" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_getpremium.gif" ></div></div></form>  </div>
+  <div class="Bottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif);"></div>
+</div>
+
+<!-- networks theme box -->
+<div id="NetworksBox" class="Themebox"  style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/themeboxes/networks/networksbox.png);" >
+  <div id="FacebookBlock" >
+    <div id="FacebookLikeBox" >
+      <div class="fb-like-box" data-href="https://www.facebook.com/tibia" data-width="175" data-height="180" data-show-faces="true" data-stream="false" data-border-color="none" data-header="false"></div>
+    </div>
+    <div id="FacebookSendBox" >
+      <div class="fb-send" data-href="https://www.facebook.com/tibia" data-width="50" data-height="20" ></div>
+    </div>
+    <div id="FacebookLikes" >
+      <div class="fb-like" data-href="https://www.facebook.com/tibia" data-width="50" data-layout="standard" data-action="recommend" data-show-faces="false" ></div>
+    </div>
+  </div>
+  <div id="TwitterBlock" >
+    <a href="https://twitter.com/Tibia" class="twitter-follow-button" data-show-count="false">Follow @Tibia</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </div>
+  <div class="Bottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif);"></div>
+</div>
+
+    <!-- random fansite theme box -->
+    <div id="FansiteBox" class="Themebox" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/themeboxes/fansites/fansites_themebox.gif);">
+      <div id="FansiteLogoFrame" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/themeboxes/fansites/border_supported.gif);">
+        <a href="http://www.tibiahof.com" target="_blank" ><img id="FansiteLogo" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/community/fansitelogos/TibiaHof.com.gif" /></a>
+      </div>
+      <div class="ThemeboxButton" >
+        <form action="https://secure.tibia.com/community/?subtopic=fansites" method="post" style="padding:0px;margin:0px;" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="View all Fansites" alt="View all Fansites" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_viewallfansites.gif" ></div></div></form>      </div>
+      <div class="Bottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif);"></div>
+    </div>
+                </div>
+              </div>
+            </div>
+            <div id="Footer">
+              Copyright by CipSoft GmbH. All rights reserved.<br/>
+              <a href="http://www.tibia.com/abouttibia/?subtopic=aboutcipsoft">About CipSoft</a> | <a href="http://www.tibia.com/support/?subtopic=legaldocuments&amp;page=agreement">Service Agreement</a> | <a href="http://www.tibia.com/support/?subtopic=legaldocuments&amp;page=privacy">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" >
+    // disable all control elements which are not part of the content container element
+    if (g_Deactivated == true) {
+      document.getElementById('LoginButtonContainer').style.zIndex = "1";
+      document.getElementById('DeactivationContainer').style.display = "block";
+      document.getElementById('DeactivationContainer').style.zIndex = "50";
+      document.getElementById('DeactivationContainerThemebox').style.display = "block";
+      document.getElementById('Monster').style.cursor = "auto";
+      document.getElementById('PlayersOnline').style.cursor = "auto";
+      document.getElementById('ThemeboxesColumn').style.opacity = "0.30";
+      document.getElementById('ThemeboxesColumn').style.MozOpacity = "0.30";
+      document.getElementById('ThemeboxesColumn').filters.alpha.opacity = "0.75";
+      document.getElementById('ThemeboxesColumn').style.filter = "alpha(opacity=50); opacity: 0.30";
+      document.getElementById('Monster').setAttribute("onclick", "");
+      document.getElementById('PlayersOnline').setAttribute("onclick", "");
+    }
+  </script>
+  <div id="HelperDivContainer" style="background-image: url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/scroll.gif);" ><div class="HelperDivArrow" style="background-image: url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/helper-div-arrow.png);" ></div><div id="HelperDivHeadline" ></div><div id="HelperDivText" ></div><center><img class="Ornament" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/ornament.gif" /></center><br/></div></body>
+</html>
