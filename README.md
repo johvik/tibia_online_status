@@ -15,7 +15,7 @@ _Note that the information provided is only as accurate as the information on th
 
 ## Download
 * [Google Chrome](https://chrome.google.com/webstore/detail/tibia-online-status/mlpikpafkalaelbchmohpffpbkpoiaaf)
-* [Mozilla Firefox](https://addons.mozilla.org/pt-BR/firefox/addon/tibia-online-status/?src=cb-dl-updated)
+* [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/tibia-online-status/)
 
 ## Contribute
 To build run `npm install` followed by `grunt`.
