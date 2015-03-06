@@ -48,24 +48,38 @@ Utils.prototype.fetch = function(url, callback) {
 };
 
 /**
- * Mark characters links green if online. Optional callback(link_element, player) for each online player.
+ * Find all links with online characters. Returns an array with { link, player } objects.
  */
-Utils.prototype.markOnlineLinks = function(root_element, players, callback) {
+Utils.prototype.findOnlineCharacters = function(root_element, players) {
   var self = this;
   var links = root_element.getElementsByTagName('a');
   var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
+  var online = [];
   for (var i = 0, j = links.length; i < j; i++) {
     if (link_exp.test(links[i].href)) {
       var name = self.decode(links[i].innerHTML);
       var player = players[name];
       if (player) {
-        if (callback) {
-          callback(links[i], player);
-        }
-        links[i].style.color = self.color.green;
+        online.push({
+          link: links[i],
+          player: player
+        });
       }
     }
   }
+  return online;
+};
+
+/**
+ * Mark characters links green if online. Returns the result from findOnlineCharacters.
+ */
+Utils.prototype.markOnlineLinks = function(root_element, players) {
+  var self = this;
+  var online = self.findOnlineCharacters(root_element, players);
+  for (var i = 0, j = online.length; i < j; i++) {
+    online[i].link.style.color = self.color.green;
+  }
+  return online;
 };
 
 /**

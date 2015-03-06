@@ -99,11 +99,40 @@ describe('Utils', function() {
     });
   });
 
+  describe('#findOnlineCharacters', function() {
+    it('should find online', function() {
+      var document = jsdom('<a href="https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="https://secure.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>');
+      var online = utils.findOnlineCharacters(document, {
+        'Bubble': {
+          level: 100,
+          vocation: 'Knight'
+        }
+      });
+      online.should.have.lengthOf(1);
+      online[0].should.have.keys('link', 'player');
+      should.exist(online[0].link);
+      online[0].player.should.eql({
+        level: 100,
+        vocation: 'Knight'
+      });
+    });
+  });
+
   describe('#markOnlineLinks', function() {
     it('should mark online green', function() {
       var document = jsdom('<a href="https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="https://secure.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>');
-      utils.markOnlineLinks(document, {
-        'Chorizo\'korv': {}
+      var online = utils.markOnlineLinks(document, {
+        'Chorizo\'korv': {
+          level: 500,
+          vocation: 'None'
+        }
+      });
+      online.should.have.lengthOf(1);
+      online[0].should.have.keys('link', 'player');
+      should.exist(online[0].link);
+      online[0].player.should.eql({
+        level: 500,
+        vocation: 'None'
       });
       var links = document.getElementsByTagName('a');
       TestUtils.rgbToHex(links[0].style.color).should.equal(utils.color.green);

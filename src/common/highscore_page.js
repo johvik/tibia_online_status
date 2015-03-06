@@ -29,21 +29,22 @@ HighscorePage.prototype.parse = function(callback) {
  */
 HighscorePage.prototype.update = function(players) {
   var self = this;
-  self.utils.markOnlineLinks(self.elements.highscores_div, players, function(link_element, player) {
-    // Set level if found
-    if (self.list === 'Experience') {
-      if (link_element.parentElement && link_element.parentElement.parentElement) {
-        var columns = link_element.parentElement.parentElement.getElementsByTagName('td');
+  var online = self.utils.markOnlineLinks(self.elements.highscores_div, players);
+  // Set level if found
+  if (self.list === 'Experience') {
+    for (var i = 0, j = online.length; i < j; i++) {
+      if (online[i].link.parentElement && online[i].link.parentElement.parentElement) {
+        var columns = online[i].link.parentElement.parentElement.getElementsByTagName('td');
         if (columns.length >= 4) {
           var row_value = columns[2].textContent.trim();
           var level = parseInt(row_value, 10);
           if (!isNaN(level)) {
-            self.utils.setLevel(columns[2], level, player.level);
+            self.utils.setLevel(columns[2], level, online[i].player.level);
           }
         }
       }
     }
-  });
+  }
 };
 
 /**
