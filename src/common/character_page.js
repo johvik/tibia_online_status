@@ -21,12 +21,12 @@ CharacterPage.prototype.parse = function(callback) {
   var parsed_characters = false;
 
   for (var i = 0, j = character_tables.length; i < j; i++) {
-    if (!parsed_character_information && /Character Information/.test(character_tables[i].innerHTML)) {
+    if (!parsed_character_information && /Character Information/.test(character_tables[i].textContent)) {
       if (!self.parseCharacterInformation(character_tables[i])) {
         return callback('Failed to parse character information. Name:' + self.name + ', Vocation:' + self.vocation + ', Level:' + self.level + ', World:' + self.world);
       }
       parsed_character_information = true;
-    } else if (!parsed_characters && /Characters/.test(character_tables[i].innerHTML)) {
+    } else if (!parsed_characters && /Characters/.test(character_tables[i].textContent)) {
       self.parseCharacters(character_tables[i]);
       parsed_characters = true;
     }
@@ -56,7 +56,7 @@ CharacterPage.prototype.parseCharacterInformation = function(table) {
     var columns = rows[i].getElementsByTagName('td');
 
     if (columns.length >= 2) {
-      var row_name = columns[0].innerHTML;
+      var row_name = columns[0].textContent;
       var row_value = columns[1].textContent.trim();
       if (!name_found && row_name === 'Name:') {
         self.elements.name_column = columns[1];

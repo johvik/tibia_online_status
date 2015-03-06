@@ -57,7 +57,7 @@ Utils.prototype.findOnlineCharacters = function(root_element, players) {
   var online = [];
   for (var i = 0, j = links.length; i < j; i++) {
     if (link_exp.test(links[i].href)) {
-      var name = self.decode(links[i].innerHTML);
+      var name = links[i].textContent.replace(/\s/g, ' ');
       var player = players[name];
       if (player) {
         online.push({

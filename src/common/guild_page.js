@@ -14,7 +14,7 @@ GuildPage.prototype.parse = function(callback) {
   }
   self.elements.guilds_div = guilds_div;
 
-  var world_match = guilds_div.innerHTML.match(/The guild was founded on (.*?) on /);
+  var world_match = guilds_div.textContent.match(/The guild was founded on (.*?) on /);
   if (world_match === null) {
     return callback('No world found');
   }
