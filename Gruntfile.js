@@ -138,6 +138,7 @@ module.exports = function(grunt) {
           'dest/chrome/data/background.js': ['src/common/world_page.js', 'src/chrome/data/background.js'],
           'dest/chrome/data/utils.js': ['src/common/utils.js', 'src/chrome/data/chrome_page.js'],
           'dest/chrome/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
+          'dest/chrome/data/guilds.js': ['src/common/guild_page.js', 'src/common/pages/guilds.js'],
           'dest/chrome/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js'],
           'dest/chrome/options/options.js': ['src/chrome/options/options.js']
         }
@@ -149,6 +150,7 @@ module.exports = function(grunt) {
           'dest/firefox/lib/utils.js': ['src/common/utils.js'],
           'dest/firefox/data/utils.js': ['src/common/utils.js', 'src/firefox/data/firefox_page.js'],
           'dest/firefox/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
+          'dest/firefox/data/guilds.js': ['src/common/guild_page.js', 'src/common/pages/guilds.js'],
           'dest/firefox/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js']
         }
       }

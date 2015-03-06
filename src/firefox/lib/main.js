@@ -44,6 +44,12 @@ pageMod.PageMod({
 });
 
 pageMod.PageMod({
+  include: ["http://www.tibia.com/community/?subtopic=guilds*", "https://secure.tibia.com/community/?subtopic=guilds*"],
+  contentScriptFile: [data.url("utils.js"), data.url("guilds.js")],
+  onAttach: onAttach
+});
+
+pageMod.PageMod({
   include: ["http://www.tibia.com/community/?subtopic=highscores*", "https://secure.tibia.com/community/?subtopic=highscores*"],
   contentScriptFile: [data.url("utils.js"), data.url("highscores.js")],
   onAttach: onAttach

@@ -1,0 +1,2429 @@
+<html>
+<head>
+  <title>Tibia - Free Multiplayer Online Role Playing Game - Community</title>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />  <meta name="description" content="Tibia is a free massively multiplayer online role-playing game (MMORPG). Join this fascinating game that has thousands of fans from all over the world! - http://www.tibia.com" />
+  <meta name="author" content="CipSoft GmbH" />
+  <meta http-equiv="content-language" content="en" />
+  <meta name="keywords" content="free online game, free multiplayer game, free online rpg, free mmorpg, mmorpg, mmog, online role playing game, online multiplayer game, internet game, online rpg, rpg" />
+  <meta name="google-site-verification" content="DnO3wR8m-XUPrU02NoZt9x3vMB0fjpOXXJshbKucEj8" />
+
+  <!--  regular browsers -->
+  <link rel="shortcut icon" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/favicon.ico" type="image/x-icon">
+  <!-- For iPad with high-resolution Retina display running iOS = 7: -->
+  <link rel="apple-touch-icon" sizes="152x152" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-152x152.png">
+  <!-- For iPad with high-resolution Retina display running iOS = 6: -->
+  <link rel="apple-touch-icon" sizes="144x144" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-144x144.png">
+  <!-- For iPhone with high-resolution Retina display running iOS = 7: -->
+  <link rel="apple-touch-icon" sizes="120x120" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-120x120.png">
+  <!-- For iPhone with high-resolution Retina display running iOS = 6: -->
+  <link rel="apple-touch-icon" sizes="114x114" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-114x114.png">
+  <!-- For the iPad mini and the first- and second-generation iPad on iOS = 7: -->
+  <link rel="apple-touch-icon" sizes="76x76" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-76x76.png">
+  <!-- For the iPad mini and the first- and second-generation iPad on iOS = 6: -->
+  <link rel="apple-touch-icon" sizes="72x72" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-72x72.png">
+  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon.png">
+  <!-- Fallback for older devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/apple-touch-icon-precomposed.png">
+
+  <link href="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/styles/basic_d.css?version=754e58cf1f85b08732433cd22bea6662" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/extern/jquery.js" ></script>
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/extern/jquery_ui/jquery-ui.core.js" ></script>
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/extern/jquery_ui/jquery-ui.widgets.js" ></script>
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/ajax/ajaxcip.js" ></script>
+    <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/generic.js?version=162424c1525895fb7aa44914903651ca" ></script>
+  <script type='text/javascript'>  var loginStatus=0; loginStatus='false';  var activeSubmenuItem='guilds';  var JS_DIR_IMAGES=0; JS_DIR_IMAGES='https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/';  var JS_DIR_ACCOUNT=0; JS_DIR_ACCOUNT='https://secure.tibia.com/account/';  var g_FormName='';  var g_FormField='';  var g_Deactivated=false;  var g_FlashClientInPopUp=true;var FB_TryLogin = 0;var FB_ForceReload = 0;</script><script type="text/javascript" >
+  if(top.location != window.location) {
+    g_FlashClientInPopUp = false;
+  }
+</script>
+  <script type="text/javascript" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/javascripts/initialize.js?version=84b006a17f10638ad20e77ad1647b8df" ></script>
+  
+</head>
+
+<body onBeforeUnLoad="SaveMenu();" onUnload="SaveMenu();" onLoad="SetFormFocus()" >
+  <script type="text/javascript" >
+var g_FB_LoginURL = "";
+</script>
+<div id="fb-root" ></div><script type="text/javascript" >
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 497232093667125, // App ID
+      status     : true,              // check login status
+      cookie     : true,              // enable cookies to allow the server to access the session
+      xfbml      : true               // parse XFBML
+    });
+    FB.Event.subscribe('auth.login', function() {
+      var URLHelper = "?";
+      if (window.location.search.replace("?", "").length > 0) {
+        URLHelper = "&";
+      }
+      if (FB_TryLogin == 1) {
+        window.location = "https://secure.tibia.com/mmorpg/free-multiplayer-online-role-playing-game.php" + window.location.search + URLHelper + "step=facebooktrylogin&wasreloaded=1";
+      } else if (FB_TryLogin == 2) {
+        window.location = window.location + URLHelper + "page=facebooktrylogin&wasreloaded=1";
+      } else {
+      }
+    });
+    FB.Event.subscribe('auth.logout', function(a_Response) {
+      if (a_Response.status !== 'connected') {
+        window.location.href=window.location.href;
+      } else {
+        /* nothing to do here*/
+      }
+    });
+    FB.Event.subscribe('auth.statusChange', function(response) {
+      if (FB_ForceReload == 1 && response.status == "connected") {
+        var URLHelper = "?";
+        if (window.location.search.replace("?", "").length > 0) {
+          URLHelper = "&";
+        }
+        window.location = window.location + URLHelper + "step=facebooktrylogin&wasreloaded=1";
+      }
+    });
+  };
+  (function(d){
+    var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement('script'); js.id = id; js.async = true;
+    js.src = "//connect.facebook.net/en_US/all.js";
+    ref.parentNode.insertBefore(js, ref);
+  }(document));
+</script>
+
+  <div id="DeactivationContainer" onClick="DisableDeactivationContainer();" ></div>
+
+  <a name="top" ></a>
+  <div id="DeactivationContainer" onClick="DisableDeactivationContainer();" ></div>
+
+  <div id="MainHelper1" >
+    <div id="MainHelper2" >
+      <div id="ArtworkHelper1" >
+        <div id="ArtworkHelper2" >
+          <div id="HeaderArtworkDiv" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/background-artwork.jpg);" ></div>
+        </div>
+      </div>
+
+      <div id="Bodycontainer" >
+        <div id="ContentRow">
+          <div id="MenuColumn">
+            <div id="LeftArtwork">
+              <a href="https://secure.tibia.com/mmorpg/free-multiplayer-online-role-playing-game.php" ><img id="TibiaLogoArtworkTop" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/tibia-logo-artwork-top.gif" alt="logoartwork" /></a>
+              <img id="LogoLink" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/tibia-logo-artwork-string.gif" onClick="window.location = 'http://www.tibia.com/abouttibia/?subtopic=aboutcipsoft';" alt="logoartwork" />
+            </div>
+            
+  <div id="Loginbox" >
+    <div id="LoginTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-top.gif)" ></div>
+    <div id="BorderLeft" class="LoginBorder" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif)" ></div>
+    <div id="LoginButtonContainer" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/loginbox/loginbox-textfield-background.gif)" >
+      <div id="PlayNowContainer" ><form class="MediumButtonForm" action="https://secure.tibia.com/account/?subtopic=accountmanagement" method="post" ><input type="hidden" name="page" value="overview" ><div class="MediumButtonBackground" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/mediumbutton.gif)" onMouseOver="MouseOverMediumButton(this);" onMouseOut="MouseOutMediumButton(this);" ><div class="MediumButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/mediumbutton-over.gif)" onMouseOver="MouseOverMediumButton(this);" onMouseOut="MouseOutMediumButton(this);" ></div><input class="MediumButtonText" type="image" name="Play Now" alt="Play Now" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/mediumbutton_playnow.png" /></div></form></div>
+    </div>
+    <div class="Loginstatus" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/loginbox/loginbox-textfield-background.gif)" >
+      <div id="LoginstatusText" onClick="LoginstatusTextAction(this);" onMouseOver="MouseOverLoginBoxText(this);" onMouseOut="MouseOutLoginBoxText(this);" ><div id="LoginstatusText_1" class="LoginstatusText" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/loginbox/loginbox-font-create-account.gif)" ></div><div id="LoginstatusText_2" class="LoginstatusText" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/loginbox/loginbox-font-create-account-over.gif)" ></div></div>
+    </div>
+    <div id="BorderRight" class="LoginBorder" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif)" ></div>
+    <div id="LoginBottom" class="Loginstatus" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif)" ></div>
+  </div>
+<div id='Menu'>
+<div id='MenuTop' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-top.gif);'></div>
+<div id='news' class='menuitem'>
+<span onClick="MenuItemAction('news')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='news_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='news_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-news.gif);'></div>
+      <div id='news_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-news.gif);'></div>
+      <div id='news_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='news_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/news/?subtopic=latestnews'>
+  <div id='submenu_latestnews' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_latestnews' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_latestnews' class='SubmenuitemLabel'>Latest News</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/news/?subtopic=newsarchive'>
+  <div id='submenu_newsarchive' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_newsarchive' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_newsarchive' class='SubmenuitemLabel'>News Archive</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='abouttibia' class='menuitem'>
+<span onClick="MenuItemAction('abouttibia')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='abouttibia_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='abouttibia_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-abouttibia.gif);'></div>
+      <div id='abouttibia_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-abouttibia.gif);'></div>
+      <div id='abouttibia_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='abouttibia_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/abouttibia/?subtopic=whatistibia'>
+  <div id='submenu_whatistibia' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_whatistibia' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_whatistibia' class='SubmenuitemLabel'>What Is Tibia?</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/abouttibia/?subtopic=screenshots'>
+  <div id='submenu_screenshots' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_screenshots' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_screenshots' class='SubmenuitemLabel'>Screenshots</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/abouttibia/?subtopic=gamefeatures'>
+  <div id='submenu_gamefeatures' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_gamefeatures' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_gamefeatures' class='SubmenuitemLabel'>Game Features</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/abouttibia/?subtopic=premiumfeatures'>
+  <div id='submenu_premiumfeatures' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_premiumfeatures' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_premiumfeatures' class='SubmenuitemLabel'>Premium Features</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/abouttibia/?subtopic=aboutcipsoft'>
+  <div id='submenu_aboutcipsoft' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_aboutcipsoft' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_aboutcipsoft' class='SubmenuitemLabel'>About CipSoft</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='gameguides' class='menuitem'>
+<span onClick="MenuItemAction('gameguides')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='gameguides_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='gameguides_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-gameguides.gif);'></div>
+      <div id='gameguides_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-gameguides.gif);'></div>
+      <div id='gameguides_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='gameguides_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/gameguides/?subtopic=quickstart'>
+  <div id='submenu_quickstart' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_quickstart' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_quickstart' class='SubmenuitemLabel'>Quickstart</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/gameguides/?subtopic=manual'>
+  <div id='submenu_manual' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_manual' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_manual' class='SubmenuitemLabel'>Manual</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/gameguides/?subtopic=securityhints'>
+  <div id='submenu_securityhints' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_securityhints' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_securityhints' class='SubmenuitemLabel'>Security Hints</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='library' class='menuitem'>
+<span onClick="MenuItemAction('library')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='library_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='library_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-library.gif);'></div>
+      <div id='library_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-library.gif);'></div>
+      <div id='library_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='library_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/library/?subtopic=creatures'>
+  <div id='submenu_creatures' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_creatures' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_creatures' class='SubmenuitemLabel'>Creatures</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=spells'>
+  <div id='submenu_spells' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_spells' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_spells' class='SubmenuitemLabel'>Spells</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=achievements'>
+  <div id='submenu_achievements' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_achievements' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_achievements' class='SubmenuitemLabel'>Achievements</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=worldquests'>
+  <div id='submenu_worldquests' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_worldquests' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_worldquests' class='SubmenuitemLabel'>World Quests</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=experiencetable'>
+  <div id='submenu_experiencetable' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_experiencetable' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_experiencetable' class='SubmenuitemLabel'>Experience Table</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=maps'>
+  <div id='submenu_maps' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_maps' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_maps' class='SubmenuitemLabel'>Maps</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/library/?subtopic=genesis'>
+  <div id='submenu_genesis' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_genesis' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_genesis' class='SubmenuitemLabel'>Genesis</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='community' class='menuitem'>
+<span onClick="MenuItemAction('community')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='community_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='community_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-community.gif);'></div>
+      <div id='community_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-community.gif);'></div>
+      <div id='community_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='community_Submenu' class='Submenu'>
+<a href='https://secure.tibia.com/community/?subtopic=characters'>
+  <div id='submenu_characters' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_characters' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_characters' class='SubmenuitemLabel'>Characters</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=worlds'>
+  <div id='submenu_worlds' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_worlds' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_worlds' class='SubmenuitemLabel'>Worlds</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=highscores'>
+  <div id='submenu_highscores' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_highscores' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_highscores' class='SubmenuitemLabel'>Highscores</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=killstatistics'>
+  <div id='submenu_killstatistics' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_killstatistics' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_killstatistics' class='SubmenuitemLabel'>Kill Statistics</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=houses'>
+  <div id='submenu_houses' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_houses' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_houses' class='SubmenuitemLabel'>Houses</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=guilds'>
+  <div id='submenu_guilds' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_guilds' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_guilds' class='SubmenuitemLabel'>Guilds</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=polls'>
+  <div id='submenu_polls' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_polls' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_polls' class='SubmenuitemLabel'>Polls</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=feedbackform'>
+  <div id='submenu_feedbackform' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_feedbackform' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_feedbackform' class='SubmenuitemLabel'>Feedback Form</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=conventions'>
+  <div id='submenu_conventions' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_conventions' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_conventions' class='SubmenuitemLabel'>Conventions</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=fansites'>
+  <div id='submenu_fansites' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_fansites' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_fansites' class='SubmenuitemLabel'>Fansites</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/community/?subtopic=resellers'>
+  <div id='submenu_resellers' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_resellers' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_resellers' class='SubmenuitemLabel'>Resellers</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='forum' class='menuitem'>
+<span onClick="MenuItemAction('forum')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='forum_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='forum_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-forum.gif);'></div>
+      <div id='forum_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-forum.gif);'></div>
+      <div id='forum_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='forum_Submenu' class='Submenu'>
+<a href='http://forum.tibia.com/forum/?subtopic=worldboards'>
+  <div id='submenu_worldboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_worldboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_worldboards' class='SubmenuitemLabel'>World Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=tradeboards'>
+  <div id='submenu_tradeboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_tradeboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_tradeboards' class='SubmenuitemLabel'>Trade Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=communityboards'>
+  <div id='submenu_communityboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_communityboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_communityboards' class='SubmenuitemLabel'>Community Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=councilboards'>
+  <div id='submenu_councilboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_councilboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_councilboards' class='SubmenuitemLabel'>Council Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=supportboards'>
+  <div id='submenu_supportboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_supportboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_supportboards' class='SubmenuitemLabel'>Support Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://forum.tibia.com/forum/?subtopic=guildboards'>
+  <div id='submenu_guildboards' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_guildboards' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_guildboards' class='SubmenuitemLabel'>Guild Boards</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='account' class='menuitem'>
+<span onClick="MenuItemAction('account')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='account_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='account_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-account.gif);'></div>
+      <div id='account_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-account.gif);'></div>
+      <div id='account_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='account_Submenu' class='Submenu'>
+<a href='https://secure.tibia.com/account/?subtopic=accountmanagement&amp;page=overview'>
+  <div id='submenu_accountmanagement' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_accountmanagement' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_accountmanagement' class='SubmenuitemLabel'>Account Management</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/account/?subtopic=createaccount'>
+  <div id='submenu_createaccount' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_createaccount' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_createaccount' class='SubmenuitemLabel'>Create Account</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/account/?subtopic=downloadclient&step=downloadagreement'>
+  <div id='submenu_downloadclient' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_downloadclient' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_downloadclient' class='SubmenuitemLabel'>Download Client</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='https://secure.tibia.com/account/?subtopic=lostaccount'>
+  <div id='submenu_lostaccount' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_lostaccount' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_lostaccount' class='SubmenuitemLabel'>Lost Account?</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='support' class='menuitem'>
+<span onClick="MenuItemAction('support')">
+  <div class='MenuButton' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background.gif);'>
+    <div onMouseOver='MouseOverMenuItem(this);' onMouseOut='MouseOutMenuItem(this);'><div class='Button' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/button-background-over.gif);'></div>
+      <span id='support_Lights' class='Lights'>
+        <div class='light_lu' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ld' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+        <div class='light_ru' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/green-light.gif);'></div>
+      </span>
+      <div id='support_Icon' class='Icon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-support.gif);'></div>
+      <div id='support_Label' class='Label' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/label-support.gif);'></div>
+      <div id='support_Extend' class='Extend' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/plus.gif);'></div>
+    </div>
+  </div>
+</span>
+<div id='support_Submenu' class='Submenu'>
+<a href='http://www.tibia.com/support/?subtopic=faq'>
+  <div id='submenu_faq' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_faq' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_faq' class='SubmenuitemLabel'>FAQ</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/support/?subtopic=tibiarules'>
+  <div id='submenu_tibiarules' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_tibiarules' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_tibiarules' class='SubmenuitemLabel'>Tibia Rules</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/support/?subtopic=tutorguide'>
+  <div id='submenu_tutorguide' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_tutorguide' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_tutorguide' class='SubmenuitemLabel'>Tutor Guide</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/support/?subtopic=parentsguide'>
+  <div id='submenu_parentsguide' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_parentsguide' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_parentsguide' class='SubmenuitemLabel'>Parents' Guide</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+<a href='http://www.tibia.com/support/?subtopic=legaldocuments'>
+  <div id='submenu_legaldocuments' class='Submenuitem' onMouseOver='MouseOverSubmenuItem(this)' onMouseOut='MouseOutSubmenuItem(this)'>
+    <div class='LeftChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+    <div id='ActiveSubmenuItemIcon_legaldocuments' class='ActiveSubmenuItemIcon' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/menu/icon-activesubmenu.gif);'></div>
+    <div id='ActiveSubmenuItemLabel_legaldocuments' class='SubmenuitemLabel'>Legal Documents</div>
+    <div class='RightChain' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/chain.gif);'></div>
+  </div>
+</a>
+</div>
+</div>
+<div id='MenuBottom' style='background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif);'></div>
+</div>
+<script type='text/javascript'>InitializePage();</script>          </div>
+          <div id="ContentColumn">
+            <div id="Content" class="Content">
+              <div id="ContentHelper">
+
+
+  <div id="guilds" class="Box">
+    <div class="Corner-tl" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/corner-tl.gif);"></div>
+    <div class="Corner-tr" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/corner-tr.gif);"></div>
+    <div class="Border_1" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/border-1.gif);"></div>
+    <div class="BorderTitleText" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/title-background-green.gif);"></div>
+    <img id="ContentBoxHeadline" class="Title" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/strings/headline-guilds.gif" alt="Contentbox headline" />
+    <div class="Border_2">
+      <div class="Border_3">
+        <div class="BoxContent" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/scroll.gif);">
+<TABLE BORDER=0 WIDTH=100%>
+<TR><TD WIDTH=64><IMG SRC="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/guildlogos/Satori.gif" WIDTH=64 HEIGHT=64></TD>
+<TD ALIGN=center WIDTH=100%><H1>Satori</H1></TD>
+<TD WIDTH=64><IMG SRC="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/guildlogos/Satori.gif" WIDTH=64 HEIGHT=64></TD></TR>
+</TABLE><BR>
+<TABLE Width=100%><colgroup><col width="90%"><col width="10%"></colgroup><TR><TD style="vertical-align:top; padding-right: 5px;"><div class="TableContainer" >  <table class="Table1" cellpadding="0" cellspacing="0" >    <div class="CaptionContainer" >      <div class="CaptionInnerContainer" >        <span class="CaptionEdgeLeftTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionBorderTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionVerticalLeft" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <div class="Text" >Guild Information</div>        <span class="CaptionVerticalRight" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <span class="CaptionBorderBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionEdgeLeftBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>      </div>    </div>    <tr>      <td>        <div class="InnerTableContainer" >          <table style="width:100%;" ><TR><TD><div id="GuildInformationContainer">As the world moves onward into darkness and the smell of blood is thick in the air, we strive to hold back the powers of the night. Justice and order shall be established once again, chaos shall be driven back into its murky lair. As we give light, so shall we receive light. 
+
+((Applications via Satori home page))
+<BR><BR>
+The guild was founded on Antica on Feb&#160;18&#160;2002.<BR>
+It is currently active.<BR>
+Guild is opened for applications.<BR>
+The official homepage is at <A HREF="http://www.satoriguild.net/satoriforum/index.php" TARGET="_blank">www.satoriguild.net/satoriforum/index.php</A>.<BR>
+Their home on Antica is Castle of the Winds. The rent is paid until Mar&#160;08&#160;2015.<BR>
+</div></TD></TR>          </table>        </div>      </td>    </tr>  </table></div></TD><TD style="vertical-align:top;"><div class="TableContainer" >  <table class="Table1" cellpadding="0" cellspacing="0" >    <div class="CaptionContainer" >      <div class="CaptionInnerContainer" >        <span class="CaptionEdgeLeftTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionBorderTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionVerticalLeft" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <div class="Text" >Navigation</div>        <span class="CaptionVerticalRight" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <span class="CaptionBorderBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionEdgeLeftBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>      </div>    </div>    <tr>      <td>        <div class="InnerTableContainer" >          <table style="width:100%;" ><tr><td align="center"><div id="NavigationContainer"><table border="0" cellspacing="0" cellpadding="0" ><form action="https://secure.tibia.com/community/?subtopic=guilds" method="post" ><tr><td style="border:0px;" ><input type="hidden" name=page value=guildwars ><input type="hidden" name=action value=view ><input type="hidden" name=GuildName value="Satori" ><input type="hidden" name=world value="Antica" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Guild Wars" alt="Guild Wars" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_guildwars.gif" ></div></div></td></tr></form></table><div style="font-size:1px;height:4px;" ></div><table border="0" cellspacing="0" cellpadding="0" ><form action="https://secure.tibia.com/community/?subtopic=guilds" method="post" ><tr><td style="border:0px;" ><input type="hidden" name=page value=guildevents ><input type="hidden" name=action value=view ><input type="hidden" name=GuildName value="Satori" ><input type="hidden" name=world value="Antica" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Guild Events" alt="Guild Events" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_guildevents.gif" ></div></div></td></tr></form></table><div style="font-size:1px;height:4px;" ></div><table border="0" cellspacing="0" cellpadding="0" ><form action="https://secure.tibia.com/account/index.php?subtopic=redirectlogin&redirect=https%3A%2F%2Fsecure.tibia.com%2Fcommunity%2F%3Fsubtopic%3Dguilds%26amp%3Bpage%3Dreportguild%26amp%3Baction%3Dselecttype%26amp%3BGuildName%3DSatori" method="post" ><tr><td style="border:0px;" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Report Offence" alt="Report Offence" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_reportoffence.gif" ></div></div></td></tr></form></table><div style="font-size:1px;height:4px;" ></div></div></td></tr>          </table>        </div>      </td>    </tr>  </table></div></TD></TR></TABLE><script type="text/javascript" >
+$(document).ready(function() {
+    var g_GuildInformationContainerHeight = $('#GuildInformationContainer').height();
+    if($('#AdministrationContainer').length > 0) {
+      var g_AdministrationContainerHeight = $('#AdministrationContainer').height() + 28;
+      var g_NavigationContainerHeight = $('#NavigationContainer').height() + 28;
+    } else {
+      var g_NavigationContainerHeight = $('#NavigationContainer').height();
+      var g_AdministrationContainerHeight = 0;
+    }
+    //alert(g_GuildInformationContainerHeight+' '+g_NavigationContainerHeight+' '+g_AdministrationContainerHeight);
+    if(g_GuildInformationContainerHeight < g_NavigationContainerHeight + g_AdministrationContainerHeight) {
+      $('#GuildInformationContainer').css('height', g_NavigationContainerHeight + g_AdministrationContainerHeight);
+    } else {
+      if($('#AdministrationContainer').length > 0) {
+        $('#NavigationContainer').css('height', g_GuildInformationContainerHeight * 0.7 - 28);
+        $('#AdministrationContainer').css('height', g_GuildInformationContainerHeight * 0.3 - 28);
+      } else {
+        $('#NavigationContainer').css('height', g_GuildInformationContainerHeight);
+      }
+    }
+  });</script>
+<BR>
+<div class="TableContainer" >  <table class="Table3" cellpadding="0" cellspacing="0" >    <div class="CaptionContainer" >      <div class="CaptionInnerContainer" >        <span class="CaptionEdgeLeftTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionBorderTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionVerticalLeft" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <div class="Text" >Guild Members</div>        <span class="CaptionVerticalRight" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <span class="CaptionBorderBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionEdgeLeftBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>      </div>    </div>    <tr>      <td>        <div class="InnerTableContainer" >          <table style="width:100%;" ><tr><td><div class="TableShadowContainerRightTop" >  <div class="TableShadowRightTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-rt.gif);" ></div></div><div class="TableContentAndRightShadow" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-rm.gif);" >  <div class="TableContentContainer" >    <table class="TableContent" width="100%" ><tr class="LabelH"><td>Rank&#160;&#160;<small style="font-weight:normal;" >[<a href="https://secure.tibia.com/community/?subtopic=guilds&page=view&order=rank_desc&GuildName=Satori&onlyshowonline=" >sort</a>]</small> <img class="sortarrow" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/order_desc.gif" /></td><td>Name and Title</td><td>Vocation&#160;&#160;<small style="font-weight:normal;" >[<a href="https://secure.tibia.com/community/?subtopic=guilds&page=view&order=vocation_desc&GuildName=Satori&onlyshowonline=" >sort</a>]</small> <img class="sortarrow" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/blank.gif" /></td><td>Level&#160;&#160;<small style="font-weight:normal;" >[<a href="https://secure.tibia.com/community/?subtopic=guilds&page=view&order=level_desc&GuildName=Satori&onlyshowonline=" >sort</a>]</small> <img class="sortarrow" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/blank.gif" /></td><td>Joining Date</td><td>Status</td></tr><TR BGCOLOR=#F1E0C6><TD>Shihan</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Alix">Alix</A> (Morticia)</TD>
+<TD>Elder Druid</TD>
+<TD>171</TD>
+<TD>Aug&#160;29&#160;2004</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arion">Arion</A> (Boomshakalakah)</TD>
+<TD>Elder Druid</TD>
+<TD>37</TD>
+<TD>Sep&#160;29&#160;2003</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Comodon">Comodon</A> (Doc)</TD>
+<TD>Master Sorcerer</TD>
+<TD>109</TD>
+<TD>Jun&#160;26&#160;2006</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Faerwynn">Faerwynn</A> (Misanthropist)</TD>
+<TD>Master Sorcerer</TD>
+<TD>102</TD>
+<TD>Feb&#160;18&#160;2002</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Floradelis">Floradelis</A> (Biermastah)</TD>
+<TD>Elder Druid</TD>
+<TD>254</TD>
+<TD>Dec&#160;09&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Killtec+paladin">Killtec&#160;paladin</A> (Lost Soul)</TD>
+<TD>Royal Paladin</TD>
+<TD>169</TD>
+<TD>May&#160;29&#160;2008</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Moldoz">Moldoz</A> (Pi)</TD>
+<TD>Elder Druid</TD>
+<TD>153</TD>
+<TD>Jan&#160;25&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nienna+Telperien">Nienna&#160;Telperien</A> (Deraisim Dreamer)</TD>
+<TD>Royal Paladin</TD>
+<TD>268</TD>
+<TD>Nov&#160;02&#160;2008</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vimuvawo">Vimuvawo</A> (Senior Recruiter)</TD>
+<TD>Elite Knight</TD>
+<TD>103</TD>
+<TD>May&#160;26&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>Meiyo Shihiin</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Aarc">Aarc</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>114</TD>
+<TD>Jan&#160;16&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Aguado">Aguado</A> (Made in Argentina)</TD>
+<TD>Royal Paladin</TD>
+<TD>106</TD>
+<TD>Feb&#160;24&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arsat">Arsat</A> (Gaikoukan)</TD>
+<TD>Sorcerer</TD>
+<TD>68</TD>
+<TD>Feb&#160;19&#160;2002</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Belisario">Belisario</A> (Lagbringer)</TD>
+<TD>Knight</TD>
+<TD>111</TD>
+<TD>Jul&#160;06&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Claudius+Bowen">Claudius&#160;Bowen</A> (Komon)</TD>
+<TD>Sorcerer</TD>
+<TD>27</TD>
+<TD>Feb&#160;20&#160;2002</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Death+Spray">Death&#160;Spray</A> (Keeper)</TD>
+<TD>Knight</TD>
+<TD>15</TD>
+<TD>Jan&#160;02&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Domini+Kromen">Domini&#160;Kromen</A> (Ambassador)</TD>
+<TD>Paladin</TD>
+<TD>97</TD>
+<TD>Nov&#160;13&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Hesperides">Hesperides</A> (Biku)</TD>
+<TD>Druid</TD>
+<TD>210</TD>
+<TD>Jun&#160;16&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Hircine">Hircine</A> (Darth Tapaz)</TD>
+<TD>Paladin</TD>
+<TD>29</TD>
+<TD>Aug&#160;10&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Jizzle+Flash">Jizzle&#160;Flash</A> (Kamikaze)</TD>
+<TD>Paladin</TD>
+<TD>130</TD>
+<TD>Jul&#160;30&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Kyuushi">Kyuushi</A> (Kanjougakari)</TD>
+<TD>Master Sorcerer</TD>
+<TD>173</TD>
+<TD>Feb&#160;16&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Oxiput">Oxiput</A> (King Keso)</TD>
+<TD>Paladin</TD>
+<TD>208</TD>
+<TD>Sep&#160;28&#160;2003</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Recca">Recca</A> (Ryuu)</TD>
+<TD>Knight</TD>
+<TD>117</TD>
+<TD>Dec&#160;15&#160;2002</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thalon">Thalon</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>46</TD>
+<TD>Feb&#160;19&#160;2002</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thimt+Horodus">Thimt&#160;Horodus</A> (Scrooge)</TD>
+<TD>Sorcerer</TD>
+<TD>76</TD>
+<TD>Jun&#160;08&#160;2006</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Tidol">Tidol</A> (Shadow)</TD>
+<TD>Knight</TD>
+<TD>100</TD>
+<TD>Jul&#160;30&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Walli">Walli</A> (Divine)</TD>
+<TD>Sorcerer</TD>
+<TD>27</TD>
+<TD>Nov&#160;24&#160;2006</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zaros+Kromen">Zaros&#160;Kromen</A> (Ambassador)</TD>
+<TD>Druid</TD>
+<TD>70</TD>
+<TD>Nov&#160;02&#160;2003</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>Hikyu</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sylvana+Blackarrow">Sylvana&#160;Blackarrow</A> (Senior Recruiter)</TD>
+<TD>Royal Paladin</TD>
+<TD>119</TD>
+<TD>Mar&#160;21&#160;2012</TD>
+<TD class='onlinestatus'><span class="green" ><b>online</b></span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vukar">Vukar</A> (Foh)</TD>
+<TD>Elite Knight</TD>
+<TD>264</TD>
+<TD>Aug&#160;26&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>Kanshi</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Fame+Leonard">Fame&#160;Leonard</A> (Lordhelmchen Master)</TD>
+<TD>Paladin</TD>
+<TD>116</TD>
+<TD>Apr&#160;15&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Indira">Indira</A> (Akari)</TD>
+<TD>Elite Knight</TD>
+<TD>78</TD>
+<TD>Apr&#160;30&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lord+Marshall">Lord&#160;Marshall</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>4</TD>
+<TD>Aug&#160;15&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>Komon</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Elrik">Elrik</A> (Grey Owl)</TD>
+<TD>Royal Paladin</TD>
+<TD>144</TD>
+<TD>Aug&#160;04&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>Taii</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Cimerion">Cimerion</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>159</TD>
+<TD>Apr&#160;15&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Gorox">Gorox</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>154</TD>
+<TD>Dec&#160;28&#160;2008</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Janette+Fearless">Janette&#160;Fearless</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>178</TD>
+<TD>Apr&#160;07&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sudden+Blackdeath">Sudden&#160;Blackdeath</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>137</TD>
+<TD>Sep&#160;05&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vash-The+Humanoid+Typhoon">Vash-The&#160;Humanoid&#160;Typhoon</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>255</TD>
+<TD>Sep&#160;11&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>Kouhei</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Amygem">Amygem</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>131</TD>
+<TD>May&#160;20&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Apfeleistee">Apfeleistee</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>152</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Big+Daddy">Big&#160;Daddy</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>299</TD>
+<TD>Nov&#160;01&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Crazy+Joe+Davola">Crazy&#160;Joe&#160;Davola</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>111</TD>
+<TD>May&#160;07&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Efonito">Efonito</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>113</TD>
+<TD>Aug&#160;12&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=El+Ay+Uhu">El&#160;Ay&#160;Uhu</A> (Rising Phoenix)</TD>
+<TD>Knight</TD>
+<TD>92</TD>
+<TD>Mar&#160;03&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Fengel">Fengel</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>90</TD>
+<TD>Mar&#160;09&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Flenge">Flenge</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>179</TD>
+<TD>Dec&#160;11&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Gatti">Gatti</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>64</TD>
+<TD>Aug&#160;12&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ithorion">Ithorion</A> (Mister Hokey)</TD>
+<TD>Elder Druid</TD>
+<TD>141</TD>
+<TD>Aug&#160;30&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Kale+Kees">Kale&#160;Kees</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>111</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Khattabovitch">Khattabovitch</A> (Kataporovisk)</TD>
+<TD>Elite Knight</TD>
+<TD>72</TD>
+<TD>Mar&#160;02&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Krypton+Van+San">Krypton&#160;Van&#160;San</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>121</TD>
+<TD>Aug&#160;31&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Kuwuten">Kuwuten</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>257</TD>
+<TD>Dec&#160;12&#160;2004</TD>
+<TD class='onlinestatus'><span class="green" ><b>online</b></span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Leon+Raz">Leon&#160;Raz</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>163</TD>
+<TD>Feb&#160;18&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Levon+Bedros">Levon&#160;Bedros</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>53</TD>
+<TD>Sep&#160;10&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lord+of+the+Vikings">Lord&#160;of&#160;the&#160;Vikings</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>142</TD>
+<TD>Jul&#160;16&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Maelways">Maelways</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>134</TD>
+<TD>Jan&#160;25&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Master+Kofi">Master&#160;Kofi</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>176</TD>
+<TD>Feb&#160;05&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Miissty">Miissty</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>135</TD>
+<TD>Nov&#160;09&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Mirer+Fellowen">Mirer&#160;Fellowen</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>50</TD>
+<TD>Sep&#160;25&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Natt+Dreamer">Natt&#160;Dreamer</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>111</TD>
+<TD>Apr&#160;05&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Oppenheimer">Oppenheimer</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>104</TD>
+<TD>May&#160;14&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Razy+Stardream">Razy&#160;Stardream</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>96</TD>
+<TD>Apr&#160;14&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Rissky+wat+dan">Rissky&#160;wat&#160;dan</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>133</TD>
+<TD>Jul&#160;28&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sassir">Sassir</A> (Ferumbras)</TD>
+<TD>Royal Paladin</TD>
+<TD>218</TD>
+<TD>Aug&#160;27&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Silver+Kiss">Silver&#160;Kiss</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>116</TD>
+<TD>Dec&#160;08&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Spurst">Spurst</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>78</TD>
+<TD>Jul&#160;01&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sucian+Nogriamur">Sucian&#160;Nogriamur</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>87</TD>
+<TD>Aug&#160;24&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Tabu+Fireheart">Tabu&#160;Fireheart</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>61</TD>
+<TD>Mar&#160;29&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thayan">Thayan</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>221</TD>
+<TD>Sep&#160;09&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Trixi">Trixi</A> (Foh)</TD>
+<TD>Royal Paladin</TD>
+<TD>265</TD>
+<TD>Jan&#160;08&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Wakojog">Wakojog</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>95</TD>
+<TD>Apr&#160;16&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Wrong+Way+Knight">Wrong&#160;Way&#160;Knight</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>135</TD>
+<TD>Mar&#160;08&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ximbli">Ximbli</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>186</TD>
+<TD>Sep&#160;27&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>Shinpei</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Luthientinuviel">Luthientinuviel</A> (Daughter of Twilight)</TD>
+<TD>Master Sorcerer</TD>
+<TD>63</TD>
+<TD>Aug&#160;12&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>Teishi</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Alan+Lara">Alan&#160;Lara</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>80</TD>
+<TD>Dec&#160;16&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arthus+Etell">Arthus&#160;Etell</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>86</TD>
+<TD>May&#160;29&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Aulit+Jaja">Aulit&#160;Jaja</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>37</TD>
+<TD>Apr&#160;09&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Chris+der+Edelmann">Chris&#160;der&#160;Edelmann</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>193</TD>
+<TD>Jan&#160;06&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Deidara+Sakime+Urichia">Deidara&#160;Sakime&#160;Urichia</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>61</TD>
+<TD>Aug&#160;05&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ferry+on+antica">Ferry&#160;on&#160;antica</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>85</TD>
+<TD>Aug&#160;24&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Homley">Homley</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>43</TD>
+<TD>Jun&#160;26&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Madarlon">Madarlon</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>70</TD>
+<TD>Aug&#160;07&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Moriphim">Moriphim</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>201</TD>
+<TD>Dec&#160;11&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nima">Nima</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>185</TD>
+<TD>Jun&#160;25&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Private+Medox">Private&#160;Medox</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>126</TD>
+<TD>Jan&#160;24&#160;2015</TD>
+<TD class='onlinestatus'><span class="green" ><b>online</b></span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Siiviex+Xenetheir">Siiviex&#160;Xenetheir</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>72</TD>
+<TD>Dec&#160;21&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Takeno+Dawnblade">Takeno&#160;Dawnblade</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>112</TD>
+<TD>Feb&#160;08&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vofibu+jr">Vofibu&#160;jr</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>48</TD>
+<TD>Jan&#160;31&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vrabac">Vrabac</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>126</TD>
+<TD>Dec&#160;08&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zaoguny">Zaoguny</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>102</TD>
+<TD>Aug&#160;04&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>Meiyo Meijin</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ainion">Ainion</A> (Recruiter)</TD>
+<TD>Paladin</TD>
+<TD>167</TD>
+<TD>Feb&#160;07&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Banud">Banud</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>56</TD>
+<TD>Jun&#160;13&#160;2004</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Duraxell">Duraxell</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>108</TD>
+<TD>Sep&#160;28&#160;2003</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Fisio">Fisio</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>142</TD>
+<TD>Aug&#160;08&#160;2004</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Funkstar">Funkstar</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>87</TD>
+<TD>Mar&#160;20&#160;2003</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Granger">Granger</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>93</TD>
+<TD>Aug&#160;26&#160;2003</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Iden+mirkwood">Iden&#160;mirkwood</A> (Recruiter)</TD>
+<TD>Sorcerer</TD>
+<TD>220</TD>
+<TD>Jun&#160;13&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Intrevor">Intrevor</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>45</TD>
+<TD>Jun&#160;30&#160;2002</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Isildur">Isildur</A> (Lord Sturzhelmchen)</TD>
+<TD>Paladin</TD>
+<TD>25</TD>
+<TD>May&#160;27&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Naitstalker">Naitstalker</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>118</TD>
+<TD>Jan&#160;14&#160;2008</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nanolfor">Nanolfor</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>120</TD>
+<TD>Apr&#160;04&#160;2004</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nin-ja">Nin-ja</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>124</TD>
+<TD>Nov&#160;16&#160;2004</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nitraam">Nitraam</A> (Lederhosen Commander)</TD>
+<TD>Knight</TD>
+<TD>130</TD>
+<TD>Nov&#160;17&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Orakles">Orakles</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>117</TD>
+<TD>Nov&#160;15&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Resc">Resc</A> (Yoda)</TD>
+<TD>Elder Druid</TD>
+<TD>44</TD>
+<TD>Nov&#160;16&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Schemmel">Schemmel</A> (Trial Supervisor)</TD>
+<TD>Paladin</TD>
+<TD>84</TD>
+<TD>Mar&#160;11&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Silent+merlin">Silent&#160;merlin</A> (Wurzel Disciple)</TD>
+<TD>Sorcerer</TD>
+<TD>140</TD>
+<TD>May&#160;09&#160;2004</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sir+Doury">Sir&#160;Doury</A> (Diplomat)</TD>
+<TD>Paladin</TD>
+<TD>123</TD>
+<TD>Sep&#160;15&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sir+of+Lords">Sir&#160;of&#160;Lords</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>93</TD>
+<TD>Feb&#160;08&#160;2005</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sudasozi">Sudasozi</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>36</TD>
+<TD>Jan&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Superior+Crusader">Superior&#160;Crusader</A> (Shogun)</TD>
+<TD>Knight</TD>
+<TD>82</TD>
+<TD>May&#160;17&#160;2005</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thibbs">Thibbs</A> (Diplomat)</TD>
+<TD>Paladin</TD>
+<TD>77</TD>
+<TD>Dec&#160;20&#160;2008</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>Meiyo Kaiin</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Amadeus+Mercilus">Amadeus&#160;Mercilus</A> (Nienna ismy secretary)</TD>
+<TD>Sorcerer</TD>
+<TD>103</TD>
+<TD>Feb&#160;14&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Amaurea+Miriel">Amaurea&#160;Miriel</A> (Recruiter)</TD>
+<TD>Paladin</TD>
+<TD>81</TD>
+<TD>Dec&#160;28&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Antonio+the+Uppsalabo">Antonio&#160;the&#160;Uppsalabo</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>132</TD>
+<TD>Aug&#160;19&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arcath+thade">Arcath&#160;thade</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>53</TD>
+<TD>Jul&#160;21&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ariane+Angel">Ariane&#160;Angel</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>84</TD>
+<TD>Nov&#160;15&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arieswar">Arieswar</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>147</TD>
+<TD>Oct&#160;25&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Atazoth">Atazoth</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>157</TD>
+<TD>Sep&#160;16&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Aunt+karina">Aunt&#160;karina</A> (Quest Agent)</TD>
+<TD>Paladin</TD>
+<TD>139</TD>
+<TD>Apr&#160;08&#160;2008</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Avlanch">Avlanch</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>104</TD>
+<TD>Jan&#160;16&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Azuri">Azuri</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>54</TD>
+<TD>May&#160;09&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Bundes+Kanzler">Bundes&#160;Kanzler</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>57</TD>
+<TD>Dec&#160;23&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Cailin">Cailin</A> (Event Agent)</TD>
+<TD>Sorcerer</TD>
+<TD>85</TD>
+<TD>Feb&#160;06&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Callian+Knightshade">Callian&#160;Knightshade</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>101</TD>
+<TD>May&#160;17&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Caynen">Caynen</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>31</TD>
+<TD>Jul&#160;20&#160;2006</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Chantis">Chantis</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>170</TD>
+<TD>Jan&#160;26&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Che">Che</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>162</TD>
+<TD>Oct&#160;08&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Craylen">Craylen</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>165</TD>
+<TD>Jan&#160;05&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Cube+of+Draco">Cube&#160;of&#160;Draco</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>107</TD>
+<TD>Dec&#160;06&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Dilila+Angel">Dilila&#160;Angel</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>103</TD>
+<TD>Jan&#160;19&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Don+Reckless">Don&#160;Reckless</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>100</TD>
+<TD>Feb&#160;14&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Dragon+Knightze">Dragon&#160;Knightze</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>140</TD>
+<TD>Aug&#160;18&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Dran+Tirath">Dran&#160;Tirath</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>110</TD>
+<TD>Dec&#160;02&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Eathell">Eathell</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>141</TD>
+<TD>Nov&#160;08&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Elizabeth+Bennet">Elizabeth&#160;Bennet</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>59</TD>
+<TD>Sep&#160;17&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Estebo%27pall">Estebo'pall</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>155</TD>
+<TD>Jan&#160;31&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Georgekasten">Georgekasten</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>125</TD>
+<TD>Feb&#160;20&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Gimli+der+Zwerg">Gimli&#160;der&#160;Zwerg</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>97</TD>
+<TD>Jan&#160;09&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Gwerlum">Gwerlum</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>15</TD>
+<TD>Dec&#160;16&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Hans+der+Zauberer">Hans&#160;der&#160;Zauberer</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>90</TD>
+<TD>Dec&#160;03&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Horseman+of+the+Rohhirim">Horseman&#160;of&#160;the&#160;Rohhirim</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>53</TD>
+<TD>Aug&#160;18&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Iugo">Iugo</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>88</TD>
+<TD>Nov&#160;08&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Jamarr">Jamarr</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>100</TD>
+<TD>Feb&#160;01&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Korporaatio">Korporaatio</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>79</TD>
+<TD>Sep&#160;21&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lord+Iacobus">Lord&#160;Iacobus</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>64</TD>
+<TD>Nov&#160;18&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Maya+Iscander">Maya&#160;Iscander</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>59</TD>
+<TD>Nov&#160;21&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Mcklaud">Mcklaud</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>46</TD>
+<TD>May&#160;09&#160;2004</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Mindes">Mindes</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>70</TD>
+<TD>Aug&#160;17&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Miss+Jen">Miss&#160;Jen</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>21</TD>
+<TD>Mar&#160;25&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nach+Aldrich">Nach&#160;Aldrich</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>28</TD>
+<TD>Sep&#160;10&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nightmare+Mes">Nightmare&#160;Mes</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>61</TD>
+<TD>Feb&#160;12&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Noxphilor">Noxphilor</A> (Rising Phoenix)</TD>
+<TD>Sorcerer</TD>
+<TD>84</TD>
+<TD>Mar&#160;03&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Pikiji">Pikiji</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>97</TD>
+<TD>Oct&#160;19&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Rafitus">Rafitus</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>66</TD>
+<TD>May&#160;29&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Riley+Max">Riley&#160;Max</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>100</TD>
+<TD>Apr&#160;07&#160;2008</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Rolet+Xavier">Rolet&#160;Xavier</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>163</TD>
+<TD>Feb&#160;28&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Shoestar">Shoestar</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>81</TD>
+<TD>Apr&#160;11&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sir+Dragonmaster">Sir&#160;Dragonmaster</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>148</TD>
+<TD>Feb&#160;02&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sobek">Sobek</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>92</TD>
+<TD>Sep&#160;15&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Soru+Halton+on+Antica">Soru&#160;Halton&#160;on&#160;Antica</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>94</TD>
+<TD>Jan&#160;09&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Swidrigajlow">Swidrigajlow</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>116</TD>
+<TD>Sep&#160;28&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thymo">Thymo</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>60</TD>
+<TD>Jan&#160;07&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Tigress">Tigress</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>78</TD>
+<TD>Oct&#160;17&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Viggasi">Viggasi</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>148</TD>
+<TD>Feb&#160;15&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vykn">Vykn</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>23</TD>
+<TD>Aug&#160;25&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Walone">Walone</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>22</TD>
+<TD>Mar&#160;16&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Wanedu">Wanedu</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>57</TD>
+<TD>Apr&#160;18&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Xehpo">Xehpo</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>59</TD>
+<TD>Aug&#160;03&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Xilitla">Xilitla</A> (Recruiter)</TD>
+<TD>Druid</TD>
+<TD>84</TD>
+<TD>Apr&#160;02&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ystranger">Ystranger</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>79</TD>
+<TD>Nov&#160;14&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zadil">Zadil</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>97</TD>
+<TD>May&#160;11&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zillo+Alk">Zillo&#160;Alk</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>63</TD>
+<TD>Mar&#160;19&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zoax">Zoax</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>147</TD>
+<TD>Jan&#160;24&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zydrakuz">Zydrakuz</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>107</TD>
+<TD>Jan&#160;21&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>Houkyaku</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Aarax+Javas">Aarax&#160;Javas</A> (Meken)</TD>
+<TD>Royal Paladin</TD>
+<TD>37</TD>
+<TD>Apr&#160;12&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ajax+Thunderblade">Ajax&#160;Thunderblade</A> (Rising Phoenix)</TD>
+<TD>Knight</TD>
+<TD>173</TD>
+<TD>Sep&#160;02&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Alvira+Shadowborn">Alvira&#160;Shadowborn</A> (Ivain Dragonstar)</TD>
+<TD>Royal Paladin</TD>
+<TD>28</TD>
+<TD>May&#160;29&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Angelina+Ballerina">Angelina&#160;Ballerina</A> (Wusele)</TD>
+<TD>Knight</TD>
+<TD>11</TD>
+<TD>Feb&#160;01&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arleth+Shadowborn">Arleth&#160;Shadowborn</A> (Arleth)</TD>
+<TD>Royal Paladin</TD>
+<TD>42</TD>
+<TD>Apr&#160;24&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Artemis+the+Traveller">Artemis&#160;the&#160;Traveller</A> (Artemis Iscander)</TD>
+<TD>Druid</TD>
+<TD>18</TD>
+<TD>Mar&#160;27&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Bontaz">Bontaz</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>23</TD>
+<TD>Feb&#160;21&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Colonel+Brody+Booker">Colonel&#160;Brody&#160;Booker</A> (Brody)</TD>
+<TD>Royal Paladin</TD>
+<TD>43</TD>
+<TD>Mar&#160;28&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Damdidup">Damdidup</A> (Asannia)</TD>
+<TD>Paladin</TD>
+<TD>16</TD>
+<TD>May&#160;26&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Fentatin">Fentatin</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>252</TD>
+<TD>Aug&#160;17&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Gamlgi+on+Antica">Gamlgi&#160;on&#160;Antica</A> (Gamlgi)</TD>
+<TD>Royal Paladin</TD>
+<TD>30</TD>
+<TD>Mar&#160;13&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Gana+The+Traveller">Gana&#160;The&#160;Traveller</A> (Gana Aldeonnael)</TD>
+<TD>Master Sorcerer</TD>
+<TD>34</TD>
+<TD>Apr&#160;11&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Hemminki+the+Traveller">Hemminki&#160;the&#160;Traveller</A> (Hemminki)</TD>
+<TD>Elite Knight</TD>
+<TD>32</TD>
+<TD>Nov&#160;17&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Hench">Hench</A> (Henchlings)</TD>
+<TD>Druid</TD>
+<TD>23</TD>
+<TD>Apr&#160;09&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Iggytj+on+antica">Iggytj&#160;on&#160;antica</A> (Iggytj)</TD>
+<TD>None</TD>
+<TD>5</TD>
+<TD>Mar&#160;13&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Kart+Terth">Kart&#160;Terth</A> (Sorckeer)</TD>
+<TD>Sorcerer</TD>
+<TD>20</TD>
+<TD>Jan&#160;06&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lady+Sarahs">Lady&#160;Sarahs</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>90</TD>
+<TD>Feb&#160;01&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lillfot">Lillfot</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>60</TD>
+<TD>Dec&#160;31&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lopez+de+Haro">Lopez&#160;de&#160;Haro</A> (Alvaro)</TD>
+<TD>None</TD>
+<TD>1</TD>
+<TD>Mar&#160;13&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Maggrat">Maggrat</A> (Magret)</TD>
+<TD>Elder Druid</TD>
+<TD>25</TD>
+<TD>Jun&#160;21&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nebyan">Nebyan</A> (Nebya)</TD>
+<TD>Paladin</TD>
+<TD>21</TD>
+<TD>Mar&#160;28&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Selo">Selo</A> (Avernum)</TD>
+<TD>Knight</TD>
+<TD>156</TD>
+<TD>Sep&#160;10&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Skyana+Soldfan">Skyana&#160;Soldfan</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>29</TD>
+<TD>Sep&#160;14&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zenith+Zencore">Zenith&#160;Zencore</A> (Zenith Zellion)</TD>
+<TD>Paladin</TD>
+<TD>26</TD>
+<TD>Jul&#160;03&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>Shiyounin</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Abloy">Abloy</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>33</TD>
+<TD>Apr&#160;28&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Adelice">Adelice</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>56</TD>
+<TD>Sep&#160;06&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Al+Thor+Rand">Al&#160;Thor&#160;Rand</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>102</TD>
+<TD>Feb&#160;20&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Alikz">Alikz</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>12</TD>
+<TD>Aug&#160;21&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Allasthor+Sho">Allasthor&#160;Sho</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>128</TD>
+<TD>Oct&#160;20&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Amel+Marous">Amel&#160;Marous</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>96</TD>
+<TD>Feb&#160;15&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Angelyyn+Darrabban">Angelyyn&#160;Darrabban</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>78</TD>
+<TD>Sep&#160;06&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Anya+Zweihander">Anya&#160;Zweihander</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>27</TD>
+<TD>Sep&#160;16&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Archon+Starlight">Archon&#160;Starlight</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>83</TD>
+<TD>Jun&#160;12&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arcos+Shin">Arcos&#160;Shin</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>56</TD>
+<TD>Jan&#160;30&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arexius">Arexius</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>42</TD>
+<TD>Nov&#160;05&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Aroa">Aroa</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>48</TD>
+<TD>Aug&#160;20&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Arthropoda">Arthropoda</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>67</TD>
+<TD>Jul&#160;28&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=August+der+Pfeffersack">August&#160;der&#160;Pfeffersack</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>8</TD>
+<TD>Dec&#160;30&#160;2014</TD>
+<TD class='onlinestatus'><span class="green" ><b>online</b></span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Avril+Vevece">Avril&#160;Vevece</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>109</TD>
+<TD>Nov&#160;17&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Binah">Binah</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>46</TD>
+<TD>Oct&#160;18&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Blond+Sonja">Blond&#160;Sonja</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>59</TD>
+<TD>Jul&#160;11&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Boheldra">Boheldra</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>66</TD>
+<TD>Jan&#160;11&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Borohak">Borohak</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>111</TD>
+<TD>Dec&#160;20&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Brecht">Brecht</A> (Rook Warrior)</TD>
+<TD>None</TD>
+<TD>74</TD>
+<TD>Sep&#160;18&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Burning+Palli">Burning&#160;Palli</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>152</TD>
+<TD>Feb&#160;12&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Cal+Farside">Cal&#160;Farside</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>23</TD>
+<TD>May&#160;17&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Calamus+Windbringer">Calamus&#160;Windbringer</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>96</TD>
+<TD>Aug&#160;27&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Casistonian">Casistonian</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>11</TD>
+<TD>Feb&#160;15&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Cheesy+doo+doop">Cheesy&#160;doo&#160;doop</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>46</TD>
+<TD>Sep&#160;19&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Chijara">Chijara</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>107</TD>
+<TD>Aug&#160;12&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Chris+Lightning">Chris&#160;Lightning</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>52</TD>
+<TD>Nov&#160;25&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Dark+century">Dark&#160;century</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>41</TD>
+<TD>Oct&#160;17&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Darr+Dragontear">Darr&#160;Dragontear</A> (Titi)</TD>
+<TD>None</TD>
+<TD>32</TD>
+<TD>Oct&#160;07&#160;2011</TD>
+<TD class='onlinestatus'><span class="green" ><b>online</b></span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Death+Flash">Death&#160;Flash</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>20</TD>
+<TD>Dec&#160;01&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Doctor+Van+Nostrand">Doctor&#160;Van&#160;Nostrand</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>40</TD>
+<TD>Jun&#160;10&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Doulix+Ariongva">Doulix&#160;Ariongva</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>44</TD>
+<TD>Aug&#160;21&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Dragonknightze">Dragonknightze</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>20</TD>
+<TD>Aug&#160;20&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Draugr">Draugr</A> (Rook Guardian)</TD>
+<TD>None</TD>
+<TD>6</TD>
+<TD>Jul&#160;16&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Druidonko">Druidonko</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>54</TD>
+<TD>Sep&#160;17&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Earl+Hornbone">Earl&#160;Hornbone</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>20</TD>
+<TD>Jun&#160;02&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Elessar+Ancolime">Elessar&#160;Ancolime</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>43</TD>
+<TD>Jan&#160;07&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Elloyd+Pherin">Elloyd&#160;Pherin</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>124</TD>
+<TD>Oct&#160;20&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ethelind">Ethelind</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>41</TD>
+<TD>Feb&#160;06&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Etus+Lenan">Etus&#160;Lenan</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>139</TD>
+<TD>Jul&#160;02&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Exploision">Exploision</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>8</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Fenta+mevrouw">Fenta&#160;mevrouw</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>103</TD>
+<TD>Aug&#160;18&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Feyen">Feyen</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>226</TD>
+<TD>Sep&#160;18&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Grimin">Grimin</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>50</TD>
+<TD>Mar&#160;21&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Grobian">Grobian</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>63</TD>
+<TD>Mar&#160;09&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Guts+Zane">Guts&#160;Zane</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>8</TD>
+<TD>Mar&#160;09&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Hawkeye+the+Accurate">Hawkeye&#160;the&#160;Accurate</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>33</TD>
+<TD>Dec&#160;07&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Henny">Henny</A> (Rook Soldier)</TD>
+<TD>None</TD>
+<TD>35</TD>
+<TD>Dec&#160;14&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Icemagic">Icemagic</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>20</TD>
+<TD>Sep&#160;03&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Imogene">Imogene</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>54</TD>
+<TD>Oct&#160;17&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Infestus">Infestus</A> (Blue Meanie)</TD>
+<TD>Sorcerer</TD>
+<TD>96</TD>
+<TD>Apr&#160;30&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Jovox">Jovox</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>80</TD>
+<TD>Aug&#160;28&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Kaltae+Telperien">Kaltae&#160;Telperien</A> (Wand of Joy)</TD>
+<TD>Master Sorcerer</TD>
+<TD>65</TD>
+<TD>Sep&#160;20&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Kaski">Kaski</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>73</TD>
+<TD>Jan&#160;23&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Khartoum">Khartoum</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>87</TD>
+<TD>Nov&#160;19&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Klopsi">Klopsi</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>53</TD>
+<TD>Nov&#160;29&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Klovner">Klovner</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>54</TD>
+<TD>Nov&#160;20&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lady+Doury">Lady&#160;Doury</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>88</TD>
+<TD>Feb&#160;07&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lady+Medo">Lady&#160;Medo</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>22</TD>
+<TD>Feb&#160;17&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lill+pi">Lill&#160;pi</A> (Keeper)</TD>
+<TD>None</TD>
+<TD>2</TD>
+<TD>Sep&#160;29&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Livineah">Livineah</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>59</TD>
+<TD>Feb&#160;10&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Logg">Logg</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>20</TD>
+<TD>Nov&#160;24&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lord+of+the+elements">Lord&#160;of&#160;the&#160;elements</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>132</TD>
+<TD>Jul&#160;16&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lylith+Moonstone">Lylith&#160;Moonstone</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>73</TD>
+<TD>Sep&#160;17&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Magic+on+rook">Magic&#160;on&#160;rook</A> (Rookwarrior)</TD>
+<TD>None</TD>
+<TD>18</TD>
+<TD>Feb&#160;07&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Malash+Deathwing+Dracconize">Malash&#160;Deathwing&#160;Dracconize</A> (Crimson Soul)</TD>
+<TD>Master Sorcerer</TD>
+<TD>93</TD>
+<TD>Jan&#160;01&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Mickey+Mcfinnegan">Mickey&#160;Mcfinnegan</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>60</TD>
+<TD>May&#160;03&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Mozid">Mozid</A> (Akumu)</TD>
+<TD>Druid</TD>
+<TD>40</TD>
+<TD>Dec&#160;11&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Mr.+Kill">Mr.&#160;Kill</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>35</TD>
+<TD>Dec&#160;01&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Muni">Muni</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>23</TD>
+<TD>Jul&#160;12&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Nitsuga">Nitsuga</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>33</TD>
+<TD>Apr&#160;22&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Odysseas">Odysseas</A> (Scrooge Mcduck)</TD>
+<TD>Elite Knight</TD>
+<TD>26</TD>
+<TD>May&#160;16&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Patricia+Lee">Patricia&#160;Lee</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>28</TD>
+<TD>Aug&#160;06&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Princesa+Juliet">Princesa&#160;Juliet</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>80</TD>
+<TD>Aug&#160;15&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Prvi">Prvi</A></TD>
+<TD>Royal Paladin</TD>
+<TD>42</TD>
+<TD>Jan&#160;12&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Pryar">Pryar</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>46</TD>
+<TD>Oct&#160;10&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Pumpie+umpy+umpkin">Pumpie&#160;umpy&#160;umpkin</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>11</TD>
+<TD>Feb&#160;17&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Rabbit">Rabbit</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>29</TD>
+<TD>Jun&#160;02&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Rakim+Blackdeath">Rakim&#160;Blackdeath</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>56</TD>
+<TD>Oct&#160;15&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Raxq">Raxq</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>48</TD>
+<TD>Jul&#160;11&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Rayn+Tamek">Rayn&#160;Tamek</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>28</TD>
+<TD>Aug&#160;24&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Rex+Bolter">Rex&#160;Bolter</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>166</TD>
+<TD>Feb&#160;24&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Shakaali">Shakaali</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>103</TD>
+<TD>Aug&#160;06&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Shalyness">Shalyness</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>72</TD>
+<TD>Sep&#160;01&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Simbad">Simbad</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>85</TD>
+<TD>May&#160;15&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Simorion">Simorion</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>86</TD>
+<TD>Jan&#160;01&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sir+Abdo">Sir&#160;Abdo</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>86</TD>
+<TD>Jul&#160;29&#160;2007</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sir+Picapiedra">Sir&#160;Picapiedra</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>33</TD>
+<TD>Jun&#160;05&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sir+Picoro">Sir&#160;Picoro</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>79</TD>
+<TD>Jan&#160;31&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Sir+Red+Redemption">Sir&#160;Red&#160;Redemption</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>37</TD>
+<TD>Aug&#160;18&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Skating+Pally">Skating&#160;Pally</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>34</TD>
+<TD>Feb&#160;18&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Soru+Halton">Soru&#160;Halton</A> (Rook Soldier)</TD>
+<TD>None</TD>
+<TD>21</TD>
+<TD>Jan&#160;20&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Soru+Moonflower">Soru&#160;Moonflower</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>44</TD>
+<TD>Jan&#160;19&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Souleater+Shadow">Souleater&#160;Shadow</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>88</TD>
+<TD>Apr&#160;04&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Steppenstoff">Steppenstoff</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>66</TD>
+<TD>Sep&#160;19&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Taski">Taski</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>37</TD>
+<TD>Jan&#160;23&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thibodaux">Thibodaux</A> (Akumu)</TD>
+<TD>Knight</TD>
+<TD>32</TD>
+<TD>Mar&#160;11&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thugged+Out">Thugged&#160;Out</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>105</TD>
+<TD>Oct&#160;10&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thugged+Out+Paladin">Thugged&#160;Out&#160;Paladin</A> (Yokujin)</TD>
+<TD>Royal Paladin</TD>
+<TD>63</TD>
+<TD>Feb&#160;08&#160;2015</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thuraxis">Thuraxis</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>23</TD>
+<TD>Sep&#160;06&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Timesns+sim">Timesns&#160;sim</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>49</TD>
+<TD>Apr&#160;11&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Timothy+Flower">Timothy&#160;Flower</A> (Majishan)</TD>
+<TD>Elder Druid</TD>
+<TD>59</TD>
+<TD>Mar&#160;15&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Uncle+Leo">Uncle&#160;Leo</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>87</TD>
+<TD>Apr&#160;14&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Unleasher+of+Rage">Unleasher&#160;of&#160;Rage</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>111</TD>
+<TD>Aug&#160;12&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vidofner">Vidofner</A> (Last Action Hero)</TD>
+<TD>Elite Knight</TD>
+<TD>143</TD>
+<TD>Sep&#160;18&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Vofibu%27s+Housemaid">Vofibu's&#160;Housemaid</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>57</TD>
+<TD>Feb&#160;21&#160;2015</TD>
+<TD class='onlinestatus'><span class="green" ><b>online</b></span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Wannian">Wannian</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>57</TD>
+<TD>Aug&#160;10&#160;2009</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Wonder+Phitz">Wonder&#160;Phitz</A> (Kei)</TD>
+<TD>Elite Knight</TD>
+<TD>74</TD>
+<TD>Sep&#160;19&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Xerthun">Xerthun</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>31</TD>
+<TD>Aug&#160;30&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Yis">Yis</A> (Yokujin)</TD>
+<TD>Paladin</TD>
+<TD>90</TD>
+<TD>Feb&#160;08&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zakat">Zakat</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>12</TD>
+<TD>Jun&#160;25&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zandariel">Zandariel</A> (Shungenja)</TD>
+<TD>Sorcerer</TD>
+<TD>36</TD>
+<TD>Jan&#160;23&#160;2011</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zaoguna">Zaoguna</A> (Kei)</TD>
+<TD>Knight</TD>
+<TD>23</TD>
+<TD>Aug&#160;12&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zephyr+Blackdeath">Zephyr&#160;Blackdeath</A> (Shugenja)</TD>
+<TD>Sorcerer</TD>
+<TD>43</TD>
+<TD>Sep&#160;25&#160;2010</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zephyrios">Zephyrios</A> (Majishan)</TD>
+<TD>Druid</TD>
+<TD>29</TD>
+<TD>Aug&#160;24&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#F1E0C6><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zicki">Zicki</A> (Shugenja)</TD>
+<TD>Master Sorcerer</TD>
+<TD>29</TD>
+<TD>Feb&#160;16&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>Hat Trick</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ablodeux">Ablodeux</A> (Lotta Schelin)</TD>
+<TD>Paladin</TD>
+<TD>8</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Banjos+soul">Banjos&#160;soul</A> (David Beckham)</TD>
+<TD>Druid</TD>
+<TD>8</TD>
+<TD>Mar&#160;11&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Douritto">Douritto</A> (Olof Mellberg)</TD>
+<TD>Paladin</TD>
+<TD>8</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Fotball+Playah">Fotball&#160;Playah</A> (Andreas Granqvist)</TD>
+<TD>Sorcerer</TD>
+<TD>8</TD>
+<TD>Mar&#160;29&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Gnarlerszaoazp+Hozukmazakeija">Gnarlerszaoazp&#160;Hozukmazakeija</A> (Luka Modric)</TD>
+<TD>Sorcerer</TD>
+<TD>8</TD>
+<TD>Mar&#160;13&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Goorge+Guess">Goorge&#160;Guess</A> (Cristiano Ronaldo)</TD>
+<TD>Paladin</TD>
+<TD>8</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Grom%27ter">Grom'ter</A> (Theo Walcott)</TD>
+<TD>Druid</TD>
+<TD>8</TD>
+<TD>May&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Lauweena">Lauweena</A> (Neymar da Silva)</TD>
+<TD>None</TD>
+<TD>5</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Moldorano">Moldorano</A> (Anders Svensson)</TD>
+<TD>Knight</TD>
+<TD>8</TD>
+<TD>Mar&#160;20&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Neby+the+Traveller">Neby&#160;the&#160;Traveller</A> (Zlatan Ibrahimovic)</TD>
+<TD>Druid</TD>
+<TD>14</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Neswi+Xelar">Neswi&#160;Xelar</A> (Maarten Stekelenburg)</TD>
+<TD>Knight</TD>
+<TD>15</TD>
+<TD>Mar&#160;13&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Ribuz">Ribuz</A> (Lionel Messi)</TD>
+<TD>Knight</TD>
+<TD>8</TD>
+<TD>Mar&#160;27&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Second+Gamlgi+duhh">Second&#160;Gamlgi&#160;duhh</A> (Sergio Ramos)</TD>
+<TD>Sorcerer</TD>
+<TD>8</TD>
+<TD>May&#160;04&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Snauxx">Snauxx</A> (Karim Benzema)</TD>
+<TD>Knight</TD>
+<TD>8</TD>
+<TD>Mar&#160;20&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Thainedinho">Thainedinho</A> (Ronaldinho)</TD>
+<TD>Sorcerer</TD>
+<TD>8</TD>
+<TD>Apr&#160;05&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Trollroll">Trollroll</A> (Robert Lewandowski)</TD>
+<TD>Sorcerer</TD>
+<TD>8</TD>
+<TD>Mar&#160;21&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Worra">Worra</A> (John Terry)</TD>
+<TD>Knight</TD>
+<TD>8</TD>
+<TD>Jul&#160;12&#160;2012</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Wrong+football">Wrong&#160;football</A> (Gareth Bale)</TD>
+<TD>Druid</TD>
+<TD>8</TD>
+<TD>Mar&#160;22&#160;2014</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR><TR BGCOLOR=#D4C0A1><TD>&#160;</TD>
+</td><TD><A HREF="https://secure.tibia.com/community/?subtopic=characters&name=Zie">Zie</A> (Clarence Seedorf)</TD>
+<TD>Sorcerer</TD>
+<TD>8</TD>
+<TD>Mar&#160;12&#160;2013</TD>
+<TD class='onlinestatus'><span class="red" >offline</span></TD></TR>    </table>  </div></div><div class="TableShadowContainer" >  <div class="TableBottomShadow" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-bm.gif);" >    <div class="TableBottomLeftShadow" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-bl.gif);" ></div>    <div class="TableBottomRightShadow" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-br.gif);" ></div>  </div></div></td></tr><tr><td><table class="InnerTableButtonRow" cellpadding="0" cellspacing="0" ><tr><td></td><td align="right" style="padding-right:7px;width:100%;" ><form action="https://secure.tibia.com/community/?subtopic=guilds" method="post" style="padding:0px;margin:0px;" ><input type="hidden" name="page" value="view" ><input type="hidden" name="onlyshowonline" value="1" ><input type="hidden" name="order" value="" ><input type="hidden" name="GuildName" value="Satori" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Show Online" alt="Show Online" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_showonline.gif" ></div></div></form></td></tr></table></td></tr>          </table>        </div>      </td>    </tr>  </table></div><BR>
+
+<div class="TableContainer" >  <table class="Table3" cellpadding="0" cellspacing="0" >    <div class="CaptionContainer" >      <div class="CaptionInnerContainer" >        <span class="CaptionEdgeLeftTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionBorderTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionVerticalLeft" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <div class="Text" >Invited Characters</div>        <span class="CaptionVerticalRight" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-vertical.gif);" /></span>        <span class="CaptionBorderBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-headline-border.gif);" ></span>        <span class="CaptionEdgeLeftBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>        <span class="CaptionEdgeRightBottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/box-frame-edge.gif);" /></span>      </div>    </div>    <tr>      <td>        <div class="InnerTableContainer" >          <table style="width:100%;" ><tr><td><div class="TableShadowContainerRightTop" >  <div class="TableShadowRightTop" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-rt.gif);" ></div></div><div class="TableContentAndRightShadow" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-rm.gif);" >  <div class="TableContentContainer" >    <table class="TableContent" width="100%" ><TR BGCOLOR=#F1E0C6><TD>No invited characters found.</TD></TR>
+    </table>  </div></div><div class="TableShadowContainer" >  <div class="TableBottomShadow" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-bm.gif);" >    <div class="TableBottomLeftShadow" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-bl.gif);" ></div>    <div class="TableBottomRightShadow" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/table-shadow-br.gif);" ></div>  </div></div></td></tr>          </table>        </div>      </td>    </tr>  </table></div><BR>
+
+<TABLE BORDER=0 WIDTH=100%><TR><TD ALIGN=center><IMG SRC="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/blank.gif" WIDTH=80 HEIGHT=1 BORDER=0<BR></TD><TD ALIGN=center><table border="0" cellspacing="0" cellpadding="0" ><form action="https://secure.tibia.com/account/?subtopic=redirectlogin" method="post" ><tr><td style="border:0px;" ><input type="hidden" name=redirect value=https://secure.tibia.com/community/?subtopic=guilds&page=view&GuildName=Satori ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="login" alt="login" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_login.gif" ></div></div></td></tr></form></table></TD><TD ALIGN="center"><form action="https://secure.tibia.com/community/?subtopic=guilds" method="post" style="padding:0px;margin:0px;" ><input type="hidden" name="world" value="Antica" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="Back" alt="Back" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_back.gif" ></div></div></form></TD><TD ALIGN=center><IMG SRC="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/blank.gif" WIDTH=80 HEIGHT=1 BORDER=0<BR></TD></TR></TABLE>
+        </div>
+      </div>
+    </div>
+    <div class="Border_1" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/border-1.gif);"></div>
+    <div class="CornerWrapper-b"><div class="Corner-bl" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/corner-bl.gif);"></div></div>
+    <div class="CornerWrapper-b"><div class="Corner-br" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/corner-br.gif);"></div></div>
+  </div>
+              <div id="ThemeboxesColumn" >
+                <div id="DeactivationContainerThemebox" onClick="DisableDeactivationContainer();" ></div>
+                <div id="RightArtwork">
+                  <img id="Monster" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/monsters/marid.gif" onClick="window.location = 'http://www.tibia.com/library/?subtopic=creatures&amp;race=marid';" alt="Monster of the Week" />
+                  <img id="PedestalAndOnline" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/header/pedestal-and-online.gif" alt="Monster Pedestal and Players Online Box"/>
+                  <div id="PlayersOnline" onClick="window.location = 'https://secure.tibia.com/community/?subtopic=worlds';">17706<br />Players Online</div>
+                </div>
+                <div id="Themeboxes">
+                  <!-- premium theme box -->
+<div id="PremiumBox" class="Themebox" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/themeboxes/premium/premiumbox.gif);">
+    <div class="ThemeboxButton" >
+    <form action="https://secure.tibia.com/account/index.php?subtopic=redirectlogin&redirect=https%3A%2F%2Fsecure.tibia.com%2Faccount%2F%3Fsubtopic%3Daccountmanagement%23Products%2BAvailable" method="post" style="padding:0px;margin:0px;" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_green.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_green_over.gif);" ></div><input class="ButtonText" type="image" name="Get Premium" alt="Get Premium" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_getpremium.gif" ></div></div></form>  </div>
+  <div class="Bottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif);"></div>
+</div>
+
+<!-- networks theme box -->
+<div id="NetworksBox" class="Themebox"  style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/themeboxes/networks/networksbox.png);" >
+  <div id="FacebookBlock" >
+    <div id="FacebookLikeBox" >
+      <div class="fb-like-box" data-href="https://www.facebook.com/tibia" data-width="175" data-height="180" data-show-faces="true" data-stream="false" data-border-color="none" data-header="false"></div>
+    </div>
+    <div id="FacebookSendBox" >
+      <div class="fb-send" data-href="https://www.facebook.com/tibia" data-width="50" data-height="20" ></div>
+    </div>
+    <div id="FacebookLikes" >
+      <div class="fb-like" data-href="https://www.facebook.com/tibia" data-width="50" data-layout="standard" data-action="recommend" data-show-faces="false" ></div>
+    </div>
+  </div>
+  <div id="TwitterBlock" >
+    <a href="https://twitter.com/Tibia" class="twitter-follow-button" data-show-count="false">Follow @Tibia</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </div>
+  <div class="Bottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif);"></div>
+</div>
+
+    <!-- random fansite theme box -->
+    <div id="FansiteBox" class="Themebox" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/themeboxes/fansites/fansites_themebox.gif);">
+      <div id="FansiteLogoFrame" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/themeboxes/fansites/border_promoted.gif);">
+        <a href="http://www.tibiaevents.com" target="_blank" ><img id="FansiteLogo" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/community/fansitelogos/TibiaEvents.com.gif" /></a>
+      </div>
+      <div class="ThemeboxButton" >
+        <form action="https://secure.tibia.com/community/?subtopic=fansites" method="post" style="padding:0px;margin:0px;" ><div class="BigButton" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton.gif)" ><div onMouseOver="MouseOverBigButton(this);" onMouseOut="MouseOutBigButton(this);" ><div class="BigButtonOver" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/sbutton_over.gif);" ></div><input class="ButtonText" type="image" name="View all Fansites" alt="View all Fansites" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/buttons/_sbutton_viewallfansites.gif" ></div></div></form>      </div>
+      <div class="Bottom" style="background-image:url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/general/box-bottom.gif);"></div>
+    </div>
+                </div>
+              </div>
+            </div>
+            <div id="Footer">
+              Copyright by CipSoft GmbH. All rights reserved.<br/>
+              <a href="http://www.tibia.com/abouttibia/?subtopic=aboutcipsoft">About CipSoft</a> | <a href="http://www.tibia.com/support/?subtopic=legaldocuments&amp;page=agreement">Service Agreement</a> | <a href="http://www.tibia.com/support/?subtopic=legaldocuments&amp;page=privacy">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" >
+    // disable all control elements which are not part of the content container element
+    if (g_Deactivated == true) {
+      document.getElementById('LoginButtonContainer').style.zIndex = "1";
+      document.getElementById('DeactivationContainer').style.display = "block";
+      document.getElementById('DeactivationContainer').style.zIndex = "50";
+      document.getElementById('DeactivationContainerThemebox').style.display = "block";
+      document.getElementById('Monster').style.cursor = "auto";
+      document.getElementById('PlayersOnline').style.cursor = "auto";
+      document.getElementById('ThemeboxesColumn').style.opacity = "0.30";
+      document.getElementById('ThemeboxesColumn').style.MozOpacity = "0.30";
+      document.getElementById('ThemeboxesColumn').filters.alpha.opacity = "0.75";
+      document.getElementById('ThemeboxesColumn').style.filter = "alpha(opacity=50); opacity: 0.30";
+      document.getElementById('Monster').setAttribute("onclick", "");
+      document.getElementById('PlayersOnline').setAttribute("onclick", "");
+    }
+  </script>
+  <div id="HelperDivContainer" style="background-image: url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/scroll.gif);" ><div class="HelperDivArrow" style="background-image: url(https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/helper-div-arrow.png);" ></div><div id="HelperDivHeadline" ></div><div id="HelperDivText" ></div><center><img class="Ornament" src="https://a248.e.akamai.net/cipsoft.download.akamai.com/118500/tibia/static.tibia.com/images/global/content/ornament.gif" /></center><br/></div></body>
+</html>
