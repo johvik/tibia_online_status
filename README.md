@@ -4,11 +4,12 @@ Tibia Online Status
 [![Dependency Status](https://gemnasium.com/johvik/tibia_online_status.svg)](https://gemnasium.com/johvik/tibia_online_status)
 [![Coverage Status](https://img.shields.io/coveralls/johvik/tibia_online_status.svg)](https://coveralls.io/r/johvik/tibia_online_status)
 
-This extension includes information from the "Players Online" into the characters and highscores page.
+This extension includes information from the "Players Online" into the characters, guilds and highscores page.
 With Tibia Online Status you won't have to look at the "Players Online" page to see if your friend has leveled up or if your enemies are online!
 
 ## Features
 * Characters page is extended with players online status, level change and vocation change.
+* Guilds page is extended with players level change.
 * Highscores page is extended with players online status and level change.
 
 _Note that the information provided is only as accurate as the information on the "Players Online" page. For example if a player recently logged in it might not be displayed as online just yet._
