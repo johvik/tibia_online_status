@@ -29,7 +29,7 @@ Utils.prototype.isVocation = function(str) {
  * Make a HTTP request and return the text if status is 200.
  */
 Utils.prototype.fetch = function(url, callback) {
-  if (typeof(url) !== 'string') {
+  if (typeof url !== 'string') {
     return callback('Url not a String ' + url, '');
   }
   var xhr = new XMLHttpRequest();

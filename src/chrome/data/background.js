@@ -13,9 +13,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       });
     });
     return true;
-  } else {
-    return sendResponse({
-      error: 'Bad query ' + request.query
-    });
   }
+  return sendResponse({
+    error: 'Bad query ' + request.query
+  });
 });

@@ -12,7 +12,7 @@ function WorldPage(utils) {
  */
 WorldPage.prototype.parse = function(data, callback) {
   var self = this;
-  if (typeof(data) !== 'string') {
+  if (typeof data !== 'string') {
     return callback('Data not a String ' + data, {});
   }
   var res = {};
@@ -43,7 +43,7 @@ WorldPage.prototype.parse = function(data, callback) {
  */
 WorldPage.prototype.query = function(world_name, callback) {
   var self = this;
-  if (typeof(world_name) !== 'string') {
+  if (typeof world_name !== 'string') {
     return callback('World name not a String ' + world_name, {});
   }
   world_name = world_name.trim();
@@ -54,13 +54,13 @@ WorldPage.prototype.query = function(world_name, callback) {
   var world = self.worlds_cache[world_name];
   var now = new Date().getTime();
   if (!world || (world.time + self.cache_time <= now)) {
-    return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(err, data) {
-      if (err) {
-        return callback(err, {});
+    return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(fetch_err, data) {
+      if (fetch_err) {
+        return callback(fetch_err, {});
       }
-      return self.parse(data, function(err, res) {
-        if (err) {
-          return callback(err, {});
+      return self.parse(data, function(parse_err, res) {
+        if (parse_err) {
+          return callback(parse_err, {});
         }
         self.worlds_cache[world_name] = {
           players: res,
@@ -69,10 +69,9 @@ WorldPage.prototype.query = function(world_name, callback) {
         return callback(null, res);
       });
     });
-  } else {
-    // Up to date
-    return callback(null, world.players);
   }
+  // Up to date
+  return callback(null, world.players);
 };
 
 exports.WorldPage = WorldPage;

@@ -6,7 +6,7 @@ var WorldPage = require('./world_page').WorldPage;
 
 var worldPage = new WorldPage(new Utils());
 
-function onPrefChange(prefName) {
+function onPrefChange() {
   var name = 'extensions.jid1-fvCjY69UDEeqOg@jetpack.sdk.console.logLevel';
   if (require('sdk/simple-prefs').prefs.debugOutput) {
     require('sdk/preferences/service').set(name, 'debug');
