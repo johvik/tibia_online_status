@@ -38,27 +38,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    mochacov: {
-      test: {
-        options: {
-          reporter: 'spec'
-        },
-      },
-      cov: {
-        options: {
-          reporter: 'html-cov',
-          output: 'coverage.html'
-        }
-      },
-      travis: {
-        options: {
-          coveralls: true
-        }
-      },
-      options: {
-        files: 'test/**/*spec.js'
-      }
-    },
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint', 'mochaTest']
@@ -162,12 +141,19 @@ module.exports = function(grunt) {
       run: {
         command: ['cd dest/firefox', 'cfx run'].join('&&')
       }
+    },
+    mocha_istanbul: {
+      coverage: {
+        src: 'test',
+        options: {
+          mask: '**/*spec.js'
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jsbeautifier');
-  grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -175,9 +161,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-mocha-istanbul');
 
-  grunt.registerTask('test', ['jshint', 'mochacov:test']);
-  grunt.registerTask('cov', ['jshint', 'mochacov:cov']);
-  grunt.registerTask('travis', ['jsbeautifier:release', 'jshint', 'mochacov:test', 'mochacov:travis', 'clean', 'copy', 'concat', 'replace', 'compress']);
-  grunt.registerTask('default', ['jsbeautifier:default', 'jshint', 'mochacov:test', 'clean', 'copy', 'concat', 'replace', 'compress']);
+  grunt.registerTask('test', ['jshint', 'mocha_istanbul']);
+  grunt.registerTask('build', ['clean', 'copy', 'concat', 'replace', 'compress']);
+  grunt.registerTask('travis', ['jsbeautifier:release', 'test', 'build']);
+  grunt.registerTask('default', ['jsbeautifier:default', 'test', 'build']);
 };
