@@ -51,7 +51,6 @@ Utils.prototype.fetch = function(url, callback) {
  * Find all links with online characters. Returns an array with { link, player } objects.
  */
 Utils.prototype.findOnlineCharacters = function(root_element, players) {
-  var self = this;
   var links = root_element.getElementsByTagName('a');
   var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
   var online = [];
