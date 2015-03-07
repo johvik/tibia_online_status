@@ -1,6 +1,5 @@
-function Utils(XHR) {
+function Utils() {
   this.vocations = ['Druid', 'Elder Druid', 'Elite Knight', 'Knight', 'Master Sorcerer', 'None', 'Paladin', 'Royal Paladin', 'Sorcerer'];
-  this.XHR = XHR;
   this.color = {
     green: '#00BF00'
   };
@@ -30,11 +29,10 @@ Utils.prototype.isVocation = function(str) {
  * Make a HTTP request and return the text if status is 200.
  */
 Utils.prototype.fetch = function(url, callback) {
-  var self = this;
   if (typeof(url) !== 'string') {
     return callback('Url not a String ' + url, '');
   }
-  var xhr = new self.XHR();
+  var xhr = new XMLHttpRequest();
   xhr.open('GET', url);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === xhr.DONE) {

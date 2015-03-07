@@ -126,7 +126,7 @@ module.exports = function(grunt) {
         files: {
           'dest/firefox/lib/main.js': ['src/firefox/lib/main.js'],
           'dest/firefox/lib/world_page.js': ['src/common/world_page.js'],
-          'dest/firefox/lib/utils.js': ['src/common/utils.js'],
+          'dest/firefox/lib/utils.js': ['src/firefox/lib/xhr.js', 'src/common/utils.js'],
           'dest/firefox/data/utils.js': ['src/common/utils.js', 'src/firefox/data/firefox_page.js'],
           'dest/firefox/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
           'dest/firefox/data/guilds.js': ['src/common/guild_page.js', 'src/common/pages/guilds.js'],

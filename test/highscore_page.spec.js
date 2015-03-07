@@ -7,13 +7,13 @@ require('jsdom').defaultDocumentFeatures = {
 };
 var TestUtils = require('./test_utils.js');
 
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var Utils = require('../src/common/utils.js').Utils;
 
 var HighscorePage = require('../src/common/highscore_page.js').HighscorePage;
 
 describe('HighscorePage', function() {
-  var utils = new Utils(XMLHttpRequest);
+  var utils = new Utils();
   var highscorePage = new HighscorePage(utils);
 
   describe('#parse', function() {

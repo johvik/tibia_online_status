@@ -6,13 +6,13 @@ require('jsdom').defaultDocumentFeatures = {
   ProcessExternalResources: false
 };
 
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var Utils = require('../src/common/utils.js').Utils;
 
 var GuildPage = require('../src/common/guild_page.js').GuildPage;
 
 describe('GuildPage', function() {
-  var utils = new Utils(XMLHttpRequest);
+  var utils = new Utils();
   var guildPage = new GuildPage(utils);
 
   describe('#parse', function() {

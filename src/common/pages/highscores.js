@@ -1,1 +1,1 @@
-TosPage(new HighscorePage(new Utils(XMLHttpRequest)));
+TosPage(new HighscorePage(new Utils()));

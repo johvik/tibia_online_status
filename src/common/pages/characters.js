@@ -1,1 +1,1 @@
-TosPage(new CharacterPage(new Utils(XMLHttpRequest)));
+TosPage(new CharacterPage(new Utils()));

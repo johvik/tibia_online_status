@@ -4,8 +4,7 @@ var pageMod = require("sdk/page-mod");
 var Utils = require('./utils').Utils;
 var WorldPage = require('./world_page').WorldPage;
 
-var XMLHttpRequest = require("sdk/net/xhr").XMLHttpRequest;
-var worldPage = new WorldPage(new Utils(XMLHttpRequest));
+var worldPage = new WorldPage(new Utils());
 
 function onPrefChange(prefName) {
   var name = 'extensions.jid1-fvCjY69UDEeqOg@jetpack.sdk.console.logLevel';

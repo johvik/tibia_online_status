@@ -1,1 +1,1 @@
-TosPage(new GuildPage(new Utils(XMLHttpRequest)));
+TosPage(new GuildPage(new Utils()));
