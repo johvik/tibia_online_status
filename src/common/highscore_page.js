@@ -36,11 +36,7 @@ HighscorePage.prototype.update = function(players) {
       if (online[i].link.parentElement && online[i].link.parentElement.parentElement) {
         var columns = online[i].link.parentElement.parentElement.getElementsByTagName('td');
         if (columns.length >= 4) {
-          var row_value = columns[2].textContent.trim();
-          var level = parseInt(row_value, 10);
-          if (!isNaN(level)) {
-            self.utils.setLevel(columns[2], level, online[i].player.level);
-          }
+          self.utils.parseAndSetLevel(columns[2], online[i].player.level);
         }
       }
     }

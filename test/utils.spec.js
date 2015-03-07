@@ -165,4 +165,22 @@ describe('Utils', function() {
       elements[0].textContent.should.equal('1 (-1)');
     });
   });
+
+  describe('#parseAndSetLevel', function() {
+    it('should not change', function() {
+      var document = jsdom('<div>abc</div>');
+      var elements = document.getElementsByTagName('div');
+      elements.should.have.length(1);
+      utils.parseAndSetLevel(elements[0], 1);
+      elements[0].textContent.should.equal('abc');
+    });
+
+    it('should set level', function() {
+      var document = jsdom('<div>1</div>');
+      var elements = document.getElementsByTagName('div');
+      elements.should.have.length(1);
+      utils.parseAndSetLevel(elements[0], 20);
+      elements[0].textContent.should.equal('20 (+19)');
+    });
+  });
 });

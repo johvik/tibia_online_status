@@ -82,6 +82,18 @@ Utils.prototype.markOnlineLinks = function(root_element, players) {
 };
 
 /**
+ * Parses and sets the level if element contains a number.
+ */
+Utils.prototype.parseAndSetLevel = function(element, new_level) {
+  var self = this;
+  var level_value = element.textContent.trim();
+  var level = parseInt(level_value, 10);
+  if (!isNaN(level)) {
+    self.setLevel(element, level, new_level);
+  }
+};
+
+/**
  * Update element with level and difference.
  */
 Utils.prototype.setLevel = function(element, old_level, new_level) {

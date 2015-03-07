@@ -36,11 +36,7 @@ GuildPage.prototype.update = function(players) {
       if (columns.length >= 6) {
         var status_value = columns[5].textContent.trim();
         if (status_value === 'online') {
-          var level_value = columns[3].textContent.trim();
-          var level = parseInt(level_value, 10);
-          if (!isNaN(level)) {
-            self.utils.setLevel(columns[3], level, online[i].player.level);
-          }
+          self.utils.parseAndSetLevel(columns[3], online[i].player.level);
         }
       }
     }
