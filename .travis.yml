@@ -1,9 +1,14 @@
 language: node_js
 node_js:
-  - "0.10"
-
+- '0.10'
 before_script:
-  - npm install -g grunt-cli
-
+- npm install -g grunt-cli
+- npm install -g coveralls
+- npm install -g codeclimate-test-reporter
 after_script:
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+- echo Token is $CODECLIMATE_REPO_TOKEN
+- cat ./coverage/lcov.info | coveralls
+- cat ./coverage/lcov.info | codeclimate
+env:
+  global:
+    secure: KanTtDlw6MmKUmndigoK9aUw3UMOaeiar+Ko6KTuYmrhe/Q9mn4Z9oPl/QUXR4rFesmDSwjiDMr/OdKrzu03ndO1aSQK7JOjxNOaLQhujcR1E0FvFutlig7FM6SEObm31ZFuJWdefVwJHp4JchfUWCAuKfrRIuvHDz4QVHw9kDY=
