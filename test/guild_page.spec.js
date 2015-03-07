@@ -91,7 +91,8 @@ describe('GuildPage', function() {
         guildPage.world.should.equal('Morta');
         guildPage.elements.should.have.keys('guilds_div');
 
-        // Update with one marked online and one marked offline
+        // Update with one marked online, one marked offline
+        // and one invited as online
         guildPage.update({
           'Plozy Sanki': {
             level: 198,
@@ -100,32 +101,38 @@ describe('GuildPage', function() {
           'Haraverick': {
             level: 100,
             vocation: 'Master Sorcerer'
+          },
+          'Babin Xariusano': {
+            level: 1,
+            vocation: 'None'
           }
         });
         var plozy_sanki_found = false;
         var haraverick_found = false;
+        var babin_xariusano_found = false;
         var links = guildPage.elements.guilds_div.getElementsByTagName('a');
         var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
         for (var i = 0, j = links.length; i < j; i++) {
           if (link_exp.test(links[i].href)) {
             var name = utils.decode(links[i].innerHTML);
             var row = links[i].parentElement.parentElement.getElementsByTagName('td');
-            if (row.length >= 6) {
-              var level_column = row[3];
-              if (name === 'Plozy Sanki') {
-                plozy_sanki_found = true;
-                level_column.textContent.should.equal('198 (+100)');
-              } else if (name === 'Haraverick') {
-                haraverick_found = true;
-                level_column.textContent.should.equal('32');
-              } else {
-                level_column.textContent.should.equal('' + parseInt(level_column.textContent, 10));
-              }
+            var level_column = row[3];
+            if (name === 'Plozy Sanki') {
+              plozy_sanki_found = true;
+              level_column.textContent.should.equal('198 (+100)');
+            } else if (name === 'Haraverick') {
+              haraverick_found = true;
+              level_column.textContent.should.equal('32');
+            } else if (name === 'Babin Xariusano') {
+              babin_xariusano_found = true;
+            } else if (row.length >= 6) {
+              level_column.textContent.should.equal('' + parseInt(level_column.textContent, 10));
             }
           }
         }
         plozy_sanki_found.should.equal(true);
         haraverick_found.should.equal(true);
+        babin_xariusano_found.should.equal(true);
         done();
       });
     });
