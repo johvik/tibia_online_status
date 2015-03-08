@@ -56,7 +56,7 @@ WorldPage.prototype.query = function(world_name, callback) {
 
   var world = self.worlds_cache[world_name];
   var now = new Date().getTime();
-  if (!world || (world.time + self.cache_time <= now)) {
+  if (!world || world.time + self.cache_time <= now) {
     return self.utils.fetch('http://www.tibia.com/community/?subtopic=worlds&world=' + world_name, function(fetch_err, data) {
       if (fetch_err) {
         return callback(fetch_err, {});

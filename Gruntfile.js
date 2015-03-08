@@ -7,7 +7,7 @@ module.exports = function(grunt) {
       options: {
         strict: true
       },
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js']
+      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', '!test/jasmine/data/console_boot.js']
     },
     jsbeautifier: {
       'default': {

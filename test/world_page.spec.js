@@ -130,7 +130,7 @@ describe('WorldPage', function() {
       this.timeout(5000);
       worldPage.worlds_cache.should.have.keys('Antica');
       // Move so its time to refresh cache
-      worldPage.worlds_cache.Antica.time -= (worldPage.cache_time + 1);
+      worldPage.worlds_cache.Antica.time -= worldPage.cache_time + 1;
       var time = worldPage.worlds_cache.Antica.time;
       worldPage.query('Antica', function(err, res) {
         should.not.exist(err);

@@ -104,9 +104,9 @@ CharacterPage.prototype.parseCharacters = function(table) {
         if (name === self.name) {
           var row_value = columns[2].textContent.trim();
           // Is the character displayed as online on the page?
-          self.must_be_online = (row_value === 'online');
+          self.must_be_online = row_value === 'online';
           // Is the character shown but isn't online?
-          self.must_be_offline = (self.must_be_online === false);
+          self.must_be_offline = self.must_be_online === false;
           break;
         }
       }
