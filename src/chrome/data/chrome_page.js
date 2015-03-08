@@ -1,4 +1,5 @@
 function TosPage(page) {
+  'use strict';
   page.parse(function(err) {
     if (err) {
       TosPage.debug(err);
@@ -24,6 +25,7 @@ function TosPage(page) {
  * Prints message if debug output is set in the options.
  */
 TosPage.debug = function(message) {
+  'use strict';
   chrome.storage.sync.get({
     debugOutput: false
   }, function(items) {

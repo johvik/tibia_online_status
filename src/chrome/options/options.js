@@ -1,4 +1,5 @@
 function save_options() {
+  'use strict';
   var debugOutput = document.getElementById('debugOutput').checked;
   chrome.storage.sync.set({
     debugOutput: debugOutput
@@ -6,6 +7,7 @@ function save_options() {
 }
 
 function restore_options() {
+  'use strict';
   chrome.storage.sync.get({
     debugOutput: false
   }, function(items) {

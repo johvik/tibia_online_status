@@ -1,4 +1,5 @@
 function WorldPage(utils) {
+  'use strict';
   this.utils = utils;
   // key = world gives element = { time: Number, players: Object Array }
   // players key = name gives element = { level: Number, vocation: String }
@@ -11,6 +12,7 @@ function WorldPage(utils) {
  * Parses the world page, for internal use only.
  */
 WorldPage.prototype.parse = function(data, callback) {
+  'use strict';
   var self = this;
   if (typeof data !== 'string') {
     return callback('Data not a String ' + data, {});
@@ -42,6 +44,7 @@ WorldPage.prototype.parse = function(data, callback) {
  * @param callback Callback function(err) { ... }
  */
 WorldPage.prototype.query = function(world_name, callback) {
+  'use strict';
   var self = this;
   if (typeof world_name !== 'string') {
     return callback('World name not a String ' + world_name, {});

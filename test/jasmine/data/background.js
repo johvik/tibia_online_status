@@ -1,6 +1,7 @@
 var testRunner = null;
 
 function testDone(status) {
+  'use strict';
   console.log('Test ' + status);
   if (testRunner) {
     chrome.tabs.remove(testRunner.tabId);
@@ -9,6 +10,7 @@ function testDone(status) {
 }
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  'use strict';
   if (changeInfo.status === 'complete' && testRunner && testRunner.waiting === true && testRunner.tabId === tabId) {
     testRunner.waiting = false;
     runNextAction('update');
@@ -16,6 +18,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 });
 
 chrome.browserAction.onClicked.addListener(function() {
+  'use strict';
   if (testRunner) {
     // Cancel old test
     testDone('canceled');
@@ -34,12 +37,14 @@ chrome.browserAction.onClicked.addListener(function() {
 });
 
 function runNextAction(reason) {
+  'use strict';
   setTimeout(function() {
     runNextActionNow();
   }, 500);
 }
 
 function runNextActionNow() {
+  'use strict';
   // Check online/offline or use next
   if (testRunner.characters.length > 0) {
     var character = testRunner.characters[0];
@@ -77,6 +82,7 @@ function runNextActionNow() {
 }
 
 function onExecuteCallback(response) {
+  'use strict';
   if (response.success === true) {
     console.log(response.text);
   } else {
@@ -86,6 +92,7 @@ function onExecuteCallback(response) {
 }
 
 function onCharacterPickCallback(response) {
+  'use strict';
   if (response.online) {
     testRunner.characters.push({
       url: response.online,
@@ -108,6 +115,7 @@ function onCharacterPickCallback(response) {
 }
 
 function pickHighscoreCharacters() {
+  'use strict';
   chrome.tabs.sendMessage(testRunner.tabId, {
     type: 'pickCharacters'
   }, onCharacterPickCallback);

@@ -10,6 +10,7 @@ global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var Utils = require('../src/common/utils.js').Utils;
 
 describe('Utils', function() {
+  'use strict';
   var utils = new Utils();
 
   describe('#decode', function() {

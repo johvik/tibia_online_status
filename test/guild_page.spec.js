@@ -12,6 +12,7 @@ var Utils = require('../src/common/utils.js').Utils;
 var GuildPage = require('../src/common/guild_page.js').GuildPage;
 
 describe('GuildPage', function() {
+  'use strict';
   var utils = new Utils();
   var guildPage = new GuildPage(utils);
 

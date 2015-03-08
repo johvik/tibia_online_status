@@ -1,4 +1,5 @@
 function Utils() {
+  'use strict';
   this.vocations = ['Druid', 'Elder Druid', 'Elite Knight', 'Knight', 'Master Sorcerer', 'None', 'Paladin', 'Royal Paladin', 'Sorcerer'];
   this.color = {
     green: '#00BF00'
@@ -9,6 +10,7 @@ function Utils() {
  * Replaces html codes in str.
  */
 Utils.prototype.decode = function(str) {
+  'use strict';
   return str.replace(/(&#160;|&nbsp;)/g, ' ');
 };
 
@@ -16,6 +18,7 @@ Utils.prototype.decode = function(str) {
  * Check if str is a valid vocation.
  */
 Utils.prototype.isVocation = function(str) {
+  'use strict';
   var self = this;
   for (var i = 0, j = self.vocations.length; i < j; i++) {
     if (str === self.vocations[i]) {
@@ -29,6 +32,7 @@ Utils.prototype.isVocation = function(str) {
  * Make a HTTP request and return the text if status is 200.
  */
 Utils.prototype.fetch = function(url, callback) {
+  'use strict';
   if (typeof url !== 'string') {
     return callback('Url not a String ' + url, '');
   }
@@ -49,6 +53,7 @@ Utils.prototype.fetch = function(url, callback) {
  * Find all links with online characters. Returns an array with { link, player } objects.
  */
 Utils.prototype.findOnlineCharacters = function(root_element, players) {
+  'use strict';
   var links = root_element.getElementsByTagName('a');
   var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
   var online = [];
@@ -71,6 +76,7 @@ Utils.prototype.findOnlineCharacters = function(root_element, players) {
  * Mark characters links green if online. Returns the result from findOnlineCharacters.
  */
 Utils.prototype.markOnlineLinks = function(root_element, players) {
+  'use strict';
   var self = this;
   var online = self.findOnlineCharacters(root_element, players);
   for (var i = 0, j = online.length; i < j; i++) {
@@ -83,6 +89,7 @@ Utils.prototype.markOnlineLinks = function(root_element, players) {
  * Parses and sets the level if element contains a number.
  */
 Utils.prototype.parseAndSetLevel = function(element, new_level) {
+  'use strict';
   var self = this;
   var level_value = element.textContent.trim();
   var level = parseInt(level_value, 10);
@@ -95,6 +102,7 @@ Utils.prototype.parseAndSetLevel = function(element, new_level) {
  * Update element with level and difference.
  */
 Utils.prototype.setLevel = function(element, old_level, new_level) {
+  'use strict';
   var level_diff = new_level - old_level;
   if (level_diff < 0) {
     // Lost level

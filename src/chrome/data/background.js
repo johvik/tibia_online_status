@@ -1,6 +1,7 @@
 var worldPage = new WorldPage(new Utils());
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  'use strict';
   if (request.query === 'world') {
     worldPage.query(request.world, function(err, res) {
       if (err) {

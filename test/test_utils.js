@@ -5,6 +5,7 @@
  * @return The upper case hex or null if not matching rgb format.
  */
 exports.rgbToHex = function(rgb) {
+  'use strict';
   var match = rgb.match(/rgb\((\d+), (\d+), (\d+)\)/);
   if (match) {
     var res = '';

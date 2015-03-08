@@ -1,4 +1,5 @@
 function TosPage(page) {
+  'use strict';
   page.parse(function(err) {
     if (err) {
       TosPage.debug(err);
@@ -22,6 +23,7 @@ function TosPage(page) {
  * Prints message if debug output is set in the options.
  */
 TosPage.debug = function(message) {
+  'use strict';
   self.port.once('query:options', function(options) {
     if (options.debugOutput) {
       console.log('Tibia Online Status:', message);

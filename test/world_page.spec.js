@@ -7,6 +7,7 @@ var Utils = require('../src/common/utils.js').Utils;
 var WorldPage = require('../src/common/world_page.js').WorldPage;
 
 describe('WorldPage', function() {
+  'use strict';
   var utils = new Utils();
   var worldPage = new WorldPage(utils);
 

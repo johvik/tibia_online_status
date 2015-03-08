@@ -13,6 +13,7 @@ var Utils = require('../src/common/utils.js').Utils;
 var CharacterPage = require('../src/common/character_page.js').CharacterPage;
 
 describe('CharacterPage', function() {
+  'use strict';
   var utils = new Utils(XMLHttpRequest);
   var characterPage = new CharacterPage(utils);
 

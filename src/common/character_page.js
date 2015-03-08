@@ -1,4 +1,5 @@
 function CharacterPage(utils) {
+  'use strict';
   this.utils = utils;
   this.must_be_online = false;
   this.must_be_offline = false;
@@ -9,6 +10,7 @@ function CharacterPage(utils) {
  * Retrieves and stores information from the character.
  */
 CharacterPage.prototype.parse = function(callback) {
+  'use strict';
   var self = this;
   var characters_div = document.getElementById('characters');
   if (characters_div === null) {
@@ -44,6 +46,7 @@ CharacterPage.prototype.parse = function(callback) {
  * @return False if something isn't found or is bad.
  */
 CharacterPage.prototype.parseCharacterInformation = function(table) {
+  'use strict';
   var self = this;
   var rows = table.getElementsByTagName('tr');
 
@@ -85,6 +88,7 @@ CharacterPage.prototype.parseCharacterInformation = function(table) {
  * Used internally by #parse.
  */
 CharacterPage.prototype.parseCharacters = function(table) {
+  'use strict';
   var self = this;
   var rows = table.getElementsByTagName('tr');
 
@@ -114,6 +118,7 @@ CharacterPage.prototype.parseCharacters = function(table) {
  * Wrapper to update information and links.
  */
 CharacterPage.prototype.update = function(players) {
+  'use strict';
   var self = this;
   self.updateCharacterInformation(players);
   self.utils.markOnlineLinks(self.elements.characters_div, players);
@@ -124,6 +129,7 @@ CharacterPage.prototype.update = function(players) {
  * Used internally by #update.
  */
 CharacterPage.prototype.updateCharacterInformation = function(players) {
+  'use strict';
   var self = this;
   var player = players[self.name];
   if (player && self.must_be_offline === false) {
@@ -145,6 +151,7 @@ CharacterPage.prototype.updateCharacterInformation = function(players) {
  * Returns an object to print.
  */
 CharacterPage.prototype.toString = function() {
+  'use strict';
   var self = this;
   return {
     name: self.name,

@@ -1,6 +1,7 @@
 var completeCallback = null;
 
 function onExecuteComplete(success, text) {
+  'use strict';
   // This function is called from console_boot.js
   if (completeCallback) {
     completeCallback({
@@ -12,6 +13,7 @@ function onExecuteComplete(success, text) {
 }
 
 function pickCharacters(callback) {
+  'use strict';
   // Pick the first online/offline characters if any
   var links = document.getElementsByTagName('a');
   var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
@@ -38,6 +40,7 @@ function pickCharacters(callback) {
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  'use strict';
   if (request.type === 'execute') {
     completeCallback = sendResponse;
     setTimeout(function() {

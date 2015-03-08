@@ -1,8 +1,12 @@
 module.exports = function(grunt) {
+  'use strict';
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
+      options: {
+        strict: true
+      },
       files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js']
     },
     jsbeautifier: {

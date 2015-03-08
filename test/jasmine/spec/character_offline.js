@@ -1,4 +1,5 @@
 describe('Characters', function() {
+  'use strict';
   it('should be offline', function() {
     var rows = document.getElementsByTagName('tr');
     var name_row = null;

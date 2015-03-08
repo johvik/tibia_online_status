@@ -1,4 +1,5 @@
 function HighscorePage(utils) {
+  'use strict';
   this.utils = utils;
   this.elements = {};
 }
@@ -7,6 +8,7 @@ function HighscorePage(utils) {
  * Retrieves and stores information from the highscore.
  */
 HighscorePage.prototype.parse = function(callback) {
+  'use strict';
   var self = this;
   var highscores_div = document.getElementById('highscores');
   if (highscores_div === null) {
@@ -28,6 +30,7 @@ HighscorePage.prototype.parse = function(callback) {
  * Mark all character links if they are online.
  */
 HighscorePage.prototype.update = function(players) {
+  'use strict';
   var self = this;
   var online = self.utils.markOnlineLinks(self.elements.highscores_div, players);
   // Set level if found
@@ -47,6 +50,7 @@ HighscorePage.prototype.update = function(players) {
  * Returns an object to print.
  */
 HighscorePage.prototype.toString = function() {
+  'use strict';
   var self = this;
   return {
     list: self.list,

@@ -13,6 +13,7 @@ var Utils = require('../src/common/utils.js').Utils;
 var HighscorePage = require('../src/common/highscore_page.js').HighscorePage;
 
 describe('HighscorePage', function() {
+  'use strict';
   var utils = new Utils();
   var highscorePage = new HighscorePage(utils);
 

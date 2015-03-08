@@ -1,4 +1,5 @@
 function GuildPage(utils) {
+  'use strict';
   this.utils = utils;
   this.elements = {};
 }
@@ -7,6 +8,7 @@ function GuildPage(utils) {
  * Retrieves and stores information from the guild.
  */
 GuildPage.prototype.parse = function(callback) {
+  'use strict';
   var self = this;
   var guilds_div = document.getElementById('guilds');
   if (guilds_div === null) {
@@ -27,6 +29,7 @@ GuildPage.prototype.parse = function(callback) {
  * Mark all character links if they are online.
  */
 GuildPage.prototype.update = function(players) {
+  'use strict';
   var self = this;
   var online = self.utils.findOnlineCharacters(self.elements.guilds_div, players);
   // Set level if status says online
@@ -47,6 +50,7 @@ GuildPage.prototype.update = function(players) {
  * Returns an object to print.
  */
 GuildPage.prototype.toString = function() {
+  'use strict';
   var self = this;
   return {
     world: self.world,

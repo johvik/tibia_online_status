@@ -7,6 +7,7 @@ var WorldPage = require('./world_page').WorldPage;
 var worldPage = new WorldPage(new Utils());
 
 function onPrefChange() {
+  'use strict';
   var name = 'extensions.jid1-fvCjY69UDEeqOg@jetpack.sdk.console.logLevel';
   if (require('sdk/simple-prefs').prefs.debugOutput) {
     require('sdk/preferences/service').set(name, 'debug');
@@ -18,6 +19,7 @@ function onPrefChange() {
 require('sdk/simple-prefs').on('', onPrefChange);
 
 function onAttach(worker) {
+  'use strict';
   worker.port.once('query:world', function(world) {
     worldPage.query(world, function(err, res) {
       if (err) {

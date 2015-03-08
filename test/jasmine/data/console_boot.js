@@ -1,5 +1,6 @@
 /* More or less a copy of original boot.js but does not use onload/html */
 (function() {
+  'use strict';
   window.jasmine = jasmineRequire.core(jasmineRequire);
 
   jasmineRequire.console(jasmineRequire, jasmine);
