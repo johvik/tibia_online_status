@@ -1,1 +1,1 @@
-TosPage(new HighscorePage(new Utils()));
+(new HighscorePage(new Utils()));

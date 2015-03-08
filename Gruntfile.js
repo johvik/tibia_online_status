@@ -7,11 +7,12 @@ module.exports = function(grunt) {
       options: {
         strict: true
       },
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', '!test/jasmine/data/console_boot.js']
+      beforeconcat: ['Gruntfile.js', 'src/**/*.js', '!src/chrome/data/chrome_page.js', '!src/firefox/data/firefox_page.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', '!test/jasmine/data/console_boot.js'],
+      afterconcat: ['dest/**/*.js']
     },
     jsbeautifier: {
       'default': {
-        src: ['<%= jshint.files %>', 'package.json', 'src/chrome/manifest.json', 'src/firefox/package.json', 'test/**/*.json'],
+        src: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', 'package.json', 'src/chrome/manifest.json', 'src/firefox/package.json', 'test/**/*.json'],
         options: {
           html: {
             indentSize: 2,
@@ -41,10 +42,6 @@ module.exports = function(grunt) {
           }
         }
       }
-    },
-    watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'mochaTest']
     },
     copy: {
       /* Copy icons and manifest.json/package.json. Source files are copied through concat. */
@@ -119,10 +116,10 @@ module.exports = function(grunt) {
       chrome: {
         files: {
           'dest/chrome/data/background.js': ['src/common/world_page.js', 'src/chrome/data/background.js'],
-          'dest/chrome/data/utils.js': ['src/common/utils.js', 'src/chrome/data/chrome_page.js'],
-          'dest/chrome/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
-          'dest/chrome/data/guilds.js': ['src/common/guild_page.js', 'src/common/pages/guilds.js'],
-          'dest/chrome/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js'],
+          'dest/chrome/data/utils.js': ['src/common/utils.js'],
+          'dest/chrome/data/characters.js': ['src/common/character_page.js', 'src/chrome/data/chrome_page.js', 'src/common/pages/characters.js'],
+          'dest/chrome/data/guilds.js': ['src/common/guild_page.js', 'src/chrome/data/chrome_page.js', 'src/common/pages/guilds.js'],
+          'dest/chrome/data/highscores.js': ['src/common/highscore_page.js', 'src/chrome/data/chrome_page.js', 'src/common/pages/highscores.js'],
           'dest/chrome/options/options.js': ['src/chrome/options/options.js']
         }
       },
@@ -131,10 +128,10 @@ module.exports = function(grunt) {
           'dest/firefox/lib/main.js': ['src/firefox/lib/main.js'],
           'dest/firefox/lib/world_page.js': ['src/common/world_page.js'],
           'dest/firefox/lib/utils.js': ['src/firefox/lib/xhr.js', 'src/common/utils.js'],
-          'dest/firefox/data/utils.js': ['src/common/utils.js', 'src/firefox/data/firefox_page.js'],
-          'dest/firefox/data/characters.js': ['src/common/character_page.js', 'src/common/pages/characters.js'],
-          'dest/firefox/data/guilds.js': ['src/common/guild_page.js', 'src/common/pages/guilds.js'],
-          'dest/firefox/data/highscores.js': ['src/common/highscore_page.js', 'src/common/pages/highscores.js']
+          'dest/firefox/data/utils.js': ['src/common/utils.js'],
+          'dest/firefox/data/characters.js': ['src/common/character_page.js', 'src/firefox/data/firefox_page.js', 'src/common/pages/characters.js'],
+          'dest/firefox/data/guilds.js': ['src/common/guild_page.js', 'src/firefox/data/firefox_page.js', 'src/common/pages/guilds.js'],
+          'dest/firefox/data/highscores.js': ['src/common/highscore_page.js', 'src/firefox/data/firefox_page.js', 'src/common/pages/highscores.js']
         }
       }
     },
@@ -158,7 +155,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-jsbeautifier');
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-replace');
@@ -167,8 +163,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-mocha-istanbul');
 
-  grunt.registerTask('test', ['jshint', 'mocha_istanbul']);
-  grunt.registerTask('build', ['clean', 'copy', 'concat', 'replace', 'compress']);
+  grunt.registerTask('test', ['jshint:beforeconcat', 'mocha_istanbul']);
+  grunt.registerTask('build', ['clean', 'copy', 'concat', 'replace', 'compress', 'jshint:afterconcat']);
   grunt.registerTask('travis', ['jsbeautifier:release', 'test', 'build']);
   grunt.registerTask('default', ['jsbeautifier:default', 'test', 'build']);
 };

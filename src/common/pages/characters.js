@@ -1,1 +1,1 @@
-TosPage(new CharacterPage(new Utils()));
+(new CharacterPage(new Utils()));

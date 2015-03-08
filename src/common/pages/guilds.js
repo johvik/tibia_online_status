@@ -1,1 +1,1 @@
-TosPage(new GuildPage(new Utils()));
+(new GuildPage(new Utils()));
