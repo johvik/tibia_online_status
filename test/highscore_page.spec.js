@@ -8,9 +8,9 @@ require('jsdom').defaultDocumentFeatures = {
 var TestUtils = require('./test_utils.js');
 
 global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var Utils = require('../src/common/utils.js').Utils;
+var Utils = require('../src/utils.js').Utils;
 
-var HighscorePage = require('../src/common/highscore_page.js').HighscorePage;
+var HighscorePage = require('../src/highscore_page.js').HighscorePage;
 
 describe('HighscorePage', function() {
   'use strict';

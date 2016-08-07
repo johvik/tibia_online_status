@@ -7,7 +7,7 @@ require('jsdom').defaultDocumentFeatures = {
 var TestUtils = require('./test_utils.js');
 
 global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var Utils = require('../src/common/utils.js').Utils;
+var Utils = require('../src/utils.js').Utils;
 
 describe('Utils', function() {
   'use strict';

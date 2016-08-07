@@ -8,9 +8,9 @@ require('jsdom').defaultDocumentFeatures = {
 var TestUtils = require('./test_utils.js');
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var Utils = require('../src/common/utils.js').Utils;
+var Utils = require('../src/utils.js').Utils;
 
-var CharacterPage = require('../src/common/character_page.js').CharacterPage;
+var CharacterPage = require('../src/character_page.js').CharacterPage;
 
 describe('CharacterPage', function() {
   'use strict';

@@ -7,12 +7,12 @@ module.exports = function(grunt) {
       options: {
         strict: true
       },
-      beforeconcat: ['Gruntfile.js', 'src/**/*.js', '!src/chrome/data/chrome_page.js', '!src/firefox/data/firefox_page.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', '!test/jasmine/data/console_boot.js'],
+      beforeconcat: ['Gruntfile.js', 'src/**/*.js', '!src/data/chrome_page.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', '!test/jasmine/data/console_boot.js'],
       afterconcat: ['dest/**/*.js']
     },
     jsbeautifier: {
       'default': {
-        src: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', 'package.json', 'src/chrome/manifest.json', 'src/firefox/package.json', 'test/**/*.json'],
+        src: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', 'package.json', 'src/manifest.json', 'test/**/*.json'],
         options: {
           html: {
             indentSize: 2,
@@ -49,27 +49,17 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: ['icons/icon16.png', 'icons/icon48.png', 'icons/icon128.png'],
-          dest: 'dest/chrome/'
+          dest: 'dest/'
         }, {
-          src: ['src/chrome/manifest.json'],
-          dest: 'dest/chrome/manifest.json'
+          src: ['src/manifest.json'],
+          dest: 'dest/manifest.json'
         }, {
-          src: ['src/chrome/options/options.html'],
-          dest: 'dest/chrome/options/options.html'
-        }]
-      },
-      firefox: {
-        files: [{
-          expand: true,
-          src: ['icons/icon48.png', 'icons/icon64.png'],
-          dest: 'dest/firefox/'
-        }, {
-          src: ['src/firefox/package.json'],
-          dest: 'dest/firefox/package.json'
+          src: ['src/options/options.html'],
+          dest: 'dest/options/options.html'
         }]
       }
     },
-    clean: ['dest/'],
+    clean: ['dest/', 'dest.zip'],
     replace: {
       json: {
         options: {
@@ -82,11 +72,8 @@ module.exports = function(grunt) {
           }]
         },
         files: [{
-          src: ['dest/chrome/manifest.json'],
-          dest: 'dest/chrome/manifest.json'
-        }, {
-          src: ['dest/firefox/package.json'],
-          dest: 'dest/firefox/package.json'
+          src: ['dest/manifest.json'],
+          dest: 'dest/manifest.json'
         }]
       },
       exports: {
@@ -97,7 +84,7 @@ module.exports = function(grunt) {
           }]
         },
         files: [{
-          src: ['dest/**/*.js', '!dest/firefox/lib/**/*.js'],
+          src: ['dest/**/*.js'],
           dest: './'
         }]
       }
@@ -105,42 +92,23 @@ module.exports = function(grunt) {
     compress: {
       main: {
         options: {
-          archive: 'dest/chrome.zip'
+          archive: 'dest.zip'
         },
         expand: true,
-        cwd: 'dest/chrome/',
+        cwd: 'dest/',
         src: ['**/*']
       }
     },
     concat: {
       chrome: {
         files: {
-          'dest/chrome/data/background.js': ['src/common/world_page.js', 'src/chrome/data/background.js'],
-          'dest/chrome/data/utils.js': ['src/common/utils.js'],
-          'dest/chrome/data/characters.js': ['src/common/character_page.js', 'src/chrome/data/chrome_page.js', 'src/common/pages/characters.js'],
-          'dest/chrome/data/guilds.js': ['src/common/guild_page.js', 'src/chrome/data/chrome_page.js', 'src/common/pages/guilds.js'],
-          'dest/chrome/data/highscores.js': ['src/common/highscore_page.js', 'src/chrome/data/chrome_page.js', 'src/common/pages/highscores.js'],
-          'dest/chrome/options/options.js': ['src/chrome/options/options.js']
+          'dest/data/background.js': ['src/world_page.js', 'src/data/background.js'],
+          'dest/data/utils.js': ['src/utils.js'],
+          'dest/data/characters.js': ['src/character_page.js', 'src/data/chrome_page.js', 'src/pages/characters.js'],
+          'dest/data/guilds.js': ['src/guild_page.js', 'src/data/chrome_page.js', 'src/pages/guilds.js'],
+          'dest/data/highscores.js': ['src/highscore_page.js', 'src/data/chrome_page.js', 'src/pages/highscores.js'],
+          'dest/options/options.js': ['src/options/options.js']
         }
-      },
-      firefox: {
-        files: {
-          'dest/firefox/lib/main.js': ['src/firefox/lib/main.js'],
-          'dest/firefox/lib/world_page.js': ['src/common/world_page.js'],
-          'dest/firefox/lib/utils.js': ['src/firefox/lib/xhr.js', 'src/common/utils.js'],
-          'dest/firefox/data/utils.js': ['src/common/utils.js'],
-          'dest/firefox/data/characters.js': ['src/common/character_page.js', 'src/firefox/data/firefox_page.js', 'src/common/pages/characters.js'],
-          'dest/firefox/data/guilds.js': ['src/common/guild_page.js', 'src/firefox/data/firefox_page.js', 'src/common/pages/guilds.js'],
-          'dest/firefox/data/highscores.js': ['src/common/highscore_page.js', 'src/firefox/data/firefox_page.js', 'src/common/pages/highscores.js']
-        }
-      }
-    },
-    shell: {
-      xpi: {
-        command: ['cd dest/firefox', 'cfx xpi'].join('&&')
-      },
-      run: {
-        command: ['cd dest/firefox', 'cfx run'].join('&&')
       }
     },
     mocha_istanbul: {
@@ -160,7 +128,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-mocha-istanbul');
 
   grunt.registerTask('test', ['jshint:beforeconcat', 'mocha_istanbul']);

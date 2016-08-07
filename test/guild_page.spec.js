@@ -7,9 +7,9 @@ require('jsdom').defaultDocumentFeatures = {
 };
 
 global.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var Utils = require('../src/common/utils.js').Utils;
+var Utils = require('../src/utils.js').Utils;
 
-var GuildPage = require('../src/common/guild_page.js').GuildPage;
+var GuildPage = require('../src/guild_page.js').GuildPage;
 
 describe('GuildPage', function() {
   'use strict';
