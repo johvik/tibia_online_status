@@ -1,13 +1,10 @@
 language: node_js
 node_js:
 - '6'
-addons:
-  code_climate:
-    repo_token: 2fed5830dce8205f9dc70c5423d7a2072fe9eb0a9c257b185fde6d8c1d3dba46
 before_script:
 - npm install -g grunt-cli
 - npm install -g coveralls
 - npm install -g codeclimate-test-reporter
 after_script:
 - cat ./coverage/lcov.info | coveralls
-- codeclimate-test-reporter < ./coverage/lcov.info
+- CODECLIMATE_REPO_TOKEN=2fed5830dce8205f9dc70c5423d7a2072fe9eb0a9c257b185fde6d8c1d3dba46 codeclimate-test-reporter < ./coverage/lcov.info
