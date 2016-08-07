@@ -4,7 +4,8 @@
    * Prints message if debug output is set in the options.
    */
   var debug = function(message) {
-    chrome.storage.sync.get({
+    var storage = chrome.storage.sync || chrome.storage.local;
+    storage.get({
       debugOutput: false
     }, function(items) {
       if (items.debugOutput) {

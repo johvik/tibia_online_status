@@ -10,7 +10,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "permissions": ["storage"],
+  "permissions": ["storage", "http://www.tibia.com/community/"],
   "background": {
     "scripts": ["data/utils.js", "data/background.js"],
     "persistent": false
