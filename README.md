@@ -21,8 +21,7 @@ _Note that the information provided is only as accurate as the information on th
 
 ## Contribute
 To build run `npm install` followed by `grunt`.
-The chrome extension will be packed in `dest/chrome.zip`.
-For the firefox addon run `grunt shell:xpi` and look inside `dest/firefox`.
+The extension will be packed in `dest.zip`.
 
 To execute end-to-end tests for chrome load the extension from `test/jasmin/` (requires that the main extension is loaded first). Then click on the jasmine icon in the browser to start the test.
 
