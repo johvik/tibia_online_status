@@ -1,7 +1,10 @@
 var fs = require('fs');
 var should = require('should');
-var jsdom = require('jsdom').jsdom;
-require('jsdom').defaultDocumentFeatures = {
+const jsdom = require('jsdom');
+const {
+  JSDOM
+} = jsdom;
+jsdom.defaultDocumentFeatures = {
   FetchExternalResources: false,
   ProcessExternalResources: false
 };
@@ -23,7 +26,7 @@ describe('HighscorePage', function() {
     });
 
     it('should not find highscores div', function(done) {
-      global.document = jsdom('');
+      global.document = new JSDOM('').window.document;
       highscorePage.parse(function(err) {
         err.should.equal('Highscores div not found');
         highscorePage.elements.should.eql({});
@@ -32,7 +35,7 @@ describe('HighscorePage', function() {
     });
 
     it('should not find world', function(done) {
-      global.document = jsdom('<div id="highscores"></div>');
+      global.document = new JSDOM('<div id="highscores"></div>').window.document;
       highscorePage.parse(function(err) {
         err.should.equal('No world found');
         highscorePage.elements.should.have.keys('highscores_div');
@@ -42,40 +45,40 @@ describe('HighscorePage', function() {
 
     it('should parse Antica', function(done) {
       var data = fs.readFileSync(__dirname + '/files/highscore_page_antica_magic.html', 'utf8');
-      global.document = jsdom(data);
+      global.document = new JSDOM(data).window.document;
       highscorePage.parse(function(err) {
         should.not.exist(err);
-        highscorePage.list.should.equal('Magic Level');
+        highscorePage.list.should.equal('magic');
         highscorePage.world.should.equal('Antica');
         highscorePage.elements.should.have.keys('highscores_div');
         done();
       });
     });
 
-    it('should fetch and parse Aurera', function(done) {
+    it('should fetch and parse Candia', function(done) {
       this.timeout(5000);
-      utils.fetch('http://www.tibia.com/community/?subtopic=highscores&world=Aurera', function(err, data) {
+      utils.fetch('http://www.tibia.com/community/?subtopic=highscores&world=Candia', function(err, data) {
         should.not.exist(err);
-        global.document = jsdom(data);
+        global.document = new JSDOM(data).window.document;
         highscorePage.parse(function(err) {
           should.not.exist(err);
-          highscorePage.list.should.equal('Experience');
-          highscorePage.world.should.equal('Aurera');
+          highscorePage.list.should.equal('experience');
+          highscorePage.world.should.equal('Candia');
           highscorePage.elements.should.have.keys('highscores_div');
           done();
         });
       });
     });
 
-    it('should fetch and parse Inferna secure', function(done) {
+    it('should fetch and parse Premia secure', function(done) {
       this.timeout(5000);
-      utils.fetch('https://secure.tibia.com/community/?subtopic=highscores&world=Inferna', function(err, data) {
+      utils.fetch('https://secure.tibia.com/community/?subtopic=highscores&world=Premia', function(err, data) {
         should.not.exist(err);
-        global.document = jsdom(data);
+        global.document = new JSDOM(data).window.document;
         highscorePage.parse(function(err) {
           should.not.exist(err);
-          highscorePage.list.should.equal('Experience');
-          highscorePage.world.should.equal('Inferna');
+          highscorePage.list.should.equal('experience');
+          highscorePage.world.should.equal('Premia');
           highscorePage.elements.should.have.keys('highscores_div');
           done();
         });
@@ -90,22 +93,22 @@ describe('HighscorePage', function() {
 
     it('should update Antica experience', function(done) {
       var data = fs.readFileSync(__dirname + '/files/highscore_page_antica_experience.html', 'utf8');
-      global.document = jsdom(data);
+      global.document = new JSDOM(data).window.document;
       highscorePage.parse(function(err) {
         should.not.exist(err);
-        highscorePage.list.should.equal('Experience');
+        highscorePage.list.should.equal('experience');
         highscorePage.world.should.equal('Antica');
         highscorePage.elements.should.have.keys('highscores_div');
 
         // Update with first and last player in the list
         highscorePage.update({
-          'Meendel': {
-            level: 11,
+          'Battle Commander': {
+            level: 72,
             vocation: 'Royal Paladin'
           },
-          'Linglifer': {
-            level: 427,
-            vocation: 'Master Sorcerer'
+          'Zombalil': {
+            level: 447,
+            vocation: 'Elite Knight'
           }
         });
         var meendel_found = false;
@@ -115,15 +118,15 @@ describe('HighscorePage', function() {
         for (var i = 0, j = links.length; i < j; i++) {
           if (link_exp.test(links[i].href)) {
             var name = utils.decode(links[i].innerHTML);
-            var level_column = links[i].parentElement.parentElement.getElementsByTagName('td')[2];
-            if (name === 'Meendel') {
+            var level_column = links[i].parentElement.parentElement.getElementsByTagName('td')[3];
+            if (name === 'Battle Commander') {
               meendel_found = true;
               TestUtils.rgbToHex(links[i].style.color).should.equal(utils.color.green);
-              level_column.textContent.should.equal('11 (-500)');
-            } else if (name === 'Linglifer') {
+              level_column.textContent.should.equal('72 (-500)');
+            } else if (name === 'Zombalil') {
               linglifer_found = true;
               TestUtils.rgbToHex(links[i].style.color).should.equal(utils.color.green);
-              level_column.textContent.should.equal('427 (+1)');
+              level_column.textContent.should.equal('447 (+1)');
             } else {
               links[i].style.color.should.equal('');
               level_column.textContent.should.equal('' + parseInt(level_column.textContent, 10));
@@ -138,15 +141,15 @@ describe('HighscorePage', function() {
 
     it('should update Antica magic', function(done) {
       var data = fs.readFileSync(__dirname + '/files/highscore_page_antica_magic.html', 'utf8');
-      global.document = jsdom(data);
+      global.document = new JSDOM(data).window.document;
       highscorePage.parse(function(err) {
         should.not.exist(err);
-        highscorePage.list.should.equal('Magic Level');
+        highscorePage.list.should.equal('magic');
         highscorePage.world.should.equal('Antica');
         highscorePage.elements.should.have.keys('highscores_div');
 
         highscorePage.update({
-          'Stentung': {
+          'Sioo ham': {
             level: 11,
             vocation: 'Royal Paladin'
           }
@@ -157,11 +160,11 @@ describe('HighscorePage', function() {
         for (var i = 0, j = links.length; i < j; i++) {
           if (link_exp.test(links[i].href)) {
             var name = utils.decode(links[i].innerHTML);
-            var level_column = links[i].parentElement.parentElement.getElementsByTagName('td')[2];
-            if (name === 'Stentung') {
+            var level_column = links[i].parentElement.parentElement.getElementsByTagName('td')[3];
+            if (name === 'Sioo ham') {
               stentung_found = true;
               TestUtils.rgbToHex(links[i].style.color).should.equal(utils.color.green);
-              level_column.textContent.should.equal('99');
+              level_column.textContent.should.equal('106');
             } else {
               links[i].style.color.should.equal('');
               level_column.textContent.should.equal('' + parseInt(level_column.textContent, 10));

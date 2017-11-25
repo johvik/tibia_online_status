@@ -5,7 +5,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       options: {
-        strict: true
+        strict: true,
+        esversion: 6
       },
       beforeconcat: ['Gruntfile.js', 'src/**/*.js', '!src/data/chrome_page.js', 'test/**/*.js', '!test/jasmine/lib/**/*.js', '!test/jasmine/data/console_boot.js'],
       afterconcat: ['dest/**/*.js']

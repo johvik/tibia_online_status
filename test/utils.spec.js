@@ -1,6 +1,9 @@
 var should = require('should');
-var jsdom = require('jsdom').jsdom;
-require('jsdom').defaultDocumentFeatures = {
+const jsdom = require('jsdom');
+const {
+  JSDOM
+} = jsdom;
+jsdom.defaultDocumentFeatures = {
   FetchExternalResources: false,
   ProcessExternalResources: false
 };
@@ -102,7 +105,7 @@ describe('Utils', function() {
 
   describe('#findOnlineCharacters', function() {
     it('should find online', function() {
-      var document = jsdom('<a href="https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="https://secure.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>');
+      var document = new JSDOM('<a href="https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="https://secure.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>').window.document;
       var online = utils.findOnlineCharacters(document, {
         'Bubble': {
           level: 100,
@@ -121,7 +124,7 @@ describe('Utils', function() {
 
   describe('#markOnlineLinks', function() {
     it('should mark online green', function() {
-      var document = jsdom('<a href="https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="https://secure.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>');
+      var document = new JSDOM('<a href="https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv">Chorizo\'korv</a><a href="https://secure.tibia.com/community/?subtopic=characters&name=Bubble">Bubble</a>').window.document;
       var online = utils.markOnlineLinks(document, {
         'Chorizo\'korv': {
           level: 500,
@@ -143,7 +146,7 @@ describe('Utils', function() {
 
   describe('#setLevel', function() {
     it('should not change', function() {
-      var document = jsdom('<div>abc</div>');
+      var document = new JSDOM('<div>abc</div>').window.document;
       var elements = document.getElementsByTagName('div');
       elements.should.have.length(1);
       utils.setLevel(elements[0], 1, 1);
@@ -151,7 +154,7 @@ describe('Utils', function() {
     });
 
     it('should change positive', function() {
-      var document = jsdom('<div>abc</div>');
+      var document = new JSDOM('<div>abc</div>').window.document;
       var elements = document.getElementsByTagName('div');
       elements.should.have.length(1);
       utils.setLevel(elements[0], 1, 2);
@@ -159,7 +162,7 @@ describe('Utils', function() {
     });
 
     it('should change negative', function() {
-      var document = jsdom('<div>abc</div>');
+      var document = new JSDOM('<div>abc</div>').window.document;
       var elements = document.getElementsByTagName('div');
       elements.should.have.length(1);
       utils.setLevel(elements[0], 2, 1);
@@ -169,7 +172,7 @@ describe('Utils', function() {
 
   describe('#parseAndSetLevel', function() {
     it('should not change', function() {
-      var document = jsdom('<div>abc</div>');
+      var document = new JSDOM('<div>abc</div>').window.document;
       var elements = document.getElementsByTagName('div');
       elements.should.have.length(1);
       utils.parseAndSetLevel(elements[0], 1);
@@ -177,7 +180,7 @@ describe('Utils', function() {
     });
 
     it('should set level', function() {
-      var document = jsdom('<div>1</div>');
+      var document = new JSDOM('<div>1</div>').window.document;
       var elements = document.getElementsByTagName('div');
       elements.should.have.length(1);
       utils.parseAndSetLevel(elements[0], 20);

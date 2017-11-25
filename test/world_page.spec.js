@@ -13,12 +13,12 @@ describe('WorldPage', function() {
 
   describe('#parse', function() {
     it('should parse Antica', function(done) {
-      var data = fs.readFileSync(__dirname + '/files/world_page_antica_613.html', 'utf8');
-      var expected = require('./files/world_page_antica_613.expected.js').expected;
+      var data = fs.readFileSync(__dirname + '/files/world_page_antica_466.html', 'utf8');
+      var expected = require('./files/world_page_antica_466.expected.js').expected;
       worldPage.parse(data, function(err, res) {
         should.not.exist(err);
         res.should.eql(expected);
-        Object.keys(res).should.have.length(613);
+        Object.keys(res).should.have.length(466);
         done();
       });
     });

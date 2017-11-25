@@ -1,7 +1,10 @@
 var fs = require('fs');
 var should = require('should');
-var jsdom = require('jsdom').jsdom;
-require('jsdom').defaultDocumentFeatures = {
+const jsdom = require('jsdom');
+const {
+  JSDOM
+} = jsdom;
+jsdom.defaultDocumentFeatures = {
   FetchExternalResources: false,
   ProcessExternalResources: false
 };
@@ -22,7 +25,7 @@ describe('GuildPage', function() {
     });
 
     it('should not find guilds div', function(done) {
-      global.document = jsdom('');
+      global.document = new JSDOM('').window.document;
       guildPage.parse(function(err) {
         err.should.equal('Guilds div not found');
         guildPage.elements.should.eql({});
@@ -31,7 +34,7 @@ describe('GuildPage', function() {
     });
 
     it('should not find world', function(done) {
-      global.document = jsdom('<div id="guilds"></div>');
+      global.document = new JSDOM('<div id="guilds"></div>').window.document;
       guildPage.parse(function(err) {
         err.should.equal('No world found');
         guildPage.elements.should.have.keys('guilds_div');
@@ -41,7 +44,7 @@ describe('GuildPage', function() {
 
     it('should parse Satori', function(done) {
       var data = fs.readFileSync(__dirname + '/files/guild_page_satori.html', 'utf8');
-      global.document = jsdom(data);
+      global.document = new JSDOM(data).window.document;
       guildPage.parse(function(err) {
         should.not.exist(err);
         guildPage.world.should.equal('Antica');
@@ -54,7 +57,7 @@ describe('GuildPage', function() {
       this.timeout(5000);
       utils.fetch('http://www.tibia.com/community/?subtopic=guilds&page=view&GuildName=Red+Rose', function(err, data) {
         should.not.exist(err);
-        global.document = jsdom(data);
+        global.document = new JSDOM(data).window.document;
         guildPage.parse(function(err) {
           should.not.exist(err);
           guildPage.world.should.equal('Antica');
@@ -68,7 +71,7 @@ describe('GuildPage', function() {
       this.timeout(5000);
       utils.fetch('https://secure.tibia.com/community/?subtopic=guilds&page=view&GuildName=Satori', function(err, data) {
         should.not.exist(err);
-        global.document = jsdom(data);
+        global.document = new JSDOM(data).window.document;
         guildPage.parse(function(err) {
           should.not.exist(err);
           guildPage.world.should.equal('Antica');
@@ -84,9 +87,9 @@ describe('GuildPage', function() {
       guildPage = new GuildPage(utils);
     });
 
-    it('should update Bongos', function(done) {
-      var data = fs.readFileSync(__dirname + '/files/guild_page_bongos.html', 'utf8');
-      global.document = jsdom(data);
+    it('should update Old Fashion', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/guild_page_old_fashion.html', 'utf8');
+      global.document = new JSDOM(data).window.document;
       guildPage.parse(function(err) {
         should.not.exist(err);
         guildPage.world.should.equal('Morta');
@@ -95,22 +98,22 @@ describe('GuildPage', function() {
         // Update with one marked online, one marked offline
         // and one invited as online
         guildPage.update({
-          'Plozy Sanki': {
-            level: 198,
+          'Tironyte': {
+            level: 100,
             vocation: 'Elder Druid'
           },
-          'Haraverick': {
-            level: 100,
+          'Martin Grower': {
+            level: 42,
             vocation: 'Master Sorcerer'
           },
-          'Babin Xariusano': {
-            level: 1,
+          'Mehland': {
+            level: 250,
             vocation: 'None'
           }
         });
-        var plozy_sanki_found = false;
-        var haraverick_found = false;
-        var babin_xariusano_found = false;
+        var tironyte_found = false;
+        var martin_grower_found = false;
+        var mehland_found = false;
         var links = guildPage.elements.guilds_div.getElementsByTagName('a');
         var link_exp = /https:\/\/secure\.tibia\.com\/community\/\?subtopic=characters&name=.+/;
         for (var i = 0, j = links.length; i < j; i++) {
@@ -118,22 +121,22 @@ describe('GuildPage', function() {
             var name = utils.decode(links[i].innerHTML);
             var row = links[i].parentElement.parentElement.getElementsByTagName('td');
             var level_column = row[3];
-            if (name === 'Plozy Sanki') {
-              plozy_sanki_found = true;
-              level_column.textContent.should.equal('198 (+100)');
-            } else if (name === 'Haraverick') {
-              haraverick_found = true;
-              level_column.textContent.should.equal('32');
-            } else if (name === 'Babin Xariusano') {
-              babin_xariusano_found = true;
+            if (name === 'Tironyte') {
+              tironyte_found = true;
+              level_column.textContent.should.equal('100 (+21)');
+            } else if (name === 'Martin Grower') {
+              martin_grower_found = true;
+              level_column.textContent.should.equal('47');
+            } else if (name === 'Mehland') {
+              mehland_found = true;
             } else if (row.length >= 6) {
               level_column.textContent.should.equal('' + parseInt(level_column.textContent, 10));
             }
           }
         }
-        plozy_sanki_found.should.equal(true);
-        haraverick_found.should.equal(true);
-        babin_xariusano_found.should.equal(true);
+        tironyte_found.should.equal(true);
+        martin_grower_found.should.equal(true);
+        mehland_found.should.equal(true);
         done();
       });
     });

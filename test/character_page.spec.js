@@ -1,7 +1,10 @@
 var fs = require('fs');
 var should = require('should');
-var jsdom = require('jsdom').jsdom;
-require('jsdom').defaultDocumentFeatures = {
+const jsdom = require('jsdom');
+const {
+  JSDOM
+} = jsdom;
+jsdom.defaultDocumentFeatures = {
   FetchExternalResources: false,
   ProcessExternalResources: false
 };
@@ -23,7 +26,7 @@ describe('CharacterPage', function() {
     });
 
     it('should not find characters div', function(done) {
-      global.document = jsdom('');
+      global.document = new JSDOM('').window.document;
       characterPage.parse(function(err) {
         err.should.equal('Characters div not found');
         characterPage.elements.should.eql({});
@@ -32,7 +35,7 @@ describe('CharacterPage', function() {
     });
 
     it('should not find character information', function(done) {
-      global.document = jsdom('<div id="characters"></div>');
+      global.document = new JSDOM('<div id="characters"></div>').window.document;
       characterPage.parse(function(err) {
         err.should.equal('No character information found');
         characterPage.elements.should.have.keys('characters_div');
@@ -41,7 +44,7 @@ describe('CharacterPage', function() {
     });
 
     it('should not parse character information', function(done) {
-      global.document = jsdom('<div id="characters"><table><tr><td>Character Information</td></tr></table></div>');
+      global.document = new JSDOM('<div id="characters"><table><tr><td>Character Information</td></tr></table></div>').window.document;
       characterPage.parse(function(err) {
         err.should.startWith('Failed to parse character information. ');
         characterPage.elements.should.have.keys('characters_div');
@@ -51,31 +54,31 @@ describe('CharacterPage', function() {
 
     it('should parse Chorizo\'korv', function(done) {
       var data = fs.readFileSync(__dirname + '/files/character_page_chorizo_korv.html', 'utf8');
-      global.document = jsdom(data);
+      global.document = new JSDOM(data).window.document;
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(false);
         characterPage.must_be_offline.should.equal(false);
         characterPage.name.should.equal('Chorizo\'korv');
-        characterPage.vocation.should.equal('Master Sorcerer');
-        characterPage.level.should.equal(69);
-        characterPage.world.should.equal('Inferna');
+        characterPage.vocation.should.equal('Sorcerer');
+        characterPage.level.should.equal(101);
+        characterPage.world.should.equal('Antica');
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
         done();
       });
     });
 
-    it('should parse Ratsafari Guide', function(done) {
-      var data = fs.readFileSync(__dirname + '/files/character_page_ratsafari_guide.html', 'utf8');
-      global.document = jsdom(data);
+    it('should parse Ageyth', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/character_page_ageyth.html', 'utf8');
+      global.document = new JSDOM(data).window.document;
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(true);
         characterPage.must_be_offline.should.equal(false);
-        characterPage.name.should.equal('Ratsafari Guide');
-        characterPage.vocation.should.equal('Master Sorcerer');
-        characterPage.level.should.equal(31);
-        characterPage.world.should.equal('Inferna');
+        characterPage.name.should.equal('Ageyth');
+        characterPage.vocation.should.equal('Royal Paladin');
+        characterPage.level.should.equal(198);
+        characterPage.world.should.equal('Amera');
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
         done();
       });
@@ -85,7 +88,7 @@ describe('CharacterPage', function() {
       this.timeout(5000);
       utils.fetch('http://www.tibia.com/community/?subtopic=characters&name=Chorizo%27korv', function(err, data) {
         should.not.exist(err);
-        global.document = jsdom(data);
+        global.document = new JSDOM(data).window.document;
         characterPage.parse(function(err) {
           should.not.exist(err);
           characterPage.must_be_online.should.equal(false);
@@ -93,7 +96,7 @@ describe('CharacterPage', function() {
           characterPage.name.should.equal('Chorizo\'korv');
           characterPage.vocation.should.equal('Sorcerer');
           characterPage.level.should.be.within(90, 150);
-          characterPage.world.should.equal('Inferna');
+          characterPage.world.should.equal('Antica');
           characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
           done();
         });
@@ -104,7 +107,7 @@ describe('CharacterPage', function() {
       this.timeout(5000);
       utils.fetch('https://secure.tibia.com/community/?subtopic=characters&name=Chorizo%27korv', function(err, data) {
         should.not.exist(err);
-        global.document = jsdom(data);
+        global.document = new JSDOM(data).window.document;
         characterPage.parse(function(err) {
           should.not.exist(err);
           characterPage.must_be_online.should.equal(false);
@@ -112,7 +115,7 @@ describe('CharacterPage', function() {
           characterPage.name.should.equal('Chorizo\'korv');
           characterPage.vocation.should.equal('Sorcerer');
           characterPage.level.should.be.within(90, 150);
-          characterPage.world.should.equal('Inferna');
+          characterPage.world.should.equal('Antica');
           characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
           done();
         });
@@ -127,93 +130,93 @@ describe('CharacterPage', function() {
 
     it('should update Chorizo\'korv', function(done) {
       var data = fs.readFileSync(__dirname + '/files/character_page_chorizo_korv.html', 'utf8');
-      global.document = jsdom(data);
+      global.document = new JSDOM(data).window.document;
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(false);
         characterPage.must_be_offline.should.equal(false);
         characterPage.name.should.equal('Chorizo\'korv');
-        characterPage.vocation.should.equal('Master Sorcerer');
-        characterPage.level.should.equal(69);
-        characterPage.world.should.equal('Inferna');
+        characterPage.vocation.should.equal('Sorcerer');
+        characterPage.level.should.equal(101);
+        characterPage.world.should.equal('Antica');
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
 
         characterPage.update({});
         characterPage.elements.name_column.style.color.should.equal('');
-        characterPage.elements.level_column.textContent.should.equal('69');
-        characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
-
-        characterPage.update({
-          'Chorizo\'korv': {
-            level: 70,
-            vocation: 'Sorcerer'
-          }
-        });
-        TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.green);
-        characterPage.elements.level_column.textContent.should.equal('70 (+1)');
+        characterPage.elements.level_column.textContent.should.equal('101');
         characterPage.elements.vocation_column.textContent.should.equal('Sorcerer');
 
         characterPage.update({
           'Chorizo\'korv': {
-            level: 68,
+            level: 102,
             vocation: 'Master Sorcerer'
           }
         });
         TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.green);
-        characterPage.elements.level_column.textContent.should.equal('68 (-1)');
+        characterPage.elements.level_column.textContent.should.equal('102 (+1)');
+        characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
+
+        characterPage.update({
+          'Chorizo\'korv': {
+            level: 100,
+            vocation: 'Master Sorcerer'
+          }
+        });
+        TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.green);
+        characterPage.elements.level_column.textContent.should.equal('100 (-1)');
         characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
         done();
       });
     });
 
-    it('should update Ratsafari Guide', function(done) {
-      var data = fs.readFileSync(__dirname + '/files/character_page_ratsafari_guide.html', 'utf8');
-      global.document = jsdom(data);
+    it('should update Ageyth', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/character_page_ageyth.html', 'utf8');
+      global.document = new JSDOM(data).window.document;
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(true);
         characterPage.must_be_offline.should.equal(false);
-        characterPage.name.should.equal('Ratsafari Guide');
-        characterPage.vocation.should.equal('Master Sorcerer');
-        characterPage.level.should.equal(31);
-        characterPage.world.should.equal('Inferna');
+        characterPage.name.should.equal('Ageyth');
+        characterPage.vocation.should.equal('Royal Paladin');
+        characterPage.level.should.equal(198);
+        characterPage.world.should.equal('Amera');
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
 
         characterPage.update({});
         TestUtils.rgbToHex(characterPage.elements.name_column.style.color).should.equal(utils.color.green);
-        characterPage.elements.level_column.textContent.should.equal('31');
-        characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
+        characterPage.elements.level_column.textContent.should.equal('198');
+        characterPage.elements.vocation_column.textContent.should.equal('Royal Paladin');
         done();
       });
     });
 
-    it('should not update Ratsafari Guide', function(done) {
-      var data = fs.readFileSync(__dirname + '/files/character_page_ratsafari_guide_offline.html', 'utf8');
-      global.document = jsdom(data);
+    it('should not update Ageyth', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/character_page_ageyth_offline.html', 'utf8');
+      global.document = new JSDOM(data).window.document;
       characterPage.parse(function(err) {
         should.not.exist(err);
         characterPage.must_be_online.should.equal(false);
         characterPage.must_be_offline.should.equal(true);
-        characterPage.name.should.equal('Ratsafari Guide');
-        characterPage.vocation.should.equal('Master Sorcerer');
-        characterPage.level.should.equal(32);
-        characterPage.world.should.equal('Inferna');
+        characterPage.name.should.equal('Ageyth');
+        characterPage.vocation.should.equal('Royal Paladin');
+        characterPage.level.should.equal(198);
+        characterPage.world.should.equal('Amera');
         characterPage.elements.should.have.keys('characters_div', 'name_column', 'vocation_column', 'level_column');
 
         characterPage.update({});
         characterPage.elements.name_column.style.color.should.equal('');
-        characterPage.elements.level_column.textContent.should.equal('32');
-        characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
+        characterPage.elements.level_column.textContent.should.equal('198');
+        characterPage.elements.vocation_column.textContent.should.equal('Royal Paladin');
 
         characterPage.update({
-          'Ratsafari Guide': {
+          'Ageyth': {
             level: 100,
             vocation: 'Knight'
           }
         });
         characterPage.elements.name_column.style.color.should.equal('');
-        characterPage.elements.level_column.textContent.should.equal('32');
-        characterPage.elements.vocation_column.textContent.should.equal('Master Sorcerer');
+        characterPage.elements.level_column.textContent.should.equal('198');
+        characterPage.elements.vocation_column.textContent.should.equal('Royal Paladin');
         done();
       });
     });
