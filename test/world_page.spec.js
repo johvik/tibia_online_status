@@ -23,8 +23,8 @@ describe('WorldPage', function() {
       });
     });
 
-    it('should parse offline Magera', function(done) {
-      var data = fs.readFileSync(__dirname + '/files/world_page_magera_offline.html', 'utf8');
+    it('should parse Magera', function(done) {
+      var data = fs.readFileSync(__dirname + '/files/world_page_magera_0.html', 'utf8');
       worldPage.parse(data, function(err, res) {
         should.not.exist(err);
         res.should.eql({});
